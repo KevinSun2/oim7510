@@ -92,7 +92,7 @@ def _(mo):
 
 @app.cell
 def _():
-    freight_charges = [16.75, 22.25, 25.00, 20.25, 36.25]
+    freight_charges = [999.99, 22.25, 25.00, 20.25, 36.25]
     freight_charges
     return (freight_charges,)
 
@@ -131,8 +131,16 @@ def _(freight_charges):
 
 
 @app.cell
-def _():
+def _(total):
+    total
     return
+
+
+@app.cell
+def _(freight_charges):
+    total= sum(freight_charges)
+
+    return (total,)
 
 
 @app.cell(hide_code=True)
