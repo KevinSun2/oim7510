@@ -57,6 +57,18 @@ def _(mo):
     return
 
 
+@app.cell
+def _():
+    print("hi")
+    return
+
+
+@app.cell
+def _():
+    print("Hello world!")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -139,7 +151,6 @@ def _(total):
 @app.cell
 def _(freight_charges):
     total= sum(freight_charges)
-
     return (total,)
 
 
@@ -263,6 +274,25 @@ def _(mo):
     6. `orders * 2`, then `orders + freight_charges`. Neither one is an error.
     7. `sorted(freight_charges)`, then `sorted(freight_charges, reverse=True)`. What did `reverse=True` change, and did `freight_charges` itself change?
     """)
+    return
+
+
+@app.cell
+def _():
+    x=100
+    return (x,)
+
+
+@app.cell
+def _(x):
+    y=x+50
+    return (y,)
+
+
+@app.cell
+def _(x, y):
+    print(x)
+    print(y)
     return
 
 

@@ -25,6 +25,46 @@
       "console": []
     },
     {
+      "id": "docx",
+      "code_hash": "aef1670f14ef68ff12a1052445c96172",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "hi\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "QneX",
+      "code_hash": "34fcd36e914ae085cbb4c8f69214f39e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Hello world!\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "vblA",
       "code_hash": "8eccc2874bd4a25a67b56a0f5288c2c6",
       "outputs": [
@@ -77,59 +117,31 @@
       "console": []
     },
     {
-      "id": "DXGQ",
+      "id": "Xref",
       "code_hash": "7807a9f2a3c70a3dba1e5940a31a52c3",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>999.99</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
       "id": "SFPL",
       "code_hash": "47c11c10e5fa42f4ae3d744af66eaac0",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>5</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "jwmN",
+      "id": "BYtC",
       "code_hash": "fbb44b4487415b134bce9c790a27fe5e",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>1103.74</pre>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "TNYC",
-      "code_hash": "c5a18a1ff3cdf8aee015cbe09f3901f3",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
       "id": "RGSE",
+      "code_hash": "0f1aa6ba50dc6d3723f62199066ecf53",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Kclp",
       "code_hash": "26b4c34487e23e3a6a8a25ca45d5c821",
       "outputs": [
         {
@@ -142,7 +154,7 @@
       "console": []
     },
     {
-      "id": "Kclp",
+      "id": "emfo",
       "code_hash": "94a57b4d2f7415c80ebbf5f23c594311",
       "outputs": [
         {
@@ -155,7 +167,7 @@
       "console": []
     },
     {
-      "id": "emfo",
+      "id": "Hstk",
       "code_hash": "a38d32dbbb47ac81ee857a8e4f587493",
       "outputs": [
         {
@@ -168,7 +180,7 @@
       "console": []
     },
     {
-      "id": "Hstk",
+      "id": "nWHF",
       "code_hash": "1c7f5d35f40512380e4e63a7d3602152",
       "outputs": [
         {
@@ -181,7 +193,7 @@
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "iLit",
       "code_hash": "c560a73c50a639b3232304257ed0738d",
       "outputs": [
         {
@@ -194,7 +206,7 @@
       "console": []
     },
     {
-      "id": "iLit",
+      "id": "ZHCJ",
       "code_hash": "77da7510c24b20cf9a9ed3dd3452fbe1",
       "outputs": [
         {
@@ -207,7 +219,7 @@
       "console": []
     },
     {
-      "id": "ZHCJ",
+      "id": "ROlb",
       "code_hash": "1057f06a192ac3338dafec878b1a2ac3",
       "outputs": [
         {
@@ -220,13 +232,20 @@
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "qnkX",
       "code_hash": "fcd5fe5a90d3e8ec5b572d836365a5bf",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10248, 10249, 10250, 10251, 10252]"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "qnkX",
+      "id": "TqIu",
       "code_hash": "24a98ea6d88d50be86f90cf02fd1775b",
       "outputs": [
         {
@@ -239,7 +258,53 @@
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "oKMK",
+      "code_hash": "469ee54f303ce19e5e3ce6b071a80f91",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vugb",
+      "code_hash": "286d084ae36f51f798ff56393c1bcd32",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nKmG",
+      "code_hash": "0858d9b71e6e086d4f44d6925e410870",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "100\n150\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Vxnm",
       "code_hash": "6d0b81807515509cd78ab5d6bcdf23b9",
       "outputs": [
         {
@@ -252,13 +317,20 @@
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "DnEU",
       "code_hash": "e4fe7720112bf52771a7c6e23b6680c8",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain:<class 'float'>\", \"text/plain:<class 'int'>\", \"text/plain:<class 'str'>\", \"text/plain:<class 'bool'>\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "ulZA",
       "code_hash": "e37bd35d034f1b1250af1bc0ff154ca7",
       "outputs": [
         {
@@ -271,7 +343,7 @@
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "ecfG",
       "code_hash": "e772d821a86328a255a3c0e7072f418c",
       "outputs": [
         {
@@ -284,7 +356,7 @@
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "Pvdt",
       "code_hash": "61c872df0f30ee9fc863188843e1827f",
       "outputs": [
         {
@@ -297,7 +369,7 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "ZBYS",
       "code_hash": "f055d6c47921af028d1e478512b0c4ef",
       "outputs": [
         {
@@ -310,7 +382,7 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "aLJB",
       "code_hash": "c769b53cfa5c0d31eb4774ccc90cead4",
       "outputs": [
         {
@@ -323,13 +395,13 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "nHfw",
       "code_hash": "ab81ca09e82b5615c45e533a8eb8a2d5",
       "outputs": [],
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "xXTn",
       "code_hash": "3412983ccee1651667e60ce26c8ebab7",
       "outputs": [
         {
@@ -342,7 +414,7 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "AjVT",
       "code_hash": "ae8593286258fa717ee70a219c0780b9",
       "outputs": [
         {
@@ -355,7 +427,7 @@
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "pHFh",
       "code_hash": "820c55de11633da2a9d03c20e93517b6",
       "outputs": [
         {
@@ -368,13 +440,13 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "NCOB",
       "code_hash": "99d2afc68739f124c36b434e4f86adcf",
       "outputs": [],
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "aqbW",
       "code_hash": "cfb66343400f3ca3ff1c2cef1cf4eb77",
       "outputs": [
         {
@@ -387,7 +459,7 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "TRpd",
       "code_hash": "eaff85162f208add7648c4d43810498a",
       "outputs": [
         {
@@ -400,7 +472,7 @@
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "TXez",
       "code_hash": "3c0f55b2f8582e207416da282626db3d",
       "outputs": [
         {
@@ -413,7 +485,7 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "dNNg",
       "code_hash": "ceef6bdc4617e1512188a28309983104",
       "outputs": [
         {
@@ -426,7 +498,7 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "yCnT",
       "code_hash": "830409d9361fd16a4b5b79956f3dae62",
       "outputs": [
         {
@@ -439,7 +511,7 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "wlCL",
       "code_hash": "b3a11deac49dcba187ae6c47dcc0854c",
       "outputs": [
         {
@@ -452,7 +524,7 @@
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "kqZH",
       "code_hash": "9604a4334a5c681e4d051bb1c7468616",
       "outputs": [
         {
@@ -465,7 +537,7 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "wAgl",
       "code_hash": "220c060dad06108b309d7d0e848cd4d6",
       "outputs": [
         {
@@ -478,7 +550,7 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "rEll",
       "code_hash": "3d8a46394aacb87f7fbca6175b3d5175",
       "outputs": [
         {
@@ -491,7 +563,7 @@
       "console": []
     },
     {
-      "id": "rEll",
+      "id": "dGlV",
       "code_hash": "aeb144ec827e787994efccd05da6699e",
       "outputs": [
         {
