@@ -258,6 +258,68 @@ def _():
     return (orders,)
 
 
+@app.cell
+def _(freight_charges):
+    freight_charges[-1]
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[:3]
+    return
+
+
+@app.cell
+def _(orders):
+    orders[0]
+    return
+
+
+app._unparsable_cell(
+    r"""
+    Both take sthe first number
+    """,
+    name="_"
+)
+
+
+@app.cell
+def _(category):
+    len(category)
+    return
+
+
+@app.cell
+def _(orders):
+    sum(orders)
+    return
+
+
+@app.cell
+def _(orders):
+    orders*2
+    return
+
+
+@app.cell
+def _(freight_charges, orders):
+    orders+freight_charges
+    return
+
+
+@app.cell
+def _(freight_charges):
+    sorted(freight_charges)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    sorted(freight_charges, reverse=True)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -322,6 +384,18 @@ def _(mo):
     return
 
 
+@app.cell
+def _():
+    "16.75" + "22.25"
+    return
+
+
+@app.cell
+def _():
+    16.75 + "22.25"
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -348,6 +422,24 @@ def _(mo):
 
     📖 Handbook: Python §2 Types
     """)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[0] > 20
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[-1] == max(freight_charges)
+    return
+
+
+@app.cell
+def _():
+    type(True)
     return
 
 
@@ -395,6 +487,12 @@ def _(mo):
     return
 
 
+@app.cell
+def _(freight_charges, total):
+    print(total/len(freight_charges))
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -419,11 +517,11 @@ def _(mo):
 
 @app.cell
 def _(freight_charges):
-    over_20 = []
+    under_25 = []
     for charge in freight_charges:
-        if charge > 20:
-            over_20.append(charge)
-    over_20
+        if charge < 20:
+            under_25.append(charge)
+    under_25
     return
 
 
@@ -475,6 +573,27 @@ def _(mo):
     return
 
 
+@app.cell
+def _():
+    import pandsa
+
+    return
+
+
+@app.cell
+def _():
+    open("sales.csv")
+    return
+
+
+app._unparsable_cell(
+    r"""
+    new_charges = [16.75, 22.25
+    """,
+    name="_"
+)
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -504,6 +623,18 @@ def _(mo):
 
     `max(["9.50", "16.75", "22.25"])`
     """)
+    return
+
+
+@app.cell
+def _():
+    max(["9.50", "16.75", "22.25"])
+    return
+
+
+@app.cell
+def _():
+    max([9.50, 16.75, 22.25])
     return
 
 
@@ -553,6 +684,14 @@ def _(mo):
     return
 
 
+app._unparsable_cell(
+    r"""
+    Python is naming total=sum line, the issue is with pending, because it has values and suddenly there is text, I would take the pending out or change it to a number
+    """,
+    name="_"
+)
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -585,6 +724,17 @@ def _(mo):
 @app.cell
 def _():
     Total =1 
+    return
+
+
+@app.cell
+def _(freight_charges, orders):
+    import matplotlib.pyplot as plt
+
+    _fig, _ax = plt.subplots(figsize=(6, 2.6))
+    _ax.bar([str(_o) for _o in orders], freight_charges)
+    _ax.set_ylabel("freight")
+    _fig
     return
 
 
