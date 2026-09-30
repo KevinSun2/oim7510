@@ -229,7 +229,7 @@ def _():
         print("Pass")
     elif score >= 90:
         print("A")
-    return (score,)
+    return
 
 
 @app.cell(hide_code=True)
@@ -256,7 +256,7 @@ def _(mo):
 def _():
     statuses = ["shipped", "pending", "shipped", "cancelled", "shipped"]
     statuses
-    return (statuses,)
+    return
 
 
 @app.cell(hide_code=True)
@@ -285,7 +285,7 @@ def _():
     order_lines = ["notebook", "pen"]
     order_lines.append(["stapler", "tape"])
     len(order_lines)
-    return (order_lines,)
+    return
 
 
 @app.cell(hide_code=True)
@@ -315,7 +315,7 @@ def _():
     print(sorted(tickers))
     print(tickers.sort())
     tickers
-    return (tickers,)
+    return
 
 
 @app.cell(hide_code=True)
@@ -351,7 +351,7 @@ def _():
     sale_prices = prices
     sale_prices.append(4.99)
     prices
-    return (prices, sale_prices,)
+    return
 
 
 @app.cell(hide_code=True)
@@ -460,6 +460,43 @@ def _(mo):
     Two of them fail, and both give the same kind of error. Add a cell and find out
     which, and what the message says. A `KeyError` names the key it could not find.
     """)
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order["Freight"]
+    first_order["freight"]
+    first_order[0]
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order["Freight"]
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order["freight"]
+
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order[0]
+    return
+
+
+@app.cell
+def _(first_order):
+    for key in ["Freight", "freight", 0]:
+        try:
+            print(key, "->", first_order[key])
+        except KeyError as e:
+            print(key, "-> KeyError:", e)
     return
 
 
