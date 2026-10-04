@@ -45,6 +45,85 @@
       "console": []
     },
     {
+      "id": "uMyx",
+      "code_hash": "2c89a072f36ea46a1b1d3ddfb34cd736",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Enter the cost: 16.5\nEnter tax: 3.25\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "VvCn",
+      "code_hash": "bd584f485531dc8a8612f58924a3ce3c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>19.75</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "VVlo",
+      "code_hash": "5d0a9ecf541aa51ea94bc5446946d5cf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>165.0</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "EmsP",
+      "code_hash": "ec5527a6c62e392eae5528bf8a812dd2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "The total cost is $165.00.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "VxsP",
+      "code_hash": "9bc20ec431429cc424aa1c2fdfac1894",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&lt;class &#x27;float&#x27;&gt;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "bkHC",
       "code_hash": "115cdc766461e63d887742e99ed47a5d",
       "outputs": [],
@@ -79,7 +158,14 @@
     {
       "id": "Xref",
       "code_hash": "3162e71c11ea9d96662b50a13fe21705",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:16.75\", \"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:20.25\", \"text/plain+float:36.25\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -93,6 +179,30 @@
           }
         }
       ],
+      "console": []
+    },
+    {
+      "id": "uSEf",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Nzra",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "OgrB",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "sNVc",
+      "code_hash": null,
+      "outputs": [],
       "console": []
     },
     {
@@ -122,10 +232,30 @@
       "console": []
     },
     {
-      "id": "Kclp",
-      "code_hash": "dc0cf7ab380db59842116577d44768e7",
+      "id": "fuVj",
+      "code_hash": null,
       "outputs": [],
       "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "53005fde25d76a9a02755ec7bc069c4c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "A\nC\nPass\nfail\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "emfo",
@@ -143,8 +273,55 @@
     {
       "id": "Hstk",
       "code_hash": "413f573172b95d2cba69850b5e98a1e1",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"shipped\", \"pending\", \"shipped\", \"cancelled\", \"shipped\"]"
+          }
+        }
+      ],
       "console": []
+    },
+    {
+      "id": "iQos",
+      "code_hash": "8a797ec01468ff6e51bf5fd1afedfa75",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "shipped\npending\nshipped\ncancelled\nshipped\n3\n2\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "JNRC",
+      "code_hash": "dd79f2be340a431f7dde487f03edf5e4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "60.0\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "nWHF",
@@ -161,9 +338,23 @@
     },
     {
       "id": "iLit",
-      "code_hash": "d7f1e30a273b00c372f58d2c77801a99",
-      "outputs": [],
-      "console": []
+      "code_hash": "9c703179f04d6e2d366b64a9a114e57e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "['notebook', 'pen', 'stapler', 'tape']\n4\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "ZHCJ",
@@ -181,8 +372,42 @@
     {
       "id": "ROlb",
       "code_hash": "01a8d5269858a498482cb962fade9d87",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"AAPL\", \"MSFT\", \"NVDA\"]"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "['AAPL', 'MSFT', 'NVDA']\nNone\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "djuY",
+      "code_hash": "a24cd81dec103216b544347b72a727b8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "['NVDA', 'MSFT', 'AAPL']\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "qnkX",
@@ -199,8 +424,48 @@
     },
     {
       "id": "TqIu",
-      "code_hash": "8d95c8f244caaf7e1606caf938476e98",
-      "outputs": [],
+      "code_hash": "5be6bfaab033d3e55be7cf2d636c9080",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:12.5\", \"text/plain+float:8.0\", \"text/plain+float:19.99\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hnrm",
+      "code_hash": "c8ba5cd81bfd4f76e9001b7d29de9ada",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "False\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "LJAQ",
+      "code_hash": "894fce94a8fe3d4557222ec1775922dd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">changes made through either name to appear in the same list</span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -219,8 +484,62 @@
     {
       "id": "DnEU",
       "code_hash": "e22c9fe5df8633ecd9c695b5510cb87f",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "10050\n150\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "tugh",
+      "code_hash": "8cab35675b827dd0d105b6d3fc787e87",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "150\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "mAGJ",
+      "code_hash": "a1a14e4062e22b111c048cfce8a3900d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "100.5\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "ulZA",
@@ -230,6 +549,92 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\"><strong>Advanced \u00b7 G \u00b7 Off the end.</strong> <code>charges</code> in section 2 holds last week's five freight\ncharges. This one has no cell of its own, because every line in it fails on\npurpose and a notebook that raises on load is a nuisance.</span>\n<ol>\n<li><strong>Add a cell</strong>, type <code>charges[5]</code> in it and run it. <strong>Add a markdown cell</strong> saying\n   why there is no item 5 when the list holds five charges.</li>\n<li><strong>Add a cell</strong> that gets the last charge, in two different ways, without counting\n   the items by hand.</li>\n<li><strong>Add a cell</strong> and run <code>charges[-6]</code>. Say in markdown what happened and why.</li>\n</ol>\n<span class=\"paragraph\"><strong>Advanced \u00b7 H \u00b7 A line for the operations team.</strong> Using the counts you worked out in\nB, <strong>add a cell</strong> that prints exactly <code>3 of 5 orders shipped</code>. Your code has to\ncompute both numbers. Then extend it so that it reads\n<code>3 of 5 orders shipped (60%)</code>. An f-string is the short way to build a sentence out of\nvalues, and it was section 5 of last week's notebook.</span>\n</blockquote></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "XPmp",
+      "code_hash": "c33d04356fed101f03103b3a587b36ee",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "list index out of range",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Kevin\\AppData\\Local\\Temp\\marimo_17076\\__marimo__cell_XPmp_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"mi\">5</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "LZCw",
+      "code_hash": "1901b9b890afe173d722dccf692d51ad",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">5 item starts at 0, 5 is the 6th item</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YGPe",
+      "code_hash": "fc3eb36aeacba7bd52dd5ec46cd94244",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "36.25\n36.25\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "wimb",
+      "code_hash": "53ae0f9a499fc8cdd75fdec1d1d87e1a",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "list index out of range",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Kevin\\AppData\\Local\\Temp\\marimo_17076\\__marimo__cell_wimb_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">charges</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">6</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~^^^^</span>\n<span class=\"gr\">IndexError</span>: <span class=\"n\">list index out of range</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "PyIb",
+      "code_hash": "5830b6a0fa1a90684d09a35878e117a6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">goes beyond the list</span></span>"
           }
         }
       ],
@@ -301,7 +706,7 @@
       "console": []
     },
     {
-      "id": "Qszu",
+      "id": "xXTn",
       "code_hash": "1750e9e558d7f3dcf0998e55862d3f2b",
       "outputs": [
         {
@@ -315,13 +720,13 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Kevin\\AppData\\Local\\Temp\\marimo_61060\\__marimo__cell_Qszu_.py\"</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"s2\">\"freight\"</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'freight'</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Kevin\\AppData\\Local\\Temp\\marimo_17076\\__marimo__cell_xXTn_.py\"</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"s2\">\"freight\"</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'freight'</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "jeyr",
+      "id": "AjVT",
       "code_hash": "2bfc2c56d92d1252dcea892b8285d87a",
       "outputs": [
         {
@@ -334,8 +739,8 @@
       "console": []
     },
     {
-      "id": "dqYh",
-      "code_hash": "a3f224942e22e2b230d7601382a2949c",
+      "id": "pHFh",
+      "code_hash": "2c0ebdac371fde0a720bc52f0ec33995",
       "outputs": [
         {
           "type": "error",
@@ -348,13 +753,13 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Kevin\\AppData\\Local\\Temp\\marimo_61060\\__marimo__cell_dqYh_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"s2\">\"freight\"</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'freight'</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Kevin\\AppData\\Local\\Temp\\marimo_17076\\__marimo__cell_pHFh_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"s2\">\"freight\"</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'freight'</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "NDII",
+      "id": "NCOB",
       "code_hash": "8c9992a7ee25d4caccd1bebf692690ee",
       "outputs": [
         {
@@ -368,33 +773,19 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Kevin\\AppData\\Local\\Temp\\marimo_61060\\__marimo__cell_NDII_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">0</span>\n</pre></div>\n</span>",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\Kevin\\AppData\\Local\\Temp\\marimo_17076\\__marimo__cell_NCOB_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">0</span>\n</pre></div>\n</span>",
           "mimetype": "application/vnd.marimo+traceback"
         }
       ]
     },
     {
-      "id": "xXTn",
+      "id": "aqbW",
       "code_hash": "847bebe61eac935e8308970d3ee3f0a7",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Freight -> 16.75\nfreight -> KeyError: 'freight'\n0 -> KeyError: 0\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
-      "id": "AjVT",
+      "id": "TRpd",
       "code_hash": "0ed1e9cc210d89a44e791cc8866fac27",
       "outputs": [
         {
@@ -407,13 +798,20 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "TXez",
       "code_hash": "2e78ba09148c2840a0ce57701f538f5b",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>30</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "dNNg",
       "code_hash": "215e85cc1d798eb376e760e2e6876215",
       "outputs": [
         {
@@ -426,13 +824,20 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "yCnT",
       "code_hash": "56ae7cf264083e0936598623c21b783a",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;France&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "wlCL",
       "code_hash": "362a604c80a321d2e4d5c0c5e80b4671",
       "outputs": [
         {
@@ -445,7 +850,67 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "yEFc",
+      "code_hash": "1886f81908aa1821bf70613849be0f1d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "827.0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Anzs",
+      "code_hash": "bb1eec04f00c330f93849e88e703d8a7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "3\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "FFui",
+      "code_hash": "fb1c84b4dcf22223c501bc9c583cd6b7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "10263\n56.0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "kqZH",
       "code_hash": "276567fb8e96c73de1480e5e345ad8c1",
       "outputs": [
         {
@@ -458,7 +923,40 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "ScTi",
+      "code_hash": "55e7c9e0a435c3b1de0211114959b2a6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">one row is a customer order. </span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qrcw",
+      "code_hash": "ea3ff640228ad2d3a074c4fdb908c96f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "30\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "wAgl",
       "code_hash": "1a951e63750454427afca99d94d5c044",
       "outputs": [
         {
@@ -471,7 +969,7 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "rEll",
       "code_hash": "33f3e6ba51f144e4af890984773e0cfc",
       "outputs": [
         {
@@ -484,13 +982,125 @@
       "console": []
     },
     {
-      "id": "wlCL",
-      "code_hash": "ee04f5dc9b3e474ede5f3f883c3aa33e",
-      "outputs": [],
+      "id": "AAjw",
+      "code_hash": "cffb3425207505b6281044fedd9f701f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"your-turn-the-grocery-order\">Your Turn \u00b7 The Grocery Order</h2>\n<span class=\"paragraph\">Five items in a cart. <strong>What does the whole order cost?</strong></span>\n<span class=\"paragraph\">Same steps as before, but this time work it out yourself:</span>\n<ol>\n<li>Look at <code>cart</code> below. Each item is a record with a <code>\"qty\"</code> and a <code>\"price\"</code>.</li>\n<li>Write the code: for each item, multiply quantity by price, then add every\n   item's cost together to get the total.</li>\n</ol>\n<span class=\"paragraph\"><strong>Check yourself: $74.87.</strong></span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "MbLi",
+      "code_hash": "53bdcca1cba18bbbdd2b101f5781bf21",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"Item\": \"Coffee\", \"qty\": 2, \"price\": \"text/plain+float:8.99\"}, {\"Item\": \"Bread\", \"qty\": 3, \"price\": \"text/plain+float:4.5\"}, {\"Item\": \"Eggs\", \"qty\": 1, \"price\": \"text/plain+float:5.25\"}, {\"Item\": \"Cheese\", \"qty\": 2, \"price\": \"text/plain+float:11.49\"}, {\"Item\": \"Rice\", \"qty\": 4, \"price\": \"text/plain+float:3.79\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "gshL",
+      "code_hash": "d23e8aeec309926b8cf3f42449d624e9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Total value: $74.87\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "dGlV",
+      "code_hash": "ee04f5dc9b3e474ede5f3f883c3aa33e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"Symbol\": \"AAPL\", \"Shares\": 100, \"Price\": \"text/plain+float:173.93\"}, {\"Symbol\": \"MSFT\", \"Shares\": 50, \"Price\": \"text/plain+float:319.53\"}, {\"Symbol\": \"GOOG\", \"Shares\": 80, \"Price\": \"text/plain+float:131.36\"}, {\"Symbol\": \"AMZN\", \"Shares\": 200, \"Price\": \"text/plain+float:129.33\"}, {\"Symbol\": \"NVDA\", \"Shares\": 20, \"Price\": \"text/plain+float:410.17\"}, {\"Symbol\": \"TSLA\", \"Shares\": 150, \"Price\": \"text/plain+float:255.7\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Biil",
+      "code_hash": "8be65f1c25fdd8554ce3f951f7701d75",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Total value: $116,302.70\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "tyEn",
+      "code_hash": "078b9400115c668241b36091690f5139",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">for each holding, multiply \"Shares\" by \"Price\".\nthen add all the holdings together.\nThen you get the total value of the portfolio</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dVtQ",
+      "code_hash": "b467db17ec994a2c7b9fae0ecc466496",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">For each holding, multiply the number of shares by the price per share.\nThis gives the cost of that holding.\nAdd the costs of all six holdings together.\nThe result is the total cost of buying the portfolio.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vDqD",
+      "code_hash": "be631b7a9b6c4dc1eac1c61c47902ae4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">included the second line to explain what the multiplication produces, but your version already makes sense.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SdmI",
       "code_hash": "d7c2e174de0e810f192e0ebcd5f38e05",
       "outputs": [
         {
@@ -503,13 +1113,40 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "zVSc",
+      "code_hash": "72b7c4f5edcc06a106e120f39e3a205b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "name     shares     price\nAAPL        100    173.93\nMSFT         50    319.53\nGOOG         80    131.36\nAMZN        200    129.33\nNVDA         20    410.17\nTSLA        150    255.70\nTotal cost: $116302.70\nRows read: 6; rows skipped: 0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "lgWD",
       "code_hash": "75416f5df6cb12c24498123c5e0d1d9a",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;wrote data/portfolio.csv&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "rEll",
+      "id": "yOPj",
       "code_hash": "df005cd3fd1bc1931ea095f4bf1ce662",
       "outputs": [
         {

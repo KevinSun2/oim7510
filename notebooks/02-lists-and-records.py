@@ -78,6 +78,38 @@ def _(mo):
 
 @app.cell
 def _():
+    cost = float(input("Enter the cost:"))
+    tax = float(input("Enter tax:"))
+    return cost, tax
+
+
+@app.cell
+def _(cost, tax):
+    cost + tax
+    return
+
+
+@app.cell
+def _(cost):
+    total_cost = cost * 10
+    total_cost
+    return (total_cost,)
+
+
+@app.cell
+def _(total_cost):
+    print(f'The total cost is ${total_cost:.2f}.')
+    return
+
+
+@app.cell
+def _(cost):
+    type(cost)
+    return
+
+
+@app.cell
+def _():
     # Your own example of each name.
 
     # 1. value:
@@ -146,7 +178,7 @@ def _(mo):
 def _():
     charges = [16.75, 22.25, 25.00, 20.25, 36.25]
     charges
-    return
+    return (charges,)
 
 
 @app.cell(hide_code=True)
@@ -177,6 +209,26 @@ def _(mo):
       finish by asking which concepts it used. The four steps are at the top of this
       notebook.
     """)
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
     return
 
 
@@ -222,13 +274,30 @@ def _(mo):
     return
 
 
+app._unparsable_cell(
+    r"""
+    python reads from top down, once the first true condition gets met, it prints that and skips remaining elif. 
+    """,
+    name="_"
+)
+
+
 @app.cell
 def _():
-    score = 95
-    if score >= 60:
-        print("Pass")
-    elif score >= 90:
-        print("A")
+    score = [95, 75, 60, 55]
+    for score in score:
+        if score >= 95:
+            print("A")
+
+        elif score >= 80:
+            print("B")
+        elif score>= 70:
+            print("C")
+        elif score >= 60:
+            print("Pass")
+        else:
+            print("fail")
+
     return
 
 
@@ -256,6 +325,29 @@ def _(mo):
 def _():
     statuses = ["shipped", "pending", "shipped", "cancelled", "shipped"]
     statuses
+    return (statuses,)
+
+
+@app.cell
+def _(statuses):
+    n_shipped = 0
+    n_not_shipped = 0
+    for status in statuses:
+        print(status)
+        if status == 'shipped':
+            n_shipped += 1
+        else:
+            n_not_shipped += 1
+
+    print(n_shipped)
+    print(n_not_shipped)
+    return (n_shipped,)
+
+
+@app.cell
+def _(n_shipped, statuses):
+    shipped_percentage = n_shipped / len(statuses) * 100
+    print(shipped_percentage)
     return
 
 
@@ -283,8 +375,9 @@ def _(mo):
 @app.cell
 def _():
     order_lines = ["notebook", "pen"]
-    order_lines.append(["stapler", "tape"])
-    len(order_lines)
+    order_lines.extend(["stapler", "tape"])
+    print(order_lines)
+    print(len(order_lines))
     return
 
 
@@ -315,6 +408,12 @@ def _():
     print(sorted(tickers))
     print(tickers.sort())
     tickers
+    return (tickers,)
+
+
+@app.cell
+def _(tickers):
+    print(sorted(tickers, reverse=True))
     return
 
 
@@ -348,9 +447,23 @@ def _(mo):
 @app.cell
 def _():
     prices = [12.50, 8.00, 19.99]
-    sale_prices = prices
+    sale_prices = prices [:]
     sale_prices.append(4.99)
     prices
+    return prices, sale_prices
+
+
+@app.cell
+def _(prices, sale_prices):
+    print(prices is sale_prices)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    changes made through either name to appear in the same list
+    """)
     return
 
 
@@ -382,6 +495,18 @@ def _():
     return
 
 
+@app.cell
+def _():
+    print(int("100")+int("50"))
+    return
+
+
+@app.cell
+def _():
+    print(float("100.5"))
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -400,6 +525,41 @@ def _(mo):
     > compute both numbers. Then extend it so that it reads
     > `3 of 5 orders shipped (60%)`. An f-string is the short way to build a sentence out of
     > values, and it was section 5 of last week's notebook.
+    """)
+    return
+
+
+@app.cell
+def _(charges):
+    charges[5]
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    5 item starts at 0, 5 is the 6th item
+    """)
+    return
+
+
+@app.cell
+def _(charges):
+    print(charges[-1])
+    print(charges[len(charges)-1])
+    return
+
+
+@app.cell(hide_code=True)
+def _(charges):
+    charges[-6]
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    goes beyond the list
     """)
     return
 
@@ -480,7 +640,6 @@ def _(first_order):
 @app.cell
 def _(first_order):
     first_order["freight"]
-
     return
 
 
@@ -589,6 +748,39 @@ def _(mo):
     return
 
 
+@app.cell
+def _(orders):
+    total_freight = 0
+    for _order in orders:
+        total_freight = total_freight + _order["Freight"]
+    print(total_freight)
+    return
+
+
+@app.cell
+def _(orders):
+    unshipped_count = 0
+    for _order in orders:
+        if _order["ShippedDate"] is None:
+            unshipped_count = unshipped_count +1
+
+    print(unshipped_count)
+    return
+
+
+@app.cell
+def _(orders):
+    largest_freight_order = orders[0]
+
+    for _order in orders:
+        if _order["Freight"] > largest_freight_order["Freight"]:
+            largest_freight_order = _order
+
+    print(largest_freight_order["OrderID"])
+    print(largest_freight_order["Freight"])
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -603,6 +795,20 @@ def _(mo):
     Then check it: if a row were what you just wrote, **how many rows would this table
     have?** Does that match 30?
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    one row is a customer order.
+    """)
+    return
+
+
+@app.cell
+def _(orders):
+    print(len(orders))
     return
 
 
@@ -640,6 +846,49 @@ def _(mo):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""
+    ## Your Turn · The Grocery Order
+
+    Five items in a cart. **What does the whole order cost?**
+
+    Same steps as before, but this time work it out yourself:
+
+    1. Look at `cart` below. Each item is a record with a `"qty"` and a `"price"`.
+    2. Write the code: for each item, multiply quantity by price, then add every
+       item's cost together to get the total.
+
+    **Check yourself: $74.87.**
+    """)
+    return
+
+
+@app.cell
+def _():
+    cart = [
+        {"Item": "Coffee", "qty": 2, "price": 8.99},
+        {"Item": "Bread", "qty": 3, "price": 4.50},
+        {"Item": "Eggs", "qty": 1, "price": 5.25},
+        {"Item": "Cheese", "qty": 2, "price": 11.49},
+        {"Item": "Rice", "qty": 4, "price": 3.79},
+    ]
+    cart
+    return (cart,)
+
+
+@app.cell
+def _(cart):
+    cart_total = 0
+
+    for _Item in cart:
+        cart_total= cart_total + _Item["qty"] * _Item["price"]
+
+    print(f"Total value: ${cart_total:,.2f}")
+    # write yor code here
+    return
+
+
+@app.cell
 def _():
     portfolio = [
         {"Symbol": "AAPL", "Shares": 100, "Price": 173.93},
@@ -650,6 +899,46 @@ def _():
         {"Symbol": "TSLA", "Shares": 150, "Price": 255.70},
     ]
     portfolio
+    return (portfolio,)
+
+
+@app.cell
+def _(portfolio):
+    portfolio_total = 0
+
+    for _holding in portfolio:
+        portfolio_total= portfolio_total + _holding["Shares"] * _holding["Price"]
+
+    print(f"Total value: ${portfolio_total:,.2f}")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    for each holding, multiply "Shares" by "Price".
+    then add all the holdings together.
+    Then you get the total value of the portfolio
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    For each holding, multiply the number of shares by the price per share.
+    This gives the cost of that holding.
+    Add the costs of all six holdings together.
+    The result is the total cost of buying the portfolio.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    included the second line to explain what the multiplication produces, but your version already makes sense.
+    """)
     return
 
 
@@ -678,6 +967,30 @@ def _(mo):
 
 
 @app.cell
+def _(portfolio_csv):
+    import csv
+
+    file_portfolio_total = 0
+    _rows_read = 0
+
+    print("name     shares     price")
+
+    with portfolio_csv.open(newline="", encoding="utf-8") as _file:
+        for _row in csv.DictReader(_file):
+            _shares = int(_row["shares"])
+            _price = float(_row["price"])
+
+            file_portfolio_total = file_portfolio_total + _shares * _price
+            _rows_read = _rows_read + 1
+
+            print(f'{_row["name"]:<8} {_shares:>6} {_price:>9.2f}')
+
+    print(f"Total cost: ${file_portfolio_total:.2f}")
+    print(f"Rows read: {_rows_read}; rows skipped: 0")
+    return
+
+
+@app.cell
 def _(mo):
     _lines = ["name,shares,price"]
     for _holding in [
@@ -701,7 +1014,7 @@ def _(mo):
         _where = f"could not write into {_data_dir.name}/: {_error}"
 
     _where
-    return
+    return (portfolio_csv,)
 
 
 @app.cell(hide_code=True)
