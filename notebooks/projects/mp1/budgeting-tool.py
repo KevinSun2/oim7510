@@ -235,7 +235,29 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(
+    leftover_income,
+    net_income,
+    total_alternative,
+    total_expenses,
+    total_income,
+):
+    print(f"{'Budget Summary Monthly':<30} {'Amount':>12}")
+    print("-" * 43)
+
+    print(f"{'Total Income':<30} ${total_income:>11,.2f}")
+    print(f"{'Total Expenses':<30} ${total_expenses:>11,.2f}")
+    print(f"{'Net Income':<30} ${net_income:>11,.2f}")
+    print(f"{'Alternative Accounts':<30} ${total_alternative:>11,.2f}")
+    print(f"{'Leftover Income':<30} ${leftover_income:>11,.2f}")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    After monthly expenses and planned contributions to alternative accounts, this budget leaves $1,717.50 in leftover income each month that can be applied toward the New Car goal.
+    """)
     return
 
 
@@ -250,7 +272,59 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(
+    leftover_income,
+    net_income,
+    total_alternative,
+    total_expenses,
+    total_income,
+):
+    check_income = (
+        8267.00
+        + 2102.50
+    )
+
+    check_expenses = (
+        2402.00
+        + 160.00
+        + 300.00
+        + 157.00
+        + 250.00
+        + 1000.00
+        + 250.00
+        + 180.00
+        + 400.00
+        + 40.00
+        + 13.00
+    )
+    alternative_check = 2000.00 + 1500.00
+
+    net_income_check = check_income - check_expenses
+
+    leftover_income_check = net_income_check - alternative_check
+
+    print(f"Income check: ${check_income:,.2f}")
+    print(f"Program income total: ${total_income:,.2f}")
+
+    print(f"Expense check: ${check_expenses:,.2f}")
+    print(f"Program expense total: ${total_expenses:,.2f}")
+
+    print(f"Alternative accounts check: ${alternative_check:,.2f}")
+    print(f"Program alternative accounts total: ${total_alternative:,.2f}")
+
+    print(f"Net income check: ${net_income_check:,.2f}")
+    print(f"Program net income: ${net_income:,.2f}")
+
+    print(f"Leftover income check: ${leftover_income_check:,.2f}")
+    print(f"Program leftover income: ${leftover_income:,.2f}")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    I compared all the incomes, expenses, net income, and what is left over after despositing into alternative accounts and they came out equal
+    """)
     return
 
 

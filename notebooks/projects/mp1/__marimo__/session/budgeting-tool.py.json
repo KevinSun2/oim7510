@@ -309,9 +309,36 @@
       "console": []
     },
     {
-      "id": "RGSE",
-      "code_hash": null,
-      "outputs": [],
+      "id": "HSeE",
+      "code_hash": "4a39ed05d6ed0dad3632ecc8da4d3a9a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Budget Summary Monthly               Amount\n-------------------------------------------\nTotal Income                   $  10,369.50\nTotal Expenses                 $   5,152.00\nNet Income                     $   5,217.50\nAlternative Accounts           $   3,500.00\nLeftover Income                $   1,717.50\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "sFRD",
+      "code_hash": "b61637648b8ba52316233eb0be3e24d2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">After monthly expenses and planned contributions to alternative accounts, this budget leaves $1,717.50 in leftover income each month that can be applied toward the New Car goal.</span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -328,9 +355,36 @@
       "console": []
     },
     {
+      "id": "RGSE",
+      "code_hash": "5c03210efc8adcc903102c18d9c32725",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Income check: $10,369.50\nProgram income total: $10,369.50\nExpense check: $5,152.00\nProgram expense total: $5,152.00\nAlternative accounts check: $3,500.00\nProgram alternative accounts total: $3,500.00\nNet income check: $5,217.50\nProgram net income: $5,217.50\nLeftover income check: $1,717.50\nProgram leftover income: $1,717.50\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "emfo",
-      "code_hash": null,
-      "outputs": [],
+      "code_hash": "dea83957cc3bc196023a4de2f4d8ccce",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I compared all the incomes, expenses, net income, and what is left over after despositing into alternative accounts and they came out equal</span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
