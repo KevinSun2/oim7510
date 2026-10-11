@@ -401,6 +401,19 @@
       "console": []
     },
     {
+      "id": "frxG",
+      "code_hash": "8e9e02cfcf4544d4d638fb71ffb53c66",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Cell 17 did not break out into the goals saving and alternative accounts separately, and both were combined into one that counted toward the purchase goal. An additional line, print(f\"  Goal Savings: ${leftover_balance:,.2f}\"), had to be added to separate the savings allocated specifically for goals from the amount set aside in alternative accounts, ensuring each was tracked independently rather than being summed together under a single purchase goal total.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "nWHF",
       "code_hash": "9e11622311558f577bd7fefb4cd2c3ec",
       "outputs": [

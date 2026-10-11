@@ -343,6 +343,14 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    Cell 17 did not break out into the goals saving and alternative accounts separately, and both were combined into one that counted toward the purchase goal. An additional line, print(f"  Goal Savings: ${leftover_balance:,.2f}"), had to be added to separate the savings allocated specifically for goals from the amount set aside in alternative accounts, ensuring each was tracked independently rather than being summed together under a single purchase goal total.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     ## 8. Going Further
 
     *Take at least one step past the main task, in any direction, and use your agent as much as you like. It does not have to work. State what you tried, what you found, and where it is in this notebook.*
