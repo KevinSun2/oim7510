@@ -183,6 +183,44 @@
       ]
     },
     {
+      "id": "KgAO",
+      "code_hash": "78b7ce56d35a1ee58666b5ee06171199",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Total alternative accounts: $3,500.00\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "CENc",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "YIxq",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "wDlC",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
       "id": "BYtC",
       "code_hash": "189948d98f771b65614d9dc06a5a3ea6",
       "outputs": [

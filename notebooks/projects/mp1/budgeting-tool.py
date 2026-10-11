@@ -117,7 +117,7 @@ def _():
     goal_name = "New Car"
     goal_target = 50000.00
 
-    return expenses, income_sources
+    return alternative_accounts, expenses, income_sources
 
 
 @app.cell(hide_code=True)
@@ -158,6 +158,32 @@ def _(expenses):
 def _(total_expenses, total_income):
     net_income = total_income - total_expenses
     print(f"Net income after expenses: ${net_income:,.2f}")
+    return
+
+
+@app.cell
+def _(alternative_accounts):
+    total_alternative = 0
+
+    for account_name, account_amount, account_category in alternative_accounts:
+        total_alternative = total_alternative + account_amount
+
+    print(f"Total alternative accounts: ${total_alternative:,.2f}")
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
     return
 
 
