@@ -358,5 +358,73 @@ def _(mo):
     return
 
 
+@app.cell
+def _(expenses):
+    category_totals = {}
+
+    for expense_name, expense_amount, expense_category in expenses:
+        if expense_category in category_totals:
+            category_totals[expense_category] = category_totals[expense_category] + expense_amount
+        else:
+            category_totals[expense_category] = expense_amount
+    return (category_totals,)
+
+
+@app.cell
+def _(category_totals):
+    print("Spending by Category")
+    print("-" * 35)
+
+    for category_name, category_amount in category_totals.items():
+        print(f"{category_name:<20} ${category_amount:>10,.2f}")
+    return
+
+
+@app.cell
+def _(
+    category_totals,
+    leftover_income,
+    total_alternative,
+    total_expenses,
+    total_income,
+):
+    expense_ratio = total_expenses / total_income * 100
+
+    savings_rate = total_alternative / total_income * 100
+
+    housing_ratio = category_totals["Housing"] / total_income * 100
+
+    transportation_ratio = category_totals["Transportation"] / total_income * 100
+
+    leftover_rate = leftover_income / total_income * 100
+    return (
+        expense_ratio,
+        housing_ratio,
+        leftover_rate,
+        savings_rate,
+        transportation_ratio,
+    )
+
+
+@app.cell
+def _(
+    expense_ratio,
+    housing_ratio,
+    leftover_rate,
+    savings_rate,
+    transportation_ratio,
+):
+    print()
+    print("Financial Ratios")
+    print("-" * 40)
+
+    print(f"{'Expenses as % of income':<30} {expense_ratio:>7.1f}%")
+    print(f"{'Savings as % of income':<30} {savings_rate:>7.1f}%")
+    print(f"{'Housing as % of income':<30} {housing_ratio:>7.1f}%")
+    print(f"{'Transportation as % of income':<30} {transportation_ratio:>7.1f}%")
+    print(f"{'Income left over':<30} {leftover_rate:>7.1f}%")
+    return
+
+
 if __name__ == "__main__":
     app.run()

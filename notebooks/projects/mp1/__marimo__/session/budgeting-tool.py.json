@@ -425,6 +425,72 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "xJxp",
+      "code_hash": "2bed78f32ed62df0dead844f6d1703ae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MNmb",
+      "code_hash": "cfa78a7fa96e29c5f9a0973bec7c0872",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Spending by Category\n-----------------------------------\nHousing              $  3,019.00\nTransportation       $    430.00\nFood                 $  1,000.00\nUtilities            $    250.00\nEntertainment        $    400.00\nInsurance            $     53.00\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "jyHP",
+      "code_hash": "3b447e926326d8f9fadf0c8216656877",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pMwM",
+      "code_hash": "fc2923791e4877e93a965713711cfe70",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\nFinancial Ratios\n----------------------------------------\nExpenses as % of income           49.7%\nSavings as % of income            33.8%\nHousing as % of income            29.1%\nTransportation as % of income      4.1%\nIncome left over                  16.6%\n",
+          "mimetype": "text/plain"
+        }
+      ]
     }
   ]
 }
