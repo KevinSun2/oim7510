@@ -45,7 +45,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    This simple personal budgeting tool helps users track income, expenses, bills, and financial goals. Users can enter details such as each bill's amount, due date, and category. When the user changes any input value, the tool automatically updates the results to show total expenses, remaining income, and progress toward financial goals.
+    This simple personal budgeting tool helps users track income, expenses, bills, and financial goals. Users can enter details such as each bill's amount and category. When the user changes any input value, the tool automatically updates the results to show total expenses, remaining income, and progress toward financial goals.
     """)
     return
 
@@ -88,7 +88,35 @@ def _(mo):
 
 @app.cell
 def _():
-    # Your inputs.
+    # Income inputs
+    income_sources = [
+        ("Take Home Pay", 8,267.00, "Post-Tax Income"),
+        ("VA Disability", 2102.50, "Non-Taxable Income"),
+    ]
+    # Expense inputs
+    expenses = [
+        ("Mortgage", 2402.00, "Housing"),
+        ("Home Insurance",160.00, "Housing"),
+        ("Property Tax", 300.00, "Housing"),
+        ("HoA", 157.00, "Housing"),
+        ("Car Insurance", 250.00, "Transportation"),
+        ("Food", 1000.00, "Food"),
+        ("Utilities", 250.00, "Utilities"),
+        ("Gas", 180.00, "Transportation"),
+        ("Entertainment", 400.00, "Entertainment"),
+        ("Dental Insurance", 40.00, "Insurance"),
+        ("Vision Insurance", 13.00, "Insurance"),
+    ]
+    #Alternative Accounts Inputs
+    alternative_accounts = [
+        ("Savings", 500.00, "Savings"),
+        ("Emergency Fund", 300.00, "Savings"),
+    ]
+
+    # Goal Inputs
+    goal_name = "New Car"
+    goal_target = 50000.00
+
     return
 
 
