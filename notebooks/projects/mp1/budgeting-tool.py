@@ -117,7 +117,13 @@ def _():
     goal_name = "New Car"
     goal_target = 50000.00
 
-    return alternative_accounts, expenses, income_sources
+    return (
+        alternative_accounts,
+        expenses,
+        goal_name,
+        goal_target,
+        income_sources,
+    )
 
 
 @app.cell(hide_code=True)
@@ -158,7 +164,7 @@ def _(expenses):
 def _(total_expenses, total_income):
     net_income = total_income - total_expenses
     print(f"Net income after expenses: ${net_income:,.2f}")
-    return
+    return (net_income,)
 
 
 @app.cell
@@ -169,21 +175,52 @@ def _(alternative_accounts):
         total_alternative = total_alternative + account_amount
 
     print(f"Total alternative accounts: ${total_alternative:,.2f}")
+    return (total_alternative,)
+
+
+@app.cell
+def _(net_income, total_alternative):
+    leftover_income = net_income - total_alternative
+
+    print(f"Goal Savings: ${leftover_income:,.2f}")
+    return (leftover_income,)
+
+
+@app.cell
+def _(goal_name, goal_target, leftover_income):
+    months_to_goal = goal_target / leftover_income
+    print(f"Months to reach '{goal_name}' goal of ${goal_target:,.2f}: {months_to_goal:,.1f} months")
+    return
+
+
+@app.cell
+def _(total_alternative):
+    alternative_balance = 0
+
+    for month in range(1, 30):
+        alternative_balance = alternative_balance + total_alternative
+
+    print(f"Alternative accounts balance after {month} months: ${alternative_balance:,.2f}")
     return
 
 
 @app.cell
 def _():
-    return
+    months_input = 18
+    return (months_input,)
 
 
 @app.cell
-def _():
-    return
+def _(goal_target, leftover_income, months_input, total_alternative):
+    leftover_balance = leftover_income * months_input
+    alternative_balance_projected = total_alternative * months_input
+    combined_balance = leftover_balance + alternative_balance_projected
+    percent_of_goal = (combined_balance / goal_target) * 100
 
-
-@app.cell
-def _():
+    print(f"In {months_input} months:")
+    print(f"  Goal Savings: ${leftover_balance:,.2f}")
+    print(f"  Alternative accounts: ${alternative_balance_projected:,.2f}")
+    print(f"  Combined total: ${combined_balance:,.2f}")
     return
 
 

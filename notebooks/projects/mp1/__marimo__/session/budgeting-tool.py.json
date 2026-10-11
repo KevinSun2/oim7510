@@ -204,21 +204,96 @@
     },
     {
       "id": "CENc",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
+      "code_hash": "be04fa020416dcfbc692c980116f5508",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Goal Savings: $1,717.50\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "WOjm",
+      "code_hash": "f38d5fceb1b37a0b648a3f3bd1525409",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Months to reach 'New Car' goal of $50,000.00: 29.1 months\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ragQ",
+      "code_hash": "e8dd07506b4973356026302ee8e66060",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Alternative accounts balance after 29 months: $101,500.00\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "YIxq",
-      "code_hash": null,
-      "outputs": [],
+      "code_hash": "c1ac5bccc4cebb0b10974d73516b7a52",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "wDlC",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
+      "code_hash": "65c21603337a1dc58c1c3015af7251be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "In 18 months:\n  Goal Savings: $30,915.00\n  Alternative accounts: $63,000.00\n  Combined total: $93,915.00\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "BYtC",
