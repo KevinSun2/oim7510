@@ -45,6 +45,14 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    This simple personal budgeting tool helps users track income, expenses, bills, and financial goals. Users can enter details such as each bill's amount, due date, and category. When the user changes any input value, the tool automatically updates the results to show total expenses, remaining income, and progress toward financial goals.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     ## 2. My Plan Before AI
 
     *Before you ask your agent anything, write how you would solve it: the steps, in order, in plain words, in five lines or more. Then answer these two questions:*
@@ -53,6 +61,15 @@ def _(mo):
     - *Which check will you use in section 6, and which two numbers should agree?*
 
     *Commit this notebook with the message `mp1: plan before AI`.*
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    The loops will carry running totals for income and expenses from one entry to the next. Each income source will be added to total income, while each bill or expense will be added to total expenses. The program can then subtract total expenses from total income to determine how much money is left.
+    In Section 6, I will separately add the individual income entries and expense entries and compare them with the totals calculated by the loops. The independently calculated totals and the program's totals should agree.
     """)
     return
 
