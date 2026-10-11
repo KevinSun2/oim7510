@@ -138,20 +138,26 @@ def _(income_sources):
         total_income = total_income + amount
 
     print(f"Total monthly income: ${total_income:,.2f}")
-    return
+    return (total_income,)
 
 
 @app.cell
 def _(expenses):
     def _():
-        total_expenses = 0
-
+        total = 0
         for name, amount, category in expenses:
-            total_expenses = total_expenses + amount
-        return print(f"Total monthly expenses: ${total_expenses:,.2f}")
+            total = total + amount
+        return total
+
+    total_expenses = _()
+    print(f"Total monthly expenses: ${total_expenses:,.2f}")
+    return (total_expenses,)
 
 
-    _()
+@app.cell
+def _(total_expenses, total_income):
+    net_income = total_income - total_expenses
+    print(f"Net income after expenses: ${net_income:,.2f}")
     return
 
 
