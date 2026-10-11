@@ -98,7 +98,7 @@
     },
     {
       "id": "PKri",
-      "code_hash": "618fae3c9bcfd9fdb0a92c6cb773788a",
+      "code_hash": "66c1bd143388bd2c15901d29dbd884f1",
       "outputs": [
         {
           "type": "data",
@@ -124,9 +124,43 @@
     },
     {
       "id": "SFPL",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
+      "code_hash": "655a3807b8a5911d6f1782da205dbcaa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Total monthly income: $10,369.50\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "IJBm",
+      "code_hash": "b15260bc4a54ed24d0262a053960f77c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Total monthly expenses: $5,152.00\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "BYtC",

@@ -90,7 +90,7 @@ def _(mo):
 def _():
     # Income inputs
     income_sources = [
-        ("Take Home Pay", 8,267.00, "Post-Tax Income"),
+        ("Take Home Pay", 8267.00, "Post-Tax Income"),
         ("VA Disability", 2102.50, "Non-Taxable Income"),
     ]
     # Expense inputs
@@ -109,15 +109,15 @@ def _():
     ]
     #Alternative Accounts Inputs
     alternative_accounts = [
-        ("Savings", 500.00, "Savings"),
-        ("Emergency Fund", 300.00, "Savings"),
+        ("Savings", 2000.00, "Savings"),
+        ("Emergency Fund", 1500.00, "Savings"),
     ]
 
     # Goal Inputs
     goal_name = "New Car"
     goal_target = 50000.00
 
-    return
+    return expenses, income_sources
 
 
 @app.cell(hide_code=True)
@@ -131,7 +131,27 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(income_sources):
+    total_income = 0
+
+    for name, amount, category in income_sources:
+        total_income = total_income + amount
+
+    print(f"Total monthly income: ${total_income:,.2f}")
+    return
+
+
+@app.cell
+def _(expenses):
+    def _():
+        total_expenses = 0
+
+        for name, amount, category in expenses:
+            total_expenses = total_expenses + amount
+        return print(f"Total monthly expenses: ${total_expenses:,.2f}")
+
+
+    _()
     return
 
 
