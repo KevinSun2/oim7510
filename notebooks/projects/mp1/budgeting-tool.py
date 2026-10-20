@@ -90,7 +90,7 @@ def _(mo):
 def _():
     # Income inputs
     income_sources = [
-        ("Take Home Pay", 8267.00, "Post-Tax Income"),
+        ("Take Home Pay", 6930.00, "Post-Tax Income"),
         ("VA Disability", 2102.50, "Non-Taxable Income"),
     ]
     # Expense inputs
@@ -116,7 +116,6 @@ def _():
     # Goal Inputs
     goal_name = "New Car"
     goal_target = 50000.00
-
     return (
         alternative_accounts,
         expenses,
@@ -206,7 +205,7 @@ def _(total_alternative):
 
 @app.cell
 def _():
-    months_input = 18
+    months_input = 8
     return (months_input,)
 
 
