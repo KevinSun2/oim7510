@@ -8,7 +8,14 @@
     {
       "id": "Hbol",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -600,6 +607,32 @@
       "console": []
     },
     {
+      "id": "Dpuf",
+      "code_hash": "8789b60ffee84904883350e241160092",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PPEr",
+      "code_hash": "2f550486d708b0e85a0127a2b84e4ef6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>List, order matters, items can be removed or added</li>\n<li>set, only want each value once</li>\n<li>dictionary, look up value by a name or key</li>\n<li>Tuple, fixed group of values that cannot be changed</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "yOPj",
       "code_hash": "eaa7dc8bc1c38a0f67724dfe79a290ae",
       "outputs": [
@@ -615,7 +648,14 @@
     {
       "id": "fwwy",
       "code_hash": "c8f862e56b4e11f6d7863336e449abd5",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[[\"AAPL\", 100, \"text/plain+float:173.93\"], [\"MSFT\", 50, \"text/plain+float:319.53\"], [\"GOOG\", 80, \"text/plain+float:131.36\"], [\"AMZN\", 200, \"text/plain+float:129.33\"], [\"NVDA\", 20, \"text/plain+float:410.17\"], [\"TSLA\", 150, \"text/plain+float:255.7\"]]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -653,7 +693,14 @@
     {
       "id": "mWxS",
       "code_hash": "8e41e132c0014809fc7c6d99010a66d6",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -672,7 +719,14 @@
     {
       "id": "YWSi",
       "code_hash": "b0a00ff4650826e66e32fe0666f52a91",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>200</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
