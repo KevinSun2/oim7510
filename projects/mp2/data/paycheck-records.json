@@ -1,0 +1,74 @@
+[
+  {
+    "country": "US",
+    "year": 2026,
+    "gross": 125000,
+    "items": [
+      {
+        "key": "federal",
+        "label": "Federal income tax",
+        "amount": 16470,
+        "kind": "tax",
+        "group": "federal",
+        "how": "Taxable income $98,900 = wages $115,000 \u2212 standard deduction $16,100, through the 2026 brackets (10%/12%/22%/24%/32%/35%/37%)."
+      },
+      {
+        "key": "ss",
+        "label": "Social Security (6.2%)",
+        "amount": 7750,
+        "kind": "tax",
+        "group": "fica",
+        "how": "6.2% of $125,000."
+      },
+      {
+        "key": "medicare",
+        "label": "Medicare (1.45%)",
+        "amount": 1812.5,
+        "kind": "tax",
+        "group": "fica",
+        "how": "1.45% of $125,000."
+      },
+      {
+        "key": "state",
+        "label": "Virginia state income tax",
+        "amount": 5798.400000000001,
+        "kind": "tax",
+        "group": "state",
+        "how": "Taxable $105,320 = wages $115,000 \u2212 deduction $8,750 \u2212 exemption $930. Brackets 2%/3%/5%/5.75%."
+      },
+      {
+        "key": "k401",
+        "label": "401(k) contribution",
+        "amount": 10000,
+        "kind": "deduction"
+      }
+    ],
+    "taxes": 31830.9,
+    "deductions": 10000,
+    "net": 83169.1,
+    "effective": 0.2546472,
+    "marginal": 0.41180000000000294,
+    "periods": {
+      "annual": 83169.1,
+      "monthly": 6930.758333333334,
+      "semimonthly": 3465.379166666667,
+      "biweekly": 3198.8115384615385,
+      "weekly": 1599.4057692307692,
+      "daily": 319.8811538461539,
+      "hourly": 39.98514423076924
+    },
+    "grossPeriods": {
+      "annual": 125000,
+      "monthly": 10416.666666666666,
+      "semimonthly": 5208.333333333333,
+      "biweekly": 4807.692307692308,
+      "weekly": 2403.846153846154,
+      "daily": 480.7692307692308,
+      "hourly": 60.09615384615385
+    },
+    "state": "Virginia",
+    "stateCode": "VA",
+    "filing": "single",
+    "fedTaxable": 98900
+  }
+]

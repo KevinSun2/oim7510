@@ -6,123 +6,256 @@
   },
   "cells": [
     {
-      "id": "SEHq",
-      "code_hash": "2206392eaabd49905b636d96db083139",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Who would use this, and what decision does it help them make? </span>\n<span class=\"paragraph\">For people that will be taking a job in a different state and trying to find out their income after state taxes. This tool should help them plan and budget as needed together with the financial planning tool created for mp1. </span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "Hbol",
-      "code_hash": "f7f23c929462a65072f1c8720e02cd0c",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">My plan before AI.</span>\n<span class=\"paragraph\">Fetching state tax rates, federal tax rates, social security, and medicare is a must. Then fetching the paycheck. We then apply social security and medicare withholdings, subtract the pretax deductibles from the gross salary, then apply the federal and state tax brackets, , and finally subtract any post-tax deductions to arrive at the net take-home pay.</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "aIYt",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "qFtl",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "aGuj",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "sTNN",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "vVaL",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "nCyz",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "gvVV",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "BsVZ",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "vzZz",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "AmkU",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "AJQs",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "eoOG",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "YSkx",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "QXTH",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "IZCv",
-      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "code_hash": "31297e2891aa2411781a1210dd23ff79",
       "outputs": [
         {
           "type": "data",
           "data": {
             "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "bbc6892d25acc5158fc61180e25548db",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"take-home-pay-calculator\">Take-Home Pay Calculator</h1>\n<h2 id=\"1-the-question\">1. The Question</h2>\n<span class=\"paragraph\">Who would use this, and what decision does it help them make?</span>\n<span class=\"paragraph\">For people that will be taking a job in a different state and trying to find out their income after state taxes. This tool should help them plan and budget as needed together with the financial planning tool created for mp1.</span>\n<h2 id=\"2-my-plan-before-ai\">2. My Plan Before AI</h2>\n<span class=\"paragraph\">Fetching state tax rates, federal tax rates, social security, and medicare is a must. Then fetching the paycheck. We then apply social security and medicare withholdings, subtract the pretax deductibles from the gross salary, then apply the federal and state tax brackets, , and finally subtract any post-tax deductions to arrive at the net take-home pay.</span>\n<span class=\"paragraph\"><strong>To complete yourself:</strong> the assignment also requests at least five lines of steps,\nfunction inputs and outputs, API addresses, record completeness, and two numbers to check.\nKeep your original plan and describe later additions honestly.</span>\n<h2 id=\"3-inputs\">3. Inputs</h2>\n<span class=\"paragraph\">Money inputs are annual dollars except the 401(k) percentage.\nThese are fictional examples, not personal financial information.\nThis version covers a full year working and living in Virginia, one wage earner\nunder 50, standard deductions, no dependents or special credits.\nFiling status can be <code>single</code>, <code>married</code> (joint), or <code>head</code> (head of household).\nHealth insurance and HSA contributions must be eligible pretax payroll deductions.\nA move during the year can require a separate part-year state calculation.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "7ff67c776516024a74d009031e5341e9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "df2d5e45874a6b9a1ed5b349c2d600d6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"4-the-work\">4. The Work</h2>\n<span class=\"paragraph\">Source: <a href=\"https://paysums.com/api/\" rel=\"noopener noreferrer\" target=\"_blank\">PaySums API</a>.\nThe tables contain one federal record and all supplied state records; there is no pagination.\nThe selected state record supplies the code used in the paycheck request.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "d38edd92a321c6e0c5a95a24b97b7bfb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "b9376947bd3ac2245207e84986152383",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Tax records fetched: 52; expected: 52.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "c092240a85d625fbb29ae7ccb68b7e9c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "fe6eaba6e1d83cf6bcf28735f2721e9a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "f1a35b06fe630d4cc0399a51d437e633",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "739f483fba05449c78c8ddbce53b47b8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Saved 52 records to tax-records.json.\nSaved 1 records to paycheck-records.json.\nNo fetched records were discarded; all monetary values stay numeric.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "emfo",
+      "code_hash": "e99e6427ca960fe1c2a5030e7a1eb6be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>Path</code> builds file locations; <code>mkdir(..., exist_ok=True)</code> creates the data folder if needed.\n<code>with ... open(...)</code> closes a file automatically, and <code>json.dump()</code> saves readable JSON.</span>\n<h2 id=\"5-the-answer\">5. The Answer</h2>\n<span class=\"paragraph\">This is a standard-deduction payroll estimate, not a complete tax return.\nAdditional Medicare withholding can differ from a household's final tax liability.\n<code>:,.2f</code> displays dollars with commas and two decimals; <code>&lt;30</code> and <code>&gt;16</code> line up columns.\nDisplay rounding changes no saved records.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "1c00a77c08d3a2cf9f700e1f61b2d283",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Virginia paycheck estimate, 2026\nFederal taxable income: $98,900.00\nVirginia taxable income: $105,320.00\nItem                            Annual dollars   Monthly dollars\nGross salary                        125,000.00         10,416.67\nTraditional 401(k)                   10,000.00            833.33\nPretax health insurance                   0.00              0.00\nPayroll HSA contribution                  0.00              0.00\nFederal income tax                   16,470.00          1,372.50\nVirginia income tax                   5,798.40            483.20\nSocial Security                       7,750.00            645.83\nMedicare                              1,812.50            151.04\nPost-tax deductions                       0.00              0.00\nTake-home pay                        83,169.10          6,930.76\nWith a $125,000.00 salary in Virginia, estimated take-home pay is $83,169.10 a year, or $6,930.76 a month, after the listed taxes and deductions.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "bb7eddc82b1124221665d703500f0f88",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"6-how-i-know-these-numbers-are-right\">6. How I Know These Numbers Are Right</h2>\n<span class=\"paragraph\">Compare our calculation from the tax tables with the separate paycheck endpoint.\nPost-tax deductions are subtracted from the API's net here because we did not send them.\n<code>abs()</code> measures the size of a difference; a difference below one cent passes.\n<code>assert</code> stops the notebook if a check fails.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "7cc3be333fb424465f8d242a74f70055",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Federal income tax: ours $16,470.00; API $16,470.00\nSocial Security (6.2%): ours $7,750.00; API $7,750.00\nMedicare (1.45%): ours $1,812.50; API $1,812.50\nVirginia state income tax: ours $5,798.40; API $5,798.40\nAnnual take-home check: ours $83,169.10; API $83,169.10\nPASS: all four taxes and annual take-home pay agree within one cent.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "30c340e687cfca34016f299c61a75c04",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"7-working-with-the-agent\">7. Working With the Agent</h2>\n<span class=\"paragraph\">The calculation for this table is overall simple, both here and the API has returned with the same endpoint. I did add the pre-tax deductible, in cell 2, back into the calculation.</span>\n<h2 id=\"8-reading-it-back\">8. Reading It Back</h2>\n<span class=\"paragraph\">One very important one is having the fetch_tax_tables, we put in the API base address and requested year, it comes out with a list of federal and state tax records. This just tells you how the taxes are calculated, rather than calculating the taxes.</span>\n<span class=\"paragraph\">The other one is calculate_bracket_tax, we put in the taxable income and the list of tax brackets. This is where the calculation comes out, and it applies how much marginal taxis owed at each bracket level, summing up the total tax owed based on the taxable income provided.</span>\n<h2 id=\"9-going-further\">9. Going Further</h2>\n<span class=\"paragraph\">This calculation should connect well with MP1; you can add charitable contributions and list potential deductions to see which onessave you the most money.Should the person itemize deductions or take the standard deduction? </span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "5a986ec01e6d2ca0f267ad7f943a708d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Monthly take-home pay: $6,930.76\nMonthly expense budget: $3,000.00\nMoney remaining each month: $3,930.76\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "6e4481e2e786bfbf36109a5dd857138b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"10-time-spent\">10. Time Spent</h2>\n<span class=\"paragraph\"><strong>Complete yourself:</strong> enter the approximate number of hours spent outside class.</span></span>"
           }
         }
       ],
