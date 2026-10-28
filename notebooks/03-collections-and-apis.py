@@ -164,6 +164,8 @@ def _(mo):
     **D ·**
 
     **G ·**
+
+    **Advanced (year of trades) ·** For each ticker, keep a list of purchases in date order, recording the shares remaining and their purchase price. Add each new purchase to the end of the list. When shares are sold, subtract them from the oldest purchase first. If that purchase is used up, remove it and continue with the next oldest until the entire sale is accounted for. Keep any unsold shares for future sales.
     """)
     return
 
@@ -514,6 +516,38 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    I would prefer to use Tuples and Dictionary. The holdings are now tuples; they're shorter to write and more efficient for pairing values without the overhead of defining a custom class.As for dictionaries, they're clearer to readbut require more to write.
+    """)
+    return
+
+
+@app.cell
+def _(holdings):
+    _portfolio_cost_trace = 0
+    for _symbol, _shares, _price in holdings:
+        _holding_cost = _shares * _price
+        _portfolio_cost_trace = _portfolio_cost_trace + _holding_cost
+        print(f"{_symbol}: {_shares} x {_price} = {_holding_cost:,.2f}  -> running total: {_portfolio_cost_trace:,.2f}")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    **Line by line:**
+
+    - `portfolio_cost = 0` sets a starting value of zero, so the last line has something to add to.
+    - `for _symbol, _shares, _price in holdings:` unpacks each tuple into three names at once, instead of `holding[0]`, `holding[1]`, `holding[2]`.
+    - `portfolio_cost = portfolio_cost + _shares * _price` runs once per holding: multiplies shares by price for that one holding, adds it to the running total so far, and saves the new total back into `portfolio_cost`.
+
+    The cell above prints the running total after each of the 6 holdings, to show it building up to $116,302.70.
+    """)
+    return
+
+
 @app.cell
 def _():
     holdings = [
@@ -525,6 +559,16 @@ def _():
         ("TSLA", 150, 255.70),
     ]
     holdings
+    return (holdings,)
+
+
+@app.cell
+def _(holdings):
+    portfolio_cost = 0
+    for _symbol, _shares, _price in holdings:
+        portfolio_cost = portfolio_cost + _shares * _price
+
+    print(f"Total portfolio cost: ${portfolio_cost:,.2f}")
     return
 
 
@@ -540,6 +584,14 @@ def _(mo):
     > *Check yourself: gains of $7,900.00 in all, $6,700.00 on AAPL and $1,200.00 on MSFT. Left: 20 AAPL bought at $240.00, and 10 MSFT at $380.00.*
     >
     > **Going further.** Work it out again with **average cost**, where a sale uses the average price of every share held. The total changes. Which rule would the client rather report this year, and why?
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    For each ticker, keep a list of purchases in date order, recording the shares remaining and their purchase price. Add each new purchase to the end of the list. When shares are sold, subtract them from the oldest purchase first. If that purchase is used up, remove it and continue with the next oldest until the entire sale is accounted for. Keep any unsold shares for future sales.
     """)
     return
 

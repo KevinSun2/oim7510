@@ -73,14 +73,7 @@
     {
       "id": "PKri",
       "code_hash": "3ec179977eb886c2c66062090edededa",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "{\"Symbol\": \"GOOG\", \"Price\": \"text/plain+float:133.1\", \"Currency\": \"USD\"}"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -99,14 +92,7 @@
     {
       "id": "SFPL",
       "code_hash": "eea132fed27efd6f1db408185f7d665e",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>True</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -125,14 +111,7 @@
     {
       "id": "RGSE",
       "code_hash": "d36c2544a9da3d7ca41366697fa9ad45",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>0</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -151,14 +130,7 @@
     {
       "id": "emfo",
       "code_hash": "c6eaa2401b0fa36823b5bb26bdb54aba",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"Symbol: GOOG\", \"Price: 133.1\", \"Currency: USD\"]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -177,14 +149,7 @@
     {
       "id": "nWHF",
       "code_hash": "a098e7088e3366c7409a5de0cd5ca558",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "{\"shipped\": 4, \"pending\": 2, \"cancelled\": 1}"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -194,7 +159,7 @@
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span>\n<span class=\"paragraph\"><strong>Advanced (year of trades) \u00b7</strong> For each ticker, keep a list of purchases in date order, recording the shares remaining and their purchase price. Add each new purchase to the end of the list. When shares are sold, subtract them from the oldest purchase first. If that purchase is used up, remove it and continue with the next oldest until the entire sale is accounted for. Keep any unsold shares for future sales.</span></span>"
           }
         }
       ],
@@ -216,95 +181,32 @@
     {
       "id": "ROlb",
       "code_hash": "b3baada9d1fcfdd58bb210c538eb3881",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "{\"AAPL\": \"text/plain+float:260.81\", \"NVDA\": \"text/plain+float:186.0\", \"MSFT\": \"text/plain+float:404.88\", \"GOOG\": \"text/plain+float:308.42\"}"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
       "id": "qnkX",
       "code_hash": "ecd61e94bd0088e0f8b44aa0cf2f06e4",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "260.81\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "TqIu",
       "code_hash": "c8146e050ab1155676bf8d6b5e0d21d2",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "['AAPL', 'MSFT', 'GOOG']\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "Vxnm",
       "code_hash": "be940e3d7f25fac8bb80b7cc703e4271",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "MSFT 404.88\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "DnEU",
       "code_hash": "1afdf13e995ec0de61be7aa90cfa5347",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "{'AAPL': 286.89, 'NVDA': 204.6, 'MSFT': 445.37, 'GOOG': 339.26}\n{'AAPL': 260.81, 'NVDA': 186.0, 'MSFT': 404.88, 'GOOG': 308.42}\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "ulZA",
@@ -322,55 +224,20 @@
     {
       "id": "ecfG",
       "code_hash": "cf013d266ae6857b91858009b7c8ab48",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>30</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
       "id": "Pvdt",
       "code_hash": "9ea9563c14eb10e3276f1cd1791ae8fe",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "None\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "ZBYS",
       "code_hash": "32db6246ed3781f9aebe4bb5177db3f4",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "{'France': 4, 'Germany': 4, 'Brazil': 4, 'Belgium': 1, 'Switzerland': 2, 'Venezuela': 3, 'Austria': 3, 'Mexico': 1, 'USA': 4, 'Sweden': 1, 'Finland': 2, 'Argentina': 1}\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "aLJB",
@@ -388,14 +255,7 @@
     {
       "id": "nHfw",
       "code_hash": "28bb1887819d424fa39aa23560629d78",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"GOOG\", 3]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -427,14 +287,7 @@
     {
       "id": "pHFh",
       "code_hash": "8cb4b4c9b56148cf5915a10cbe0dd092",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>&#x27;GOOG cost $13,136.00&#x27;</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -466,14 +319,7 @@
     {
       "id": "TRpd",
       "code_hash": "95a3924e5bdeb1262241b6861ecbb4f2",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[20, 10]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -492,14 +338,7 @@
     {
       "id": "dNNg",
       "code_hash": "f01f1fda7f571e14bf2a6509ace69186",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>&#x27;Independence Day&#x27;</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -518,14 +357,7 @@
     {
       "id": "wlCL",
       "code_hash": "3ec454296bb0dc1ab5b1eba9bb86ad77",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[7, 4, [\"AAPL\", \"GOOG\", \"MSFT\", \"TSLA\"]]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -557,14 +389,7 @@
     {
       "id": "rEll",
       "code_hash": "fd30a3b2532bb06bb2b05ca93f53b70c",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[[\"AAPL\", \"GOOG\", \"MSFT\", \"TSLA\"], [\"AMZN\", \"NVDA\"]]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -607,7 +432,7 @@
       "console": []
     },
     {
-      "id": "Dpuf",
+      "id": "yOPj",
       "code_hash": "8789b60ffee84904883350e241160092",
       "outputs": [
         {
@@ -620,7 +445,7 @@
       "console": []
     },
     {
-      "id": "PPEr",
+      "id": "fwwy",
       "code_hash": "2f550486d708b0e85a0127a2b84e4ef6",
       "outputs": [
         {
@@ -633,7 +458,7 @@
       "console": []
     },
     {
-      "id": "yOPj",
+      "id": "LJZf",
       "code_hash": "eaa7dc8bc1c38a0f67724dfe79a290ae",
       "outputs": [
         {
@@ -646,20 +471,51 @@
       "console": []
     },
     {
-      "id": "fwwy",
-      "code_hash": "c8f862e56b4e11f6d7863336e449abd5",
+      "id": "urSm",
+      "code_hash": "78c942bddbe461d12c556743f300c9d0",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "application/json": "[[\"AAPL\", 100, \"text/plain+float:173.93\"], [\"MSFT\", 50, \"text/plain+float:319.53\"], [\"GOOG\", 80, \"text/plain+float:131.36\"], [\"AMZN\", 200, \"text/plain+float:129.33\"], [\"NVDA\", 20, \"text/plain+float:410.17\"], [\"TSLA\", 150, \"text/plain+float:255.7\"]]"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I would prefer to use Tuples and Dictionary. The holdings are now tuples; they're shorter to write and more efficient for pairing values without the overhead of defining a custom class.As for dictionaries, they're clearer to readbut require more to write.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "LJZf",
+      "id": "jxvo",
+      "code_hash": "b69f1fc69ba461b400aefc7103943eef",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "mWxS",
+      "code_hash": "365b6401b446946273428fea974389be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Line by line:</strong></span>\n<ul>\n<li><code>portfolio_cost = 0</code> sets a starting value of zero, so the last line has something to add to.</li>\n<li><code>for _symbol, _shares, _price in holdings:</code> unpacks each tuple into three names at once, instead of <code>holding[0]</code>, <code>holding[1]</code>, <code>holding[2]</code>.</li>\n<li><code>portfolio_cost = portfolio_cost + _shares * _price</code> runs once per holding: multiplies shares by price for that one holding, adds it to the running total so far, and saves the new total back into <code>portfolio_cost</code>.</li>\n</ul>\n<span class=\"paragraph\">The cell above prints the running total after each of the 6 holdings, to show it building up to $116,302.70.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CcZR",
+      "code_hash": "c8f862e56b4e11f6d7863336e449abd5",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "YWSi",
+      "code_hash": "5892f54800c97e24a60edbd2dd059bda",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "zlud",
       "code_hash": "80ac93ce1158d39d28b9c7f255b5c0d2",
       "outputs": [
         {
@@ -672,13 +528,26 @@
       "console": []
     },
     {
-      "id": "urSm",
+      "id": "QYft",
+      "code_hash": "bfbc06033739c0de2a7a6935df41c19a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">For each ticker, keep a list of purchases in date order, recording the shares remaining and their purchase price. Add each new purchase to the end of the list. When shares are sold, subtract them from the oldest purchase first. If that purchase is used up, remove it and continue with the next oldest until the entire sale is accounted for. Keep any unsold shares for future sales.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tZnO",
       "code_hash": "fa923984c3255ec447f3c2f9d1ae94e5",
       "outputs": [],
       "console": []
     },
     {
-      "id": "jxvo",
+      "id": "xvXZ",
       "code_hash": "14f7cd4877cce0e4ddc59b2059d2e199",
       "outputs": [
         {
@@ -691,20 +560,13 @@
       "console": []
     },
     {
-      "id": "mWxS",
+      "id": "CLip",
       "code_hash": "8e41e132c0014809fc7c6d99010a66d6",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "CcZR",
+      "id": "YECM",
       "code_hash": "b6080cd361c22f299a5a16f332dc3b04",
       "outputs": [
         {
@@ -717,20 +579,13 @@
       "console": []
     },
     {
-      "id": "YWSi",
+      "id": "cEAS",
       "code_hash": "b0a00ff4650826e66e32fe0666f52a91",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>200</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "zlud",
+      "id": "iXej",
       "code_hash": "9ca0b6832430b8774e2b359e92902d58",
       "outputs": [
         {
@@ -743,13 +598,13 @@
       "console": []
     },
     {
-      "id": "tZnO",
+      "id": "EJmg",
       "code_hash": "25e9c1190b53d7f608172bbf33825be4",
       "outputs": [],
       "console": []
     },
     {
-      "id": "xvXZ",
+      "id": "UmEG",
       "code_hash": "bfc8683999bf41d5fa95b968a6d7ac0f",
       "outputs": [
         {
@@ -762,13 +617,13 @@
       "console": []
     },
     {
-      "id": "CLip",
+      "id": "vEBW",
       "code_hash": "11b5f79650a5781c25cfe837407d6333",
       "outputs": [],
       "console": []
     },
     {
-      "id": "YECM",
+      "id": "kLmu",
       "code_hash": "c3425bba2f14018ddc2c77f648f7f0c1",
       "outputs": [
         {
@@ -781,7 +636,7 @@
       "console": []
     },
     {
-      "id": "cEAS",
+      "id": "IpqN",
       "code_hash": "633b6cde8fbf36c51e0cad83b24a6182",
       "outputs": [
         {
@@ -794,13 +649,13 @@
       "console": []
     },
     {
-      "id": "iXej",
+      "id": "dxZZ",
       "code_hash": "80c6a8567fd12b007ce7e420740ff83e",
       "outputs": [],
       "console": []
     },
     {
-      "id": "EJmg",
+      "id": "dlnW",
       "code_hash": "a808c15a06a4a161083f4687541bd128",
       "outputs": [
         {
@@ -813,13 +668,13 @@
       "console": []
     },
     {
-      "id": "UmEG",
+      "id": "TTti",
       "code_hash": "5bd422ed104db59bf08fcd74f9c7c304",
       "outputs": [],
       "console": []
     },
     {
-      "id": "vEBW",
+      "id": "RKFZ",
       "code_hash": "79e04dc9b5727678afbbc571d99b4d01",
       "outputs": [
         {
@@ -832,13 +687,13 @@
       "console": []
     },
     {
-      "id": "kLmu",
+      "id": "IaQp",
       "code_hash": "9e24f0f5b2cd162f0e0a7f9d94eefd0c",
       "outputs": [],
       "console": []
     },
     {
-      "id": "IpqN",
+      "id": "IWgg",
       "code_hash": "068ff4723243a56161860dcad659cc27",
       "outputs": [
         {
@@ -851,7 +706,7 @@
       "console": []
     },
     {
-      "id": "dxZZ",
+      "id": "fCoF",
       "code_hash": "9b744f95f434d09a4522ab2b8b9b534b",
       "outputs": [
         {
@@ -864,7 +719,7 @@
       "console": []
     },
     {
-      "id": "dlnW",
+      "id": "LkGn",
       "code_hash": "ad89aa8c2d83a0b134f6b703f4e3576d",
       "outputs": [
         {
@@ -877,7 +732,7 @@
       "console": []
     },
     {
-      "id": "TTti",
+      "id": "zVRe",
       "code_hash": "21d3ca8f95327f43ccfb133da060a48a",
       "outputs": [
         {
@@ -890,7 +745,7 @@
       "console": []
     },
     {
-      "id": "RKFZ",
+      "id": "woaO",
       "code_hash": "993c8a3d00fea66424451e25fc63bfe3",
       "outputs": [
         {
@@ -903,7 +758,7 @@
       "console": []
     },
     {
-      "id": "IaQp",
+      "id": "HnMC",
       "code_hash": "4bf25d1302150d2ee75e97a52bb32a39",
       "outputs": [
         {
@@ -916,7 +771,7 @@
       "console": []
     },
     {
-      "id": "IWgg",
+      "id": "wadT",
       "code_hash": "5068dcc10bd8c62d21c45024c783e6ba",
       "outputs": [
         {
@@ -929,7 +784,7 @@
       "console": []
     },
     {
-      "id": "fCoF",
+      "id": "VCRE",
       "code_hash": "a76520898c0a49d002fbce90b67204b1",
       "outputs": [
         {
