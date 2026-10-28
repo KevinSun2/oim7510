@@ -75,16 +75,13 @@ def _(mo):
     return
 
 
+@app.function
+def add_tax(amount):
+    return round(amount * 1.0625, 2)
+
+
 @app.cell
 def _():
-    def add_tax(amount):
-        return round(amount * 1.0625, 2)
-
-    return (add_tax,)
-
-
-@app.cell
-def _(add_tax):
     add_tax(100)
     return
 
@@ -119,19 +116,16 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
-    def compute_cost(portfolio):
-        cost_so_far = 0
-        for symbol, shares, price in portfolio:
-            cost_so_far = cost_so_far + shares * price
-        return round(cost_so_far, 2)
-
-    return (compute_cost,)
+@app.function
+def compute_cost(portfolio):
+    cost_so_far = 0
+    for symbol, shares, price in portfolio:
+        cost_so_far = cost_so_far + shares * price
+    return round(cost_so_far, 2)
 
 
 @app.cell
-def _(holdings, compute_cost):
+def _(holdings):
     compute_cost(holdings)
     return
 
@@ -156,7 +150,7 @@ def _():
 
 
 @app.cell
-def _(compute_cost, retirement_holdings):
+def _(retirement_holdings):
     compute_cost(retirement_holdings)
     return
 
@@ -186,12 +180,64 @@ def _(mo):
     return
 
 
+@app.cell
+def _(holdings, retirement_holdings):
+    def count_shares(portfolio):
+        shares_so_far = 0
+        for symbol, shares, price in portfolio:
+            shares_so_far = shares_so_far + shares
+        return shares_so_far
+
+    print(count_shares(holdings))
+    print(count_shares(retirement_holdings))
+    return
+
+
+@app.cell
+def _(holdings, retirement_holdings):
+    def find_largest(portfolio):
+        largest_ticker = None
+        largest_cost = 0
+        for ticker, shares, price in portfolio:
+            cost = shares * price
+
+            if largest_ticker is None or cost > largest_cost:
+                largest_ticker = ticker
+                largest_cost = cost
+        return (largest_ticker, round(largest_cost, 2))
+
+    print(find_largest(holdings))
+    print(find_largest(retirement_holdings))
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     ## ✏️ B · Without `return`
 
     Copy `count_shares` into a new cell under a new name, and put `print(...)` where the `return` was. Call it and keep the result in a name. In a markdown cell under it, answer: what does that name hold, and what could the next cell do with it?
+    """)
+    return
+
+
+@app.cell
+def _(holdings):
+    def count_shares_printed(portfolio):
+        shares_so_far = 0
+        for symbol, shares, price in portfolio:
+            shares_so_far = shares_so_far + shares
+        print(shares_so_far)
+
+    captured = count_shares_printed(holdings)
+    print("captured holds:", captured)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    `captured` holds `None`. `print` only displays the number on screen once; it does not hand anything back to whoever called the function. Since `count_shares_printed` has no `return` statement, Python automatically gives back `None` when the function ends. The next cell could not do anything useful with `captured`, since `None` is not a number and cannot be added, multiplied, or compared the way a real result could.
     """)
     return
 

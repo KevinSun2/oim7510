@@ -227,6 +227,46 @@
       "console": []
     },
     {
+      "id": "KBaZ",
+      "code_hash": "e5678130c1efee608c0d869502e13aee",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "600\n460\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "CFlz",
+      "code_hash": "25f208b0efa3e0d29143d731aa6fc612",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "('TSLA', 38355.0)\n('VTI', 27408.0)\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "qnkX",
       "code_hash": "056a1aa629d6f6d618e4be5ac43dae47",
       "outputs": [
@@ -234,6 +274,39 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"b-without-return\">\u270f\ufe0f B \u00b7 Without <code>return</code></h2>\n<span class=\"paragraph\">Copy <code>count_shares</code> into a new cell under a new name, and put <code>print(...)</code> where the <code>return</code> was. Call it and keep the result in a name. In a markdown cell under it, answer: what does that name hold, and what could the next cell do with it?</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CchD",
+      "code_hash": "cc6aafcaf4241452f642d72b20f4d097",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "600\ncaptured holds: None\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "AWfK",
+      "code_hash": "30a827fe3445774d131d3376443f8cbd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>captured</code> holds <code>None</code>. <code>print</code> only displays the number on screen once; it does not hand anything back to whoever called the function. Since <code>count_shares_printed</code> has no <code>return</code> statement, Python automatically gives back <code>None</code> when the function ends. The next cell could not do anything useful with <code>captured</code>, since <code>None</code> is not a number and cannot be added, multiplied, or compared the way a real result could.</span></span>"
           }
         }
       ],
