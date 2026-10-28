@@ -214,7 +214,7 @@
       "console": []
     },
     {
-      "id": "gNMB",
+      "id": "ROlb",
       "code_hash": "470574fa3d458e3d7115cb7fc465b70e",
       "outputs": [
         {
@@ -234,7 +234,7 @@
       ]
     },
     {
-      "id": "AyoO",
+      "id": "qnkX",
       "code_hash": "91d3d5ba337aeb55bf8b759d0702bc28",
       "outputs": [
         {
@@ -254,7 +254,7 @@
       ]
     },
     {
-      "id": "SHXO",
+      "id": "TqIu",
       "code_hash": "566a81d8eb1306a77471ecb967c10092",
       "outputs": [
         {
@@ -274,7 +274,7 @@
       ]
     },
     {
-      "id": "ROlb",
+      "id": "Vxnm",
       "code_hash": "96a98f89acadfc2825f603f78c04d328",
       "outputs": [
         {
@@ -287,20 +287,20 @@
       "console": []
     },
     {
-      "id": "qnkX",
+      "id": "DnEU",
       "code_hash": "e5c40be846113c1c7b8aa51bdc3d215b",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='qnkX-0' random-id='0511b02f-f44a-7cbc-99ea-0f84ab44c9e5'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:49831,&#92;&quot;income_per_capita_dollars&#92;&quot;:52832,&#92;&quot;average_single_family_value_dollars&#92;&quot;:823363,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:5599},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bourne&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:20508,&#92;&quot;income_per_capita_dollars&#92;&quot;:49345,&#92;&quot;average_single_family_value_dollars&#92;&quot;:794061,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:6075},{&#92;&quot;name&#92;&quot;:&#92;&quot;Brewster&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:10447,&#92;&quot;income_per_capita_dollars&#92;&quot;:55197,&#92;&quot;average_single_family_value_dollars&#92;&quot;:999123,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:7014},{&#92;&quot;name&#92;&quot;:&#92;&quot;Chatham&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:6711,&#92;&quot;income_per_capita_dollars&#92;&quot;:92760,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1809733,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:6587},{&#92;&quot;name&#92;&quot;:&#92;&quot;Dennis&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:14862,&#92;&quot;income_per_capita_dollars&#92;&quot;:49780,&#92;&quot;average_single_family_value_dollars&#92;&quot;:902887,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:3873},{&#92;&quot;name&#92;&quot;:&#92;&quot;Eastham&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:5824,&#92;&quot;income_per_capita_dollars&#92;&quot;:47154,&#92;&quot;average_single_family_value_dollars&#92;&quot;:875514,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:7249},{&#92;&quot;name&#92;&quot;:&#92;&quot;Falmouth&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:33227,&#92;&quot;income_per_capita_dollars&#92;&quot;:58210,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1026338,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:5881},{&#92;&quot;name&#92;&quot;:&#92;&quot;Harwich&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:13620,&#92;&quot;income_per_capita_dollars&#92;&quot;:54010,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1010724,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:5872},{&#92;&quot;name&#92;&quot;:&#92;&quot;Mashpee&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:15482,&#92;&quot;income_per_capita_dollars&#92;&quot;:56318,&#92;&quot;average_single_family_value_dollars&#92;&quot;:990034,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:6346},{&#92;&quot;name&#92;&quot;:&#92;&quot;Orleans&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:6485,&#92;&quot;income_per_capita_dollars&#92;&quot;:69762,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1467959,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:8969}]&quot;' data-total-rows='351' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;income_per_capita_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;average_single_family_value_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;average_single_family_bill_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='DnEU-0' random-id='a775cdb3-ebb1-7ad3-1453-56253453941c'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:49831,&#92;&quot;income_per_capita_dollars&#92;&quot;:52832,&#92;&quot;average_single_family_value_dollars&#92;&quot;:823363,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:5599},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bourne&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:20508,&#92;&quot;income_per_capita_dollars&#92;&quot;:49345,&#92;&quot;average_single_family_value_dollars&#92;&quot;:794061,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:6075},{&#92;&quot;name&#92;&quot;:&#92;&quot;Brewster&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:10447,&#92;&quot;income_per_capita_dollars&#92;&quot;:55197,&#92;&quot;average_single_family_value_dollars&#92;&quot;:999123,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:7014},{&#92;&quot;name&#92;&quot;:&#92;&quot;Chatham&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:6711,&#92;&quot;income_per_capita_dollars&#92;&quot;:92760,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1809733,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:6587},{&#92;&quot;name&#92;&quot;:&#92;&quot;Dennis&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:14862,&#92;&quot;income_per_capita_dollars&#92;&quot;:49780,&#92;&quot;average_single_family_value_dollars&#92;&quot;:902887,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:3873},{&#92;&quot;name&#92;&quot;:&#92;&quot;Eastham&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:5824,&#92;&quot;income_per_capita_dollars&#92;&quot;:47154,&#92;&quot;average_single_family_value_dollars&#92;&quot;:875514,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:7249},{&#92;&quot;name&#92;&quot;:&#92;&quot;Falmouth&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:33227,&#92;&quot;income_per_capita_dollars&#92;&quot;:58210,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1026338,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:5881},{&#92;&quot;name&#92;&quot;:&#92;&quot;Harwich&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:13620,&#92;&quot;income_per_capita_dollars&#92;&quot;:54010,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1010724,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:5872},{&#92;&quot;name&#92;&quot;:&#92;&quot;Mashpee&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:15482,&#92;&quot;income_per_capita_dollars&#92;&quot;:56318,&#92;&quot;average_single_family_value_dollars&#92;&quot;:990034,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:6346},{&#92;&quot;name&#92;&quot;:&#92;&quot;Orleans&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:6485,&#92;&quot;income_per_capita_dollars&#92;&quot;:69762,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1467959,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:8969}]&quot;' data-total-rows='351' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;income_per_capita_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;average_single_family_value_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;average_single_family_bill_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "ulZA",
       "code_hash": "ca66d4f524160e128dc20f0b210f7fe2",
       "outputs": [
         {
@@ -313,7 +313,7 @@
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "ecfG",
       "code_hash": "cc417b0b26bcf45183a0b87697b0f9e0",
       "outputs": [
         {
@@ -326,7 +326,7 @@
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "Pvdt",
       "code_hash": "840e8460324fb8ca9667f11d8b22f3cf",
       "outputs": [
         {
@@ -339,20 +339,20 @@
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "ZBYS",
       "code_hash": "c9e68e995a7dd41a321073a8b52b55e9",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='ulZA-0' random-id='18e4410a-be30-b897-282d-b58bb4c7d512'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Gosnold&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;population&#92;&quot;:62,&#92;&quot;income_per_capita_dollars&#92;&quot;:21887,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1080742,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:3415},{&#92;&quot;name&#92;&quot;:&#92;&quot;Monroe&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;population&#92;&quot;:115,&#92;&quot;income_per_capita_dollars&#92;&quot;:6348,&#92;&quot;average_single_family_value_dollars&#92;&quot;:183531,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:1859},{&#92;&quot;name&#92;&quot;:&#92;&quot;Mount Washington&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;population&#92;&quot;:157,&#92;&quot;income_per_capita_dollars&#92;&quot;:71739,&#92;&quot;average_single_family_value_dollars&#92;&quot;:623166,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:3720},{&#92;&quot;name&#92;&quot;:&#92;&quot;New Ashford&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;population&#92;&quot;:249,&#92;&quot;income_per_capita_dollars&#92;&quot;:30799,&#92;&quot;average_single_family_value_dollars&#92;&quot;:506938,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:2879},{&#92;&quot;name&#92;&quot;:&#92;&quot;Hawley&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;population&#92;&quot;:352,&#92;&quot;income_per_capita_dollars&#92;&quot;:23000,&#92;&quot;average_single_family_value_dollars&#92;&quot;:286904,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:4648},{&#92;&quot;name&#92;&quot;:&#92;&quot;Middlefield&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;,&#92;&quot;population&#92;&quot;:397,&#92;&quot;income_per_capita_dollars&#92;&quot;:24970,&#92;&quot;average_single_family_value_dollars&#92;&quot;:260179,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:4392},{&#92;&quot;name&#92;&quot;:&#92;&quot;Tyringham&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;population&#92;&quot;:419,&#92;&quot;income_per_capita_dollars&#92;&quot;:27933,&#92;&quot;average_single_family_value_dollars&#92;&quot;:685808,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:4547},{&#92;&quot;name&#92;&quot;:&#92;&quot;Rowe&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;population&#92;&quot;:419,&#92;&quot;income_per_capita_dollars&#92;&quot;:34659,&#92;&quot;average_single_family_value_dollars&#92;&quot;:316902,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:1661},{&#92;&quot;name&#92;&quot;:&#92;&quot;Aquinnah&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;population&#92;&quot;:451,&#92;&quot;income_per_capita_dollars&#92;&quot;:53350,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1845298,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:12677},{&#92;&quot;name&#92;&quot;:&#92;&quot;Tolland&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;population&#92;&quot;:474,&#92;&quot;income_per_capita_dollars&#92;&quot;:34310,&#92;&quot;average_single_family_value_dollars&#92;&quot;:429183,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:3373}]&quot;' data-total-rows='351' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;income_per_capita_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;average_single_family_value_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;average_single_family_bill_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='ZBYS-0' random-id='376ce6ea-3ffa-bffb-ae3d-8d739c4ac21f'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Gosnold&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;population&#92;&quot;:62,&#92;&quot;income_per_capita_dollars&#92;&quot;:21887,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1080742,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:3415},{&#92;&quot;name&#92;&quot;:&#92;&quot;Monroe&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;population&#92;&quot;:115,&#92;&quot;income_per_capita_dollars&#92;&quot;:6348,&#92;&quot;average_single_family_value_dollars&#92;&quot;:183531,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:1859},{&#92;&quot;name&#92;&quot;:&#92;&quot;Mount Washington&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;population&#92;&quot;:157,&#92;&quot;income_per_capita_dollars&#92;&quot;:71739,&#92;&quot;average_single_family_value_dollars&#92;&quot;:623166,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:3720},{&#92;&quot;name&#92;&quot;:&#92;&quot;New Ashford&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;population&#92;&quot;:249,&#92;&quot;income_per_capita_dollars&#92;&quot;:30799,&#92;&quot;average_single_family_value_dollars&#92;&quot;:506938,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:2879},{&#92;&quot;name&#92;&quot;:&#92;&quot;Hawley&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;population&#92;&quot;:352,&#92;&quot;income_per_capita_dollars&#92;&quot;:23000,&#92;&quot;average_single_family_value_dollars&#92;&quot;:286904,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:4648},{&#92;&quot;name&#92;&quot;:&#92;&quot;Middlefield&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;,&#92;&quot;population&#92;&quot;:397,&#92;&quot;income_per_capita_dollars&#92;&quot;:24970,&#92;&quot;average_single_family_value_dollars&#92;&quot;:260179,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:4392},{&#92;&quot;name&#92;&quot;:&#92;&quot;Tyringham&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;population&#92;&quot;:419,&#92;&quot;income_per_capita_dollars&#92;&quot;:27933,&#92;&quot;average_single_family_value_dollars&#92;&quot;:685808,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:4547},{&#92;&quot;name&#92;&quot;:&#92;&quot;Rowe&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;population&#92;&quot;:419,&#92;&quot;income_per_capita_dollars&#92;&quot;:34659,&#92;&quot;average_single_family_value_dollars&#92;&quot;:316902,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:1661},{&#92;&quot;name&#92;&quot;:&#92;&quot;Aquinnah&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;population&#92;&quot;:451,&#92;&quot;income_per_capita_dollars&#92;&quot;:53350,&#92;&quot;average_single_family_value_dollars&#92;&quot;:1845298,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:12677},{&#92;&quot;name&#92;&quot;:&#92;&quot;Tolland&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;population&#92;&quot;:474,&#92;&quot;income_per_capita_dollars&#92;&quot;:34310,&#92;&quot;average_single_family_value_dollars&#92;&quot;:429183,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:3373}]&quot;' data-total-rows='351' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;income_per_capita_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;average_single_family_value_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;average_single_family_bill_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "aLJB",
       "code_hash": "61c8950d81e4f3dda584c681c0b0bf08",
       "outputs": [
         {
@@ -365,20 +365,20 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "nHfw",
       "code_hash": "2315789fa1c117de962459a82f2e0bec",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='Pvdt-0' random-id='3fda567e-ed95-ddca-6edc-914cf0e94e84'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:14},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:10},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:8},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;towns&#92;&quot;:7},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:7},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:5},{&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;towns&#92;&quot;:1},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:1}]&quot;' data-total-rows='8' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;u32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='nHfw-0' random-id='cbc0eda5-b342-e0bb-e536-b48c52ad77ee'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:14},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:10},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:8},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;towns&#92;&quot;:7},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:7},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:5},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:1},{&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;towns&#92;&quot;:1}]&quot;' data-total-rows='8' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;u32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "xXTn",
       "code_hash": "a270c6e9e73679696ecb8f81f3832ee3",
       "outputs": [
         {
@@ -391,20 +391,20 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "AjVT",
       "code_hash": "4a7cd01e9f02ef447fb1bd47cacce83d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='aLJB-0' random-id='6bc02911-756d-7777-bf02-27bca69344ef'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;towns&#92;&quot;:1,&#92;&quot;million_dollar_towns&#92;&quot;:1,&#92;&quot;share&#92;&quot;:1.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:7,&#92;&quot;million_dollar_towns&#92;&quot;:7,&#92;&quot;share&#92;&quot;:1.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;towns&#92;&quot;:15,&#92;&quot;million_dollar_towns&#92;&quot;:7,&#92;&quot;share&#92;&quot;:0.4666666666666667},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:34,&#92;&quot;million_dollar_towns&#92;&quot;:10,&#92;&quot;share&#92;&quot;:0.29411764705882354},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:28,&#92;&quot;million_dollar_towns&#92;&quot;:8,&#92;&quot;share&#92;&quot;:0.2857142857142857},{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:54,&#92;&quot;million_dollar_towns&#92;&quot;:14,&#92;&quot;share&#92;&quot;:0.25925925925925924},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:27,&#92;&quot;million_dollar_towns&#92;&quot;:5,&#92;&quot;share&#92;&quot;:0.18518518518518517},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:32,&#92;&quot;million_dollar_towns&#92;&quot;:1,&#92;&quot;share&#92;&quot;:0.03125},{&#92;&quot;county&#92;&quot;:&#92;&quot;Suffolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:4,&#92;&quot;million_dollar_towns&#92;&quot;:0,&#92;&quot;share&#92;&quot;:0.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;towns&#92;&quot;:60,&#92;&quot;million_dollar_towns&#92;&quot;:0,&#92;&quot;share&#92;&quot;:0.0}]&quot;' data-total-rows='14' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;million_dollar_towns&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;share&quot;,[&quot;number&quot;,&quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='AjVT-0' random-id='f56a272d-2d82-376b-204d-f0dd8e28c8ce'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;towns&#92;&quot;:1,&#92;&quot;million_dollar_towns&#92;&quot;:1,&#92;&quot;share&#92;&quot;:1.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:7,&#92;&quot;million_dollar_towns&#92;&quot;:7,&#92;&quot;share&#92;&quot;:1.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;towns&#92;&quot;:15,&#92;&quot;million_dollar_towns&#92;&quot;:7,&#92;&quot;share&#92;&quot;:0.4666666666666667},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:34,&#92;&quot;million_dollar_towns&#92;&quot;:10,&#92;&quot;share&#92;&quot;:0.29411764705882354},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:28,&#92;&quot;million_dollar_towns&#92;&quot;:8,&#92;&quot;share&#92;&quot;:0.2857142857142857},{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:54,&#92;&quot;million_dollar_towns&#92;&quot;:14,&#92;&quot;share&#92;&quot;:0.25925925925925924},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:27,&#92;&quot;million_dollar_towns&#92;&quot;:5,&#92;&quot;share&#92;&quot;:0.18518518518518517},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:32,&#92;&quot;million_dollar_towns&#92;&quot;:1,&#92;&quot;share&#92;&quot;:0.03125},{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;towns&#92;&quot;:60,&#92;&quot;million_dollar_towns&#92;&quot;:0,&#92;&quot;share&#92;&quot;:0.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;towns&#92;&quot;:26,&#92;&quot;million_dollar_towns&#92;&quot;:0,&#92;&quot;share&#92;&quot;:0.0}]&quot;' data-total-rows='14' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;million_dollar_towns&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;share&quot;,[&quot;number&quot;,&quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "pHFh",
       "code_hash": "e198428ce1cd286ed3ef3f9d5f5ba1b6",
       "outputs": [
         {
@@ -417,7 +417,7 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "NCOB",
       "code_hash": "96e0919cb7888b6403f22712c338faad",
       "outputs": [
         {
@@ -430,7 +430,33 @@
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "fRQh",
+      "code_hash": "0c268b802bd889e98fe92e8b8711a221",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='fRQh-0' random-id='46a04cfa-f919-bcdf-d217-9744cb72e9d0'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;towns&#92;&quot;:60},{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:54},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:34},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:32},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:28},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:27},{&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;towns&#92;&quot;:26},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;towns&#92;&quot;:23},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:20},{&#92;&quot;county&#92;&quot;:&#92;&quot;Bristol&#92;&quot;,&#92;&quot;towns&#92;&quot;:20}]&quot;' data-total-rows='14' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;u32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kOoc",
+      "code_hash": "66e2bc2d2705deb5cc7acab04e8fe6eb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='kOoc-0' random-id='53d9aa67-8646-6504-74d6-514ef8925517'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;towns&#92;&quot;:60},{&#92;&quot;name&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:54},{&#92;&quot;name&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:34},{&#92;&quot;name&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:32},{&#92;&quot;name&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:28},{&#92;&quot;name&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:27},{&#92;&quot;name&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;towns&#92;&quot;:26},{&#92;&quot;name&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;towns&#92;&quot;:23},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bristol&#92;&quot;,&#92;&quot;towns&#92;&quot;:20},{&#92;&quot;name&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:20}]&quot;' data-total-rows='14' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
       "code_hash": "11aaeaffe112242a9cbbffb89659ab93",
       "outputs": [
         {
@@ -443,20 +469,20 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "TRpd",
       "code_hash": "115f927dba8c6aeca7b70fd70241cbd2",
       "outputs": [
         {
-          "type": "error",
-          "ename": "sql-error",
-          "evalue": "Invalid Input Error: reading the Python object 'town_table' as Arrow data failed: ModuleNotFoundError: No module named 'pyarrow'",
-          "traceback": []
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='TRpd-0' random-id='9727a7c1-ffbe-2e6f-a505-70a14a1e6df5'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:14},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:10},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:8},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:7},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;towns&#92;&quot;:7},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:5},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:1},{&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;towns&#92;&quot;:1}]&quot;' data-total-rows='8' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
         }
       ],
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "TXez",
       "code_hash": "e4901566dea088abcd848af77c3065e4",
       "outputs": [
         {
@@ -469,7 +495,7 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "dNNg",
       "code_hash": "ebb70508c0cf72687684ca563c5cff73",
       "outputs": [
         {
@@ -482,7 +508,7 @@
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "yCnT",
       "code_hash": "f9d57717adb6e564a63b5cc2e9328347",
       "outputs": [
         {
@@ -495,13 +521,13 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "wlCL",
       "code_hash": "a7a045188ff812dcfd591dc44c884e1b",
       "outputs": [],
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "kqZH",
       "code_hash": "3333b99655f08cbaf1c0e5a89439309d",
       "outputs": [
         {
@@ -514,7 +540,7 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "wAgl",
       "code_hash": "9036d2c3b1e700b17481fe8d9640a47a",
       "outputs": [
         {
@@ -527,7 +553,7 @@
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "rEll",
       "code_hash": "78ee299d1182f7ed622a5146c5c7bd34",
       "outputs": [
         {
@@ -540,7 +566,7 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "dGlV",
       "code_hash": "d8862f074f20a51b92cd84ace1475881",
       "outputs": [
         {

@@ -5,8 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "marimo>=0.24.2",
+    "altair>=6.3.0",
+    "marimo[sql]>=0.24.2",
     "matplotlib>=3.11.2",
+    "polars>=2.1.0",
+    "pyarrow>=26.0.0",
     "pydantic-ai>=2.51.0",
     "requests>=2.34.2",
 ]
