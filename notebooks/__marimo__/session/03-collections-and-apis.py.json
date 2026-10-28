@@ -189,12 +189,12 @@
     },
     {
       "id": "iLit",
-      "code_hash": "ee5b5f0e40fbb9c794cb9516ccd28b6d",
+      "code_hash": "856edf88150ead31eb89a62cc96027e4",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span>\n<span class=\"paragraph\"><strong>Advanced (year of trades) \u00b7</strong> For each ticker, keep a list of purchases in date order, recording the shares remaining and their purchase price. Add each new purchase to the end of the list. When shares are sold, subtract them from the oldest purchase first. If that purchase is used up, remove it and continue with the next oldest until the entire sale is accounted for. Keep any unsold shares for future sales.</span>\n<span class=\"paragraph\"><strong>Advanced, going further (average cost) \u00b7</strong> FIFO reports a total gain of $7,900.00, while average cost reports $7,533.33. The client would rather report using average cost, because it shows a lower taxable gain this year, which likely means owing less in capital gains tax.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\"><strong>G \u00b7</strong> Babson Park is in Florida, not Massachusetts. Code that always takes <code>[0]</code> would have silently picked the wrong town, with no error or warning, since the server still returns a valid 200 response and real data, just not the place I meant.</span>\n<span class=\"paragraph\"><strong>Advanced (year of trades) \u00b7</strong> For each ticker, keep a list of purchases in date order, recording the shares remaining and their purchase price. Add each new purchase to the end of the list. When shares are sold, subtract them from the oldest purchase first. If that purchase is used up, remove it and continue with the next oldest until the entire sale is accounted for. Keep any unsold shares for future sales.</span>\n<span class=\"paragraph\"><strong>Advanced, going further (average cost) \u00b7</strong> FIFO reports a total gain of $7,900.00, while average cost reports $7,533.33. The client would rather report using average cost, because it shows a lower taxable gain this year, which likely means owing less in capital gains tax.</span></span>"
           }
         }
       ],
@@ -895,7 +895,7 @@
         {
           "type": "data",
           "data": {
-            "application/json": "{\"latitude\": \"text/plain+float:42.299843\", \"longitude\": \"text/plain+float:-71.27756\", \"generationtime_ms\": \"text/plain+float:0.07283687591552734\", \"utc_offset_seconds\": -14400, \"timezone\": \"America/New_York\", \"timezone_abbreviation\": \"GMT-4\", \"elevation\": \"text/plain+float:49.0\", \"current_units\": {\"time\": \"iso8601\", \"interval\": \"seconds\", \"temperature_2m\": \"\\u00b0F\", \"wind_speed_10m\": \"mp/h\"}, \"current\": {\"time\": \"2026-10-28T11:00\", \"interval\": 900, \"temperature_2m\": \"text/plain+float:44.3\", \"wind_speed_10m\": \"text/plain+float:2.9\"}}"
+            "application/json": "{\"latitude\": \"text/plain+float:42.299843\", \"longitude\": \"text/plain+float:-71.27756\", \"generationtime_ms\": \"text/plain+float:0.09274482727050781\", \"utc_offset_seconds\": -14400, \"timezone\": \"America/New_York\", \"timezone_abbreviation\": \"GMT-4\", \"elevation\": \"text/plain+float:49.0\", \"current_units\": {\"time\": \"iso8601\", \"interval\": \"seconds\", \"temperature_2m\": \"\\u00b0F\", \"wind_speed_10m\": \"mp/h\"}, \"current\": {\"time\": \"2026-10-28T11:30\", \"interval\": 900, \"temperature_2m\": \"text/plain+float:46.9\", \"wind_speed_10m\": \"text/plain+float:2.8\"}}"
           }
         }
       ],
@@ -921,7 +921,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>44.3</pre>"
+            "text/html": "<pre class='text-xs'>46.9</pre>"
           }
         }
       ],
@@ -960,7 +960,7 @@
         {
           "type": "data",
           "data": {
-            "application/json": "[400, {\"reason\": \"Latitude must be in range of -90 to 90\\u00b0. Given: 422.0.\", \"error\": true}]"
+            "application/json": "[400, {\"error\": true, \"reason\": \"Latitude must be in range of -90 to 90\\u00b0. Given: 422.0.\"}]"
           }
         }
       ],
@@ -1045,6 +1045,26 @@
       "console": []
     },
     {
+      "id": "PaPu",
+      "code_hash": "04b0c2d47d485d4474733873fb39bc5d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "The wind speed in Babson is 2.8 mp/h.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "zVRe",
       "code_hash": "ad89aa8c2d83a0b134f6b703f4e3576d",
       "outputs": [
@@ -1056,6 +1076,26 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "Uafu",
+      "code_hash": "a74805832c06242c9aa19ace6af9c2f6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "42.29649 -71.29256 Massachusetts\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "woaO",
@@ -1071,6 +1111,26 @@
       "console": []
     },
     {
+      "id": "vFnM",
+      "code_hash": "a6cc86966b8482b1f2f273e8eecc6617",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Babson Park - Florida\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "HnMC",
       "code_hash": "993c8a3d00fea66424451e25fc63bfe3",
       "outputs": [
@@ -1078,6 +1138,19 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\"><strong>Advanced \u00b7 H \u00b7 A week of forecasts.</strong> Add <code>&amp;daily=temperature_2m_max,temperature_2m_min</code> to the Babson address. The <code>daily</code> part of the reply holds three lists side by side: dates, highs and lows, matched by position. <a href=\"/handbooks/python/02-collections/#19-choosing-a-data-structure\">Python \u00a719</a> shows how that shape goes wrong. Turn it into a list of dictionaries, one per day, each with a date, a high and a low.</span>\n</blockquote></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "JMPR",
+      "code_hash": "8951cec1b911eecf84902805094e6d35",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"date\": \"2026-10-28\", \"high\": \"text/plain+float:53.5\", \"low\": \"text/plain+float:30.9\"}, {\"date\": \"2026-10-29\", \"high\": \"text/plain+float:65.1\", \"low\": \"text/plain+float:41.3\"}, {\"date\": \"2026-10-30\", \"high\": \"text/plain+float:66.6\", \"low\": \"text/plain+float:47.7\"}, {\"date\": \"2026-10-31\", \"high\": \"text/plain+float:54.6\", \"low\": \"text/plain+float:42.3\"}, {\"date\": \"2026-11-01\", \"high\": \"text/plain+float:60.6\", \"low\": \"text/plain+float:41.7\"}, {\"date\": \"2026-11-02\", \"high\": \"text/plain+float:56.9\", \"low\": \"text/plain+float:48.6\"}, {\"date\": \"2026-11-03\", \"high\": \"text/plain+float:55.4\", \"low\": \"text/plain+float:45.4\"}]"
           }
         }
       ],
@@ -1095,6 +1168,26 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "SJRU",
+      "code_hash": "47a24c4251c4142d1219ea4916849299",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Good pair -> status: 200\n{'error': [], 'result': {'XXBTZUSD': {'a': ['80414.90000', '1', '1.000'], 'b': ['80414.80000', '4', '4.000'], 'c': ['80412.30000', '0.03568973'], 'v': ['957.80159172', '1944.21662776'], 'p': ['80799.18745', '80775.18399'], 't': [59742, 92967], 'l': ['80307.40000', '80307.40000'], 'h': ['81688.00000', '81688.00000'], 'o': '80800.90000'}}}\n\nBad pair -> status: 200\n{'error': ['EQuery:Unknown asset pair']}\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "VCRE",

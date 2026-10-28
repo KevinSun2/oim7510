@@ -163,7 +163,7 @@ def _(mo):
 
     **D ·**
 
-    **G ·**
+    **G ·** Babson Park is in Florida, not Massachusetts. Code that always takes `[0]` would have silently picked the wrong town, with no error or warning, since the server still returns a valid 200 response and real data, just not the place I meant.
 
     **Advanced (year of trades) ·** For each ticker, keep a list of purchases in date order, recording the shares remaining and their purchase price. Add each new purchase to the end of the list. When shares are sold, subtract them from the oldest purchase first. If that purchase is used up, remove it and continue with the next oldest until the entire sale is accounted for. Keep any unsold shares for future sales.
 
@@ -890,11 +890,35 @@ def _(mo):
     return
 
 
+@app.cell
+def _(babson_weather):
+    wind_speed = babson_weather["current"]["wind_speed_10m"]
+    wind_unit = babson_weather["current_units"]["wind_speed_10m"]
+
+    print(f"The wind speed in Babson is {wind_speed} {wind_unit}.")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     **F · Another town.** Search for `Wellesley` the way the misspelled search did, with the correct spelling. Take the first place out of `results`, then its `latitude`, `longitude` and `admin1`. *Check yourself: latitude 42.29649, in Massachusetts.*
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    wellesley_reply = requests.get(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Wellesley&count=1",
+        timeout=10,
+    )
+    wellesley_place = wellesley_reply.json()["results"][0]
+    wellesley_latitude = wellesley_place["latitude"]
+    wellesley_longitude = wellesley_place["longitude"]
+    wellesley_admin1 = wellesley_place["admin1"]
+
+    print(wellesley_latitude, wellesley_longitude, wellesley_admin1)
     return
 
 
@@ -908,6 +932,17 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    babson_park_reply = requests.get(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Babson Park&count=1",
+        timeout=10,
+    )
+    babson_park_place = babson_park_reply.json()["results"][0]
+    print(babson_park_place["name"], "-", babson_park_place["admin1"])
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -916,11 +951,55 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    babson_daily_url = (
+        "https://api.open-meteo.com/v1/forecast"
+        "?latitude=42.2987&longitude=-71.2595"
+        "&daily=temperature_2m_max,temperature_2m_min"
+        "&temperature_unit=fahrenheit"
+        "&timezone=America/New_York"
+    )
+    babson_daily_reply = requests.get(babson_daily_url, timeout=10)
+    daily = babson_daily_reply.json()["daily"]
+
+    daily_forecast = []
+    for _i in range(len(daily["time"])):
+        _day = {
+            "date": daily["time"][_i],
+            "high": daily["temperature_2m_max"][_i],
+            "low": daily["temperature_2m_min"][_i],
+        }
+        daily_forecast.append(_day)
+
+    daily_forecast
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     > **Advanced · I · A second API.** Kraken, a cryptocurrency exchange, publishes prices with no key: `https://api.kraken.com/0/public/Ticker?pair=XBTUSD`. Request it, then change the pair to `XBTUSX`. Compare the status code and the reply with Open-Meteo's misspelled search. Both answer 200 to a request that failed, and each shows the failure in its own way.
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    kraken_good_reply = requests.get(
+        "https://api.kraken.com/0/public/Ticker?pair=XBTUSD",
+        timeout=10,
+    )
+    print("Good pair -> status:", kraken_good_reply.status_code)
+    print(kraken_good_reply.json())
+
+    kraken_bad_reply = requests.get(
+        "https://api.kraken.com/0/public/Ticker?pair=XBTUSX",
+        timeout=10,
+    )
+    print()
+    print("Bad pair -> status:", kraken_bad_reply.status_code)
+    print(kraken_bad_reply.json())
     return
 
 
