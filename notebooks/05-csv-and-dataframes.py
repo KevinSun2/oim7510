@@ -12,7 +12,7 @@
 
 import marimo
 
-__generated_with = "0.25.1"
+__generated_with = "0.24.2"
 app = marimo.App(width="medium", sql_output="polars")
 
 
@@ -199,6 +199,65 @@ def _(mo):
     return
 
 
+@app.cell
+def _(towns_from_file):
+    million_count = 0
+    million_by_county = {}
+
+    for _town in towns_from_file:
+        if int(_town["average_single_family_value_dollars"]) >= 1000000:
+            million_count = million_count + 1
+
+            _county = _town["county"]
+
+            if _county not in million_by_county:
+                million_by_county[_county] = 0
+
+            million_by_county[_county] = million_by_county[_county] + 1
+
+    print("Million-dollar towns:", million_count)
+    print(million_by_county)
+    return (million_by_county,)
+
+
+@app.cell
+def _(million_by_county):
+    leading_county = None
+    leading_count = 0
+
+    for _county in million_by_county:
+        if million_by_county[_county] > leading_count:
+            leading_county = _county
+            leading_count = million_by_county[_county]
+
+    print("County with the most:", leading_county, leading_count)
+    return
+
+
+@app.cell
+def _(towns_from_file):
+    fewest_town = towns_from_file[0]
+    most_town = towns_from_file[0]
+
+    fewest_population = int(fewest_town["population"])
+    most_population = int(most_town["population"])
+
+    for _town in towns_from_file:
+        _population = int(_town["population"])
+
+        if _population < fewest_population:
+            fewest_town = _town
+            fewest_population = _population
+
+        if _population > most_population:
+            most_town = _town
+            most_population = _population
+
+    print("Fewest people:", fewest_town["name"], fewest_population)
+    print("Most people:", most_town["name"], most_population)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -342,7 +401,7 @@ def _(mo, town_table):
         ORDER BY towns DESC
         """
     )
-    return (towns_over_threshold,)
+    return
 
 
 @app.cell(hide_code=True)

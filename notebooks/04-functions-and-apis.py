@@ -665,11 +665,30 @@ def _(requests):
 def _(requests, town_bill, town_name):
     board_reply = requests.post(
         "https://oim.zhili.dev/message",
-        headers={"x-token": "<your-github-username>"},
+        headers={"x-token": "kevinsun2"},
         json={"message": f"{town_name}: ${town_bill:,}"},
         timeout=10,
     )
     board_reply.status_code, board_reply.json()
+    return
+
+
+@app.cell
+def _(requests, town_bill, town_name):
+    no_header_reply = requests.post(
+        "https://oim.zhili.dev/message",
+        json={"message": f"{town_name}: ${town_bill:,}"},
+        timeout=10,
+    )
+    no_header_reply.status_code, no_header_reply.json()
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    Without the `headers=` line, the server answered **401**, with the message "Missing x-token header." It needs to know who sent a message so it can show the right author's name on the board (mine shows as "Kevin"), and so it can tell who posted what, the same way a form on a website needs to know who is submitting it rather than accepting anonymous, unaccountable data.
+    """)
     return
 
 

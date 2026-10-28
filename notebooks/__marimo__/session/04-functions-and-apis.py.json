@@ -778,12 +778,38 @@
     },
     {
       "id": "tcZW",
-      "code_hash": "dd52bbcd5fd4595c47fe7ec967f6f7ff",
+      "code_hash": "081813ec913c8b49f3687d2df5b18e91",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "application/json": "[403, {\"detail\": \"Invalid token. Your token is your GitHub username.\"}]"
+            "application/json": "[201, {\"author\": \"Kevin\", \"message\": \"Concord: $20,517\", \"timestamp\": \"2026-10-28T20:04:59.637908+00:00\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xUXC",
+      "code_hash": "692ac1835a1c5e3149940a6b934e7041",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[401, {\"detail\": \"Missing x-token header\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xvPL",
+      "code_hash": "ffe2b5cb72bc7597991ab08b930e313d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Without the <code>headers=</code> line, the server answered <strong>401</strong>, with the message \"Missing x-token header.\" It needs to know who sent a message so it can show the right author's name on the board (mine shows as \"Kevin\"), and so it can tell who posted what, the same way a form on a website needs to know who is submitting it rather than accepting anonymous, unaccountable data.</span></span>"
           }
         }
       ],
