@@ -378,6 +378,35 @@ def _(mo):
     return
 
 
+@app.cell
+def _(pl, town_table):
+    counted_from_table = (
+        town_table.group_by("county")
+        .agg(pl.len().alias("towns"))
+        .sort("towns", descending=True)
+    )
+    counted_from_table
+    return
+
+
+@app.cell
+def _(ma_counties, pl):
+    counties_table = pl.DataFrame(ma_counties)
+    counties_table.select("name", "towns").sort("towns", descending=True)
+    return
+
+
+@app.cell
+def _(pl, town_table):
+    top_bill_large_towns = (
+        town_table.filter(pl.col("population") > 50_000)
+        .sort("average_single_family_bill_dollars", descending=True)
+        .head(5)
+    )
+    top_bill_large_towns.select("name", "population", "average_single_family_bill_dollars")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
