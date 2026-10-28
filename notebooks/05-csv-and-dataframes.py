@@ -540,6 +540,37 @@ def _(mo):
     return
 
 
+@app.cell
+def _(pl, town_table):
+    middlesex_top15 = (
+        town_table.filter(pl.col("county") == "Middlesex")
+        .sort("average_single_family_value_dollars", descending=True)
+        .head(15)
+        .with_columns(
+            (pl.col("average_single_family_value_dollars") >= 1_000_000)
+            .alias("million_dollar_town")
+        )
+    )
+    middlesex_top15.select("name", "average_single_family_value_dollars", "million_dollar_town")
+    return (middlesex_top15,)
+
+
+@app.cell
+def _(alt, middlesex_top15, mo):
+    middlesex_chart = mo.ui.altair_chart(
+        middlesex_top15.plot.bar(
+            y=alt.Y("name", sort="-x", title="Town"),
+            x=alt.X(
+                "average_single_family_value_dollars",
+                title="Average single-family home value (dollars)",
+            ),
+            color=alt.Color("million_dollar_town", title="Million-dollar town?"),
+        ).properties(title="Weston and Cambridge lead Middlesex County's priciest towns")
+    )
+    middlesex_chart
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
