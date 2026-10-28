@@ -166,6 +166,8 @@ def _(mo):
     **G ·**
 
     **Advanced (year of trades) ·** For each ticker, keep a list of purchases in date order, recording the shares remaining and their purchase price. Add each new purchase to the end of the list. When shares are sold, subtract them from the oldest purchase first. If that purchase is used up, remove it and continue with the next oldest until the entire sale is accounted for. Keep any unsold shares for future sales.
+
+    **Advanced, going further (average cost) ·** FIFO reports a total gain of $7,900.00, while average cost reports $7,533.33. The client would rather report using average cost, because it shows a lower taxable gain this year, which likely means owing less in capital gains tax.
     """)
     return
 
@@ -609,6 +611,123 @@ def _():
         ("2026-08-12", "AAPL", "sell", 40, 250.00),
     ]
     year_trades
+    return (year_trades,)
+
+
+@app.cell
+def _(year_trades):
+    batches = {}
+    gains_by_ticker = {}
+    total_gain = 0
+
+    for _date, _ticker, _action, _shares, _price in year_trades:
+        if _action == "buy":
+            if _ticker not in batches:
+                batches[_ticker] = []
+            batches[_ticker].append([_shares, _price])
+
+        else:  # sell
+            remaining_to_sell = _shares
+            safety_counter = 0
+
+            while remaining_to_sell > 0 and safety_counter < 20:
+                safety_counter = safety_counter + 1
+
+                oldest_batch = batches[_ticker][0]
+                batch_shares = oldest_batch[0]
+                batch_price = oldest_batch[1]
+
+                if batch_shares <= remaining_to_sell:
+                    used = batch_shares
+                    batches[_ticker].pop(0)
+                else:
+                    used = remaining_to_sell
+                    oldest_batch[0] = batch_shares - used
+
+                sale_gain = (_price - batch_price) * used
+                total_gain = total_gain + sale_gain
+                remaining_to_sell = remaining_to_sell - used
+
+                if _ticker not in gains_by_ticker:
+                    gains_by_ticker[_ticker] = 0
+                gains_by_ticker[_ticker] = gains_by_ticker[_ticker] + sale_gain
+
+    print(f"Gains by ticker: {gains_by_ticker}")
+    print(f"Total gain: ${total_gain:,.2f}")
+    print(f"Batches left: {batches}")
+    return
+
+
+@app.cell
+def _(year_trades):
+    batches_per_sale = {}
+    total_gain_per_sale = 0
+
+    for _date, _ticker, _action, _shares, _price in year_trades:
+        if _action == "buy":
+            if _ticker not in batches_per_sale:
+                batches_per_sale[_ticker] = []
+            batches_per_sale[_ticker].append([_shares, _price])
+
+        else:  # sell
+            _remaining_to_sell = _shares
+            _safety_counter = 0
+            _sale_gain = 0
+
+            while _remaining_to_sell > 0 and _safety_counter < 20:
+                _safety_counter = _safety_counter + 1
+
+                _oldest_batch = batches_per_sale[_ticker][0]
+                _batch_shares = _oldest_batch[0]
+                _batch_price = _oldest_batch[1]
+
+                if _batch_shares <= _remaining_to_sell:
+                    _used = _batch_shares
+                    batches_per_sale[_ticker].pop(0)
+                else:
+                    _used = _remaining_to_sell
+                    _oldest_batch[0] = _batch_shares - _used
+
+                _sale_gain = _sale_gain + (_price - _batch_price) * _used
+                _remaining_to_sell = _remaining_to_sell - _used
+
+            total_gain_per_sale = total_gain_per_sale + _sale_gain
+            print(f"{_date} sold {_shares} {_ticker} at ${_price:.2f} -> gain: ${_sale_gain:,.2f}")
+
+    print()
+    print(f"Total gain: ${total_gain_per_sale:,.2f}")
+    print(f"Shares left: {batches_per_sale}")
+    return
+
+
+@app.cell
+def _(year_trades):
+    avg_shares_held = {}
+    avg_cost_held = {}
+    total_gain_avg = 0
+
+    for _date, _ticker, _action, _shares, _price in year_trades:
+        if _ticker not in avg_shares_held:
+            avg_shares_held[_ticker] = 0
+            avg_cost_held[_ticker] = 0
+
+        if _action == "buy":
+            avg_shares_held[_ticker] = avg_shares_held[_ticker] + _shares
+            avg_cost_held[_ticker] = avg_cost_held[_ticker] + _shares * _price
+
+        else:  # sell
+            avg_price = avg_cost_held[_ticker] / avg_shares_held[_ticker]
+            avg_sale_gain = (_price - avg_price) * _shares
+            total_gain_avg = total_gain_avg + avg_sale_gain
+
+            avg_shares_held[_ticker] = avg_shares_held[_ticker] - _shares
+            avg_cost_held[_ticker] = avg_cost_held[_ticker] - avg_price * _shares
+
+            print(f"{_date} sold {_shares} {_ticker} at ${_price:.2f} (avg cost ${avg_price:.2f}) -> gain: ${avg_sale_gain:,.2f}")
+
+    print()
+    print(f"Total gain (average cost): ${total_gain_avg:,.2f}")
+    print(f"Shares left: {avg_shares_held}")
     return
 
 
