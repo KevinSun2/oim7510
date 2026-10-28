@@ -453,6 +453,40 @@ def _(mo):
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""
+    **Prediction:** raising the bar from $1,000,000 to $2,000,000 can only make counties' counts go down or stay the same, never go up. Any town that clears $2,000,000 also already cleared $1,000,000, so no new towns can be added by raising the bar. Some towns between $1,000,000 and $2,000,000 will drop out of the count, but nothing can appear that was not already counted before.
+    """)
+    return
+
+
+@app.cell
+def _(mo, town_table):
+    towns_over_threshold_2m = mo.sql(
+        f"""
+        SELECT county, COUNT(*) AS towns
+        FROM town_table
+        WHERE average_single_family_value_dollars >= 2000000
+        GROUP BY county
+        ORDER BY towns DESC
+        """
+    )
+    return
+
+
+@app.cell
+def _(pl, town_table):
+    polars_2m = (
+        town_table.filter(pl.col("average_single_family_value_dollars") >= 2_000_000)
+        .group_by("county")
+        .agg(pl.len().alias("towns"))
+        .sort("towns", descending=True)
+    )
+    polars_2m
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
