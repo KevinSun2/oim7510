@@ -377,6 +377,47 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    def get_temperature(town, state=None):
+        place_reply = requests.get(
+            "https://geocoding-api.open-meteo.com/v1/search",
+            params={"name": town, "count": 10},
+            timeout=10,
+        )
+        results = place_reply.json()["results"]
+
+        if state is None:
+            place = results[0]
+        else:
+            place = None
+            for _candidate in results:
+                if _candidate["admin1"] == state:
+                    place = _candidate
+                    break
+
+        latitude = place["latitude"]
+        longitude = place["longitude"]
+
+        weather_reply = requests.get(
+            "https://api.open-meteo.com/v1/forecast",
+            params={
+                "latitude": latitude,
+                "longitude": longitude,
+                "current": "temperature_2m",
+                "temperature_unit": "fahrenheit",
+            },
+            timeout=10,
+        )
+        weather = weather_reply.json()
+        return weather["current"]["temperature_2m"]
+
+    print(get_temperature("Wellesley"))
+    print(get_temperature("Babson Park"))
+    print(get_temperature("Babson Park", state="Massachusetts"))
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -386,6 +427,19 @@ def _(mo):
 
     *Check yourself: Dover, Wellesley, Cohasset, Needham, Westwood.*
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    top_income_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"county": "Norfolk", "sort": "income", "order": "desc", "per_page": 5},
+        timeout=10,
+    )
+    top_income_towns = top_income_reply.json()["items"]
+    for _t in top_income_towns:
+        print(_t["name"], _t["income_per_capita_dollars"])
     return
 
 
@@ -402,6 +456,34 @@ def _(mo):
 
     **Going further.** Write `town_history(name)`, which takes a town's name, makes both requests, and returns the history.
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(requests):
+    wellesley_town_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"name": "Wellesley"},
+        timeout=10,
+    )
+    wellesley_town = wellesley_town_reply.json()["items"][0]
+    wellesley_dor_code = wellesley_town["dor_code"]
+    print("dor_code:", wellesley_dor_code)
+
+    wellesley_history_reply = requests.get(
+        f"https://oim.zhili.dev/ma/towns/{wellesley_dor_code}/history",
+        params={"from_year": 2026, "to_year": 2026},
+        timeout=10,
+    )
+    year_2026 = wellesley_history_reply.json()["years"][0]
+
+    average_value = year_2026["average_single_family_value_dollars"]
+    tax_rate = year_2026["residential_rate_per_thousand"]
+    computed_bill = average_value * tax_rate / 1000
+    server_bill = year_2026["average_single_family_bill_dollars"]
+
+    print(f"Computed bill: ${computed_bill:,.2f}")
+    print(f"Server's bill: ${server_bill:,}")
     return
 
 

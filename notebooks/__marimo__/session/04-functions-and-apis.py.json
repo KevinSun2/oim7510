@@ -495,6 +495,26 @@
       "console": []
     },
     {
+      "id": "ISxg",
+      "code_hash": "e616a21114ffb68e853ade993def59af",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "55.5\n80.1\n55.4\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "TRpd",
       "code_hash": "2b42f203181527333e0b5e30e6c3ee36",
       "outputs": [
@@ -508,6 +528,26 @@
       "console": []
     },
     {
+      "id": "CHNB",
+      "code_hash": "a5aa426f7c4c0d5a62baa8c6920361d1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Dover 264727\nWellesley 212430\nCohasset 154676\nNeedham 139002\nWestwood 127497\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "TXez",
       "code_hash": "e7394d65fec61e25360ecf695eeb35bb",
       "outputs": [
@@ -519,6 +559,26 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "LeiD",
+      "code_hash": "4e0bddec3b5d085bdd43d90116d6c898",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "dor_code: 317\nComputed bill: $20,551.11\nServer's bill: $20,551\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "dNNg",
