@@ -568,6 +568,35 @@ def _(mo):
     return
 
 
+@app.cell
+def _(get_page):
+    def get_all_towns():
+        first_page = get_page(1)
+        pages = first_page["pagination"]["pages"]
+        all_towns = first_page["items"]
+
+        for page in range(2, pages + 1):
+            next_page = get_page(page)
+
+            for town in next_page["items"]:
+                all_towns.append(town)
+
+        return all_towns
+
+    return (get_all_towns,)
+
+
+@app.cell
+def _(get_all_towns, get_page):
+    towns = get_all_towns()
+
+    print("Towns collected:", len(towns))
+    print("Server total:", get_page(1)["pagination"]["total"])
+    print("First:", towns[0]["name"])
+    print("Last:", towns[-1]["name"])
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -614,6 +643,45 @@ def _(mo):
 
     **Going further.** Post something more useful than one town's bill: choose a question somebody would ask, answer it from live data, and post the answer, in 140 characters or fewer.
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    my_town_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"name": "Concord"},
+        timeout=10,
+    )
+    my_town = my_town_reply.json()["items"][0]
+    town_name = my_town["name"]
+    town_bill = my_town["average_single_family_bill_dollars"]
+
+    print(town_name, town_bill)
+    return town_bill, town_name
+
+
+@app.cell
+def _(requests, town_bill, town_name):
+    board_reply = requests.post(
+        "https://oim.zhili.dev/message",
+        headers={"x-token": "<your-github-username>"},
+        json={"message": f"{town_name}: ${town_bill:,}"},
+        timeout=10,
+    )
+    board_reply.status_code, board_reply.json()
+    return
+
+
+@app.cell
+def _(requests, town_bill, town_name):
+    board_reply = requests.post(
+        "https://oim.zhili.dev/message",
+        headers={"x-token": "<your-github-username>"},
+        json={"message": f"{town_name}: ${town_bill:,}"},
+        timeout=10,
+    )
+    board_reply.status_code, board_reply.json()
     return
 
 

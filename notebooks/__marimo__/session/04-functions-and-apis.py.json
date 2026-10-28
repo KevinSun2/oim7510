@@ -509,7 +509,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "55.5\n80.1\n55.4\n",
+          "text": "54.8\n75.4\n54.8\n",
           "mimetype": "text/plain"
         }
       ]
@@ -685,6 +685,39 @@
       "console": []
     },
     {
+      "id": "jRys",
+      "code_hash": "493a47927c704ba1b6be58b8bfa3d1f8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xsFa",
+      "code_hash": "cf7221c8572d0e764676b0e317e408af",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Towns collected: 351\nServer total: 351\nFirst: Abington\nLast: Yarmouth\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "lgWD",
       "code_hash": "dcb8df5206efe5e43e96963f6ebfa97d",
       "outputs": [
@@ -721,6 +754,45 @@
           }
         }
       ],
+      "console": []
+    },
+    {
+      "id": "OPBY",
+      "code_hash": "2817cdec27f77a3af156b1a0c5cc4d3c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Concord 20517\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "tcZW",
+      "code_hash": "dd52bbcd5fd4595c47fe7ec967f6f7ff",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[403, {\"detail\": \"Invalid token. Your token is your GitHub username.\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sxbv",
+      "code_hash": null,
+      "outputs": [],
       "console": []
     },
     {
