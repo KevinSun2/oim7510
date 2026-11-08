@@ -42,7 +42,7 @@ erDiagram
         int person_id PK, FK
         int project_id PK, FK
         string role
-        int weekly_hours
+        decimal weekly_hours
         date joined_date
     }
 
@@ -74,6 +74,8 @@ How to read the diagram:
 - `||` = exactly one, `|o` means zero or one, `o{` means zero or many, and `|{` means one or many.
 - The two primary-key columns in `PROJECT_ASSIGNMENTS` form one combined key: a person can appear only once for a particular project.
 
+The `weekly_hours` column uses a decimal number so commitments such as 2.5 hours are allowed. Each commitment must still be between 1 and 40 hours per week.
+
 Connections to check:
 
 - Each person has zero or one manager; a manager can supervise many people. The founders have no manager.
@@ -101,3 +103,11 @@ Each sentence describes what one row represents, based on my explanations of the
 - **expenses:** One row represents one expense and its cost for a particular project.
 
 ## 4. Design Choices
+
+1. **Choosing a key:** I chose `person_id` because it is stable. An employee's email can change, but the ID stays the same.
+
+2. **Optional relationships and values:** Not every employee needs a manager, so `manager_id` can be `NULL`; the two founders have no manager. A task can exist before anyone is assigned to it, so its assignee and assignment date can also be `NULL`. Internal projects have no client, so their `client_name` is `NULL`.
+
+3. **Rules checked with queries:** Tasks should only be assigned to someone who works on that task's project. The link to `people` alone does not enforce that rule, so I will compare tasks with project assignments in a query and list any violations. I will also use queries to check assignment dates against employee start dates and to find any projects without project assignments.
+
+4. **An agent proposal I changed or did not take:** The agent first proposed storing weekly hours as whole numbers. I chose to allow fractional hours, such as 2.5 hours per week, so I changed `weekly_hours` to a decimal number. The scenario limits commitments to between 1 and 40 hours but does not require whole hours.
