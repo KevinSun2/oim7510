@@ -176,8 +176,15 @@
     },
     {
       "id": "uVww",
-      "code_hash": null,
-      "outputs": [],
+      "code_hash": "f2109c4077e3fd1a6b86ff21948fdc79",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">with duckdb.connect(database)as conn:\n    _con.execute\"\\\"\"\n        CREATE TABLE town_bills (\n            town_name VARCHAR REFERENCES towns(name),\n            fiscal_year INTEGER,\n            average_single_family_bill_dollars INTEGER,\n            PRIMARY KEY (town_name, fiscal_year)\n        )\n    \"\\\"\")</span>\n<div class=\"language-scdoc highlight\"><pre><span></span><code>_con.execute(\"\\\"\"\n    INSERT INTO town_bills\n        (town_name, fiscal_year, average_single_family_bill_dollars)\n    VALUES\n        ('Wellesley', 2025, 19792),\n        ('Wellesley', 2026, 20551)\n\"\\\"\")\n</code></pre></div></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -196,7 +203,14 @@
     {
       "id": "nWHF",
       "code_hash": "31b661e637bceeb0e383d67fabd83f54",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Constraint Error: Duplicate key &quot;name: Concord&quot; violates primary key constraint.&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {

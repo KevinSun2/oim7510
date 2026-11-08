@@ -225,7 +225,26 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _():
+def _(mo):
+    mo.md(r"""
+    with duckdb.connect(database)as conn:
+        _con.execute"\"\"
+            CREATE TABLE town_bills (
+                town_name VARCHAR REFERENCES towns(name),
+                fiscal_year INTEGER,
+                average_single_family_bill_dollars INTEGER,
+                PRIMARY KEY (town_name, fiscal_year)
+            )
+        "\"\")
+
+        _con.execute("\"\"
+            INSERT INTO town_bills
+                (town_name, fiscal_year, average_single_family_bill_dollars)
+            VALUES
+                ('Wellesley', 2025, 19792),
+                ('Wellesley', 2026, 20551)
+        "\"\")
+    """)
     return
 
 
