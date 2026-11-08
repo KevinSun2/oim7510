@@ -284,6 +284,35 @@ def _(mo):
     return
 
 
+@app.cell
+def _(database, duckdb):
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Barnstable', 'Barnstable', 10, 0, 0)")
+        duplicate_name_result = "accepted"
+    except duckdb.ConstraintException as _error:
+        duplicate_name_result = str(_error).splitlines()[0]
+
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Testville', 'Barnstable', 0, 0, 0)")
+        zero_population_result = "accepted"
+    except duckdb.ConstraintException as _error:
+        zero_population_result = str(_error).splitlines()[0]
+
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Nowhere', 'Atlantis', 10, 0, 0)")
+        missing_county_result = "accepted"
+    except duckdb.ConstraintException as _error:
+        missing_county_result = str(_error).splitlines()[0]
+
+    print("Duplicate name:", duplicate_name_result)
+    print("Zero population:", zero_population_result)
+    print("Missing county:", missing_county_result)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -316,6 +345,18 @@ def _(mo):
     *Check yourself: Brookline, Newton, Cambridge, Somerville, Quincy.*
 
     **Going further.** Ask the same question of `counties` and `towns` together: which county is each of those five in, and what share of its county's people does each hold? That needs both tables at once, which the topic slides call a join.
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+        SELECT name, population, average_single_family_bill_dollars
+        FROM towns
+        WHERE population > 50000
+        ORDER BY average_single_family_bill_dollars DESC
+        LIMIT 5
     """)
     return
 
