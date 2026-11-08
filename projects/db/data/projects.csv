@@ -1,0 +1,13 @@
+project_id,name,client_name,category,budget,status,start_date
+1,Support Assistant,Maple Demo Market,LLM app,12000,active,2025-11-09
+2,Sales Data Refresh,Harbor Demo Goods,data pipeline,16000,active,2025-12-03
+3,Invoice Assistant,Cedar Demo Services,LLM app,10000,active,2025-12-27
+4,Staff Knowledge Search,,internal tool,18000,active,2026-01-20
+5,Stock Data Feed,Pine Demo Supply,data pipeline,14000,active,2026-02-13
+6,Booking Assistant,Willow Demo Studio,LLM app,12000,active,2026-03-09
+7,Document Search,Birch Demo Group,LLM app,11000,done,2026-04-02
+8,Expense Dashboard,,internal tool,8000,done,2026-04-26
+9,Delivery Data Feed,Oak Demo Logistics,data pipeline,6000,paused,2026-05-20
+10,Menu Assistant,Spruce Demo Cafe,LLM app,5000,paused,2026-06-13
+11,Hiring Tracker,,internal tool,5000,planned,2026-10-11
+12,Customer Feedback Feed,Elm Demo Retail,data pipeline,7000,planned,2026-10-25

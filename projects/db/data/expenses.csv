@@ -1,0 +1,181 @@
+expense_id,project_id,expense_date,amount,category,note
+1,1,2025-11-09,1230.15,GPU cloud,Model development and testing compute
+2,1,2026-06-06,175.57,data labeling,Review and label training examples
+3,1,2026-08-14,355.57,software,Project software subscription
+4,1,2025-12-01,1497.52,GPU cloud,Model development and testing compute
+5,1,2026-06-08,85.16,software,Project software subscription
+6,1,2026-09-27,222.21,software,Project software subscription
+7,1,2026-07-30,243.87,software,Project software subscription
+8,1,2026-03-23,916.66,GPU cloud,Model development and testing compute
+9,1,2026-02-27,540.15,software,Project software subscription
+10,1,2026-06-04,1780.49,GPU cloud,Model development and testing compute
+11,1,2026-05-21,1187.55,data labeling,Review and label training examples
+12,1,2026-05-13,888.70,GPU cloud,Model development and testing compute
+13,1,2026-04-25,132.84,GPU cloud,Model development and testing compute
+14,1,2026-05-09,31.63,software,Project software subscription
+15,1,2025-12-30,2447.15,GPU cloud,Model development and testing compute
+16,1,2026-08-15,896.24,data labeling,Review and label training examples
+17,1,2026-05-15,411.04,travel,Travel for a project meeting
+18,1,2026-02-15,2040.69,GPU cloud,Model development and testing compute
+19,1,2025-12-02,238.80,travel,Travel for a project meeting
+20,1,2026-03-04,401.78,data labeling,Review and label training examples
+21,1,2025-12-28,357.91,data labeling,Review and label training examples
+22,1,2026-03-18,490.03,software,Project software subscription
+23,1,2026-02-16,398.93,GPU cloud,Model development and testing compute
+24,1,2026-06-17,754.65,data labeling,Review and label training examples
+25,1,2026-03-10,2160.48,GPU cloud,Model development and testing compute
+26,1,2026-03-27,920.73,data labeling,Review and label training examples
+27,1,2026-06-06,1423.18,GPU cloud,Model development and testing compute
+28,1,2026-04-28,339.50,travel,Travel for a project meeting
+29,1,2026-03-22,938.96,GPU cloud,Model development and testing compute
+30,1,2026-01-16,440.06,software,Project software subscription
+31,2,2026-06-28,2164.05,GPU cloud,Model development and testing compute
+32,2,2026-09-27,571.77,software,Project software subscription
+33,2,2026-05-30,1135.18,GPU cloud,Model development and testing compute
+34,2,2026-03-01,558.71,software,Project software subscription
+35,2,2026-03-16,1784.79,GPU cloud,Model development and testing compute
+36,2,2026-03-30,279.51,travel,Travel for a project meeting
+37,2,2026-09-05,477.38,software,Project software subscription
+38,2,2026-10-09,69.77,software,Project software subscription
+39,2,2026-07-09,632.04,data labeling,Review and label training examples
+40,2,2026-08-05,134.22,software,Project software subscription
+41,2,2026-08-08,506.90,travel,Travel for a project meeting
+42,2,2026-09-18,538.40,software,Project software subscription
+43,2,2026-03-10,466.20,data labeling,Review and label training examples
+44,2,2026-05-18,2340.88,GPU cloud,Model development and testing compute
+45,2,2026-08-27,437.49,software,Project software subscription
+46,2,2026-06-07,75.66,software,Project software subscription
+47,2,2026-07-29,165.51,travel,Travel for a project meeting
+48,2,2026-02-17,99.37,travel,Travel for a project meeting
+49,2,2026-01-06,461.33,software,Project software subscription
+50,2,2026-10-08,367.25,software,Project software subscription
+51,2,2026-04-22,38.32,software,Project software subscription
+52,2,2026-02-03,361.57,travel,Travel for a project meeting
+53,2,2026-09-12,388.63,data labeling,Review and label training examples
+54,2,2026-03-26,575.38,software,Project software subscription
+55,2,2026-03-26,889.50,GPU cloud,Model development and testing compute
+56,2,2026-10-31,1156.12,data labeling,Review and label training examples
+57,3,2026-10-16,1620.01,GPU cloud,Model development and testing compute
+58,3,2026-06-20,769.97,travel,Travel for a project meeting
+59,3,2026-05-28,275.47,data labeling,Review and label training examples
+60,3,2026-07-10,492.02,software,Project software subscription
+61,3,2026-06-19,1619.36,GPU cloud,Model development and testing compute
+62,3,2026-06-13,268.74,software,Project software subscription
+63,3,2026-02-05,136.22,software,Project software subscription
+64,3,2026-07-13,690.08,travel,Travel for a project meeting
+65,3,2026-06-08,524.24,software,Project software subscription
+66,3,2026-09-01,773.67,travel,Travel for a project meeting
+67,3,2026-05-29,288.20,data labeling,Review and label training examples
+68,3,2026-09-14,391.35,data labeling,Review and label training examples
+69,3,2026-02-07,460.79,GPU cloud,Model development and testing compute
+70,3,2026-07-15,262.24,software,Project software subscription
+71,3,2026-05-05,177.66,data labeling,Review and label training examples
+72,3,2026-04-13,2394.08,GPU cloud,Model development and testing compute
+73,3,2026-08-16,1081.08,data labeling,Review and label training examples
+74,3,2026-06-16,897.08,data labeling,Review and label training examples
+75,3,2026-03-10,508.99,travel,Travel for a project meeting
+76,3,2026-02-10,548.63,software,Project software subscription
+77,3,2026-03-12,476.01,software,Project software subscription
+78,3,2026-08-08,467.02,software,Project software subscription
+79,3,2026-10-19,580.50,software,Project software subscription
+80,3,2026-03-14,680.86,data labeling,Review and label training examples
+81,4,2026-01-29,80.97,software,Project software subscription
+82,4,2026-09-13,1743.61,GPU cloud,Model development and testing compute
+83,4,2026-07-09,496.71,travel,Travel for a project meeting
+84,4,2026-08-14,911.31,GPU cloud,Model development and testing compute
+85,4,2026-10-13,769.97,data labeling,Review and label training examples
+86,4,2026-07-21,205.62,GPU cloud,Model development and testing compute
+87,4,2026-05-21,275.67,GPU cloud,Model development and testing compute
+88,4,2026-09-27,405.68,GPU cloud,Model development and testing compute
+89,4,2026-04-19,342.52,software,Project software subscription
+90,4,2026-05-24,201.47,GPU cloud,Model development and testing compute
+91,4,2026-07-29,393.80,travel,Travel for a project meeting
+92,4,2026-08-21,265.05,software,Project software subscription
+93,4,2026-06-29,366.51,GPU cloud,Model development and testing compute
+94,4,2026-08-28,751.03,travel,Travel for a project meeting
+95,4,2026-03-31,159.90,data labeling,Review and label training examples
+96,4,2026-04-14,361.54,data labeling,Review and label training examples
+97,4,2026-04-11,480.97,software,Project software subscription
+98,4,2026-07-13,1543.51,GPU cloud,Model development and testing compute
+99,4,2026-10-31,225.31,software,Project software subscription
+100,4,2026-05-15,1837.31,GPU cloud,Model development and testing compute
+101,4,2026-02-19,2088.30,GPU cloud,Model development and testing compute
+102,4,2026-06-20,133.09,software,Project software subscription
+103,5,2026-09-12,590.09,data labeling,Review and label training examples
+104,5,2026-10-24,279.70,software,Project software subscription
+105,5,2026-07-17,181.34,software,Project software subscription
+106,5,2026-11-04,285.36,travel,Travel for a project meeting
+107,5,2026-07-29,333.91,software,Project software subscription
+108,5,2026-04-27,1460.57,GPU cloud,Model development and testing compute
+109,5,2026-05-21,603.56,travel,Travel for a project meeting
+110,5,2026-07-22,566.36,software,Project software subscription
+111,5,2026-05-17,180.12,travel,Travel for a project meeting
+112,5,2026-08-23,669.09,GPU cloud,Model development and testing compute
+113,5,2026-10-28,719.04,travel,Travel for a project meeting
+114,5,2026-07-16,531.68,data labeling,Review and label training examples
+115,5,2026-06-22,372.70,software,Project software subscription
+116,5,2026-05-05,1220.66,GPU cloud,Model development and testing compute
+117,5,2026-05-03,249.26,GPU cloud,Model development and testing compute
+118,5,2026-05-07,409.16,software,Project software subscription
+119,5,2026-04-13,168.48,software,Project software subscription
+120,5,2026-07-20,233.83,data labeling,Review and label training examples
+121,5,2026-08-27,322.06,software,Project software subscription
+122,5,2026-02-27,577.97,GPU cloud,Model development and testing compute
+123,6,2026-03-24,585.81,software,Project software subscription
+124,6,2026-05-16,1534.37,GPU cloud,Model development and testing compute
+125,6,2026-05-15,216.25,software,Project software subscription
+126,6,2026-07-12,918.32,GPU cloud,Model development and testing compute
+127,6,2026-06-05,2237.38,GPU cloud,Model development and testing compute
+128,6,2026-07-23,174.80,software,Project software subscription
+129,6,2026-11-03,2224.22,GPU cloud,Model development and testing compute
+130,6,2026-06-11,231.88,data labeling,Review and label training examples
+131,6,2026-07-23,761.33,data labeling,Review and label training examples
+132,6,2026-08-18,492.06,software,Project software subscription
+133,6,2026-04-05,1232.35,GPU cloud,Model development and testing compute
+134,6,2026-04-26,391.99,software,Project software subscription
+135,6,2026-09-19,1230.52,GPU cloud,Model development and testing compute
+136,6,2026-05-20,252.28,software,Project software subscription
+137,6,2026-03-09,398.52,software,Project software subscription
+138,6,2026-04-03,1088.44,data labeling,Review and label training examples
+139,6,2026-09-11,428.03,travel,Travel for a project meeting
+140,6,2026-11-08,2111.15,GPU cloud,Model development and testing compute
+141,7,2026-08-19,1173.91,data labeling,Review and label training examples
+142,7,2026-10-04,555.61,data labeling,Review and label training examples
+143,7,2026-09-19,1095.89,data labeling,Review and label training examples
+144,7,2026-07-13,620.23,data labeling,Review and label training examples
+145,7,2026-04-30,637.96,data labeling,Review and label training examples
+146,7,2026-08-03,1115.42,data labeling,Review and label training examples
+147,7,2026-06-03,220.89,software,Project software subscription
+148,7,2026-09-30,727.66,data labeling,Review and label training examples
+149,7,2026-05-24,807.48,data labeling,Review and label training examples
+150,7,2026-08-07,365.37,software,Project software subscription
+151,7,2026-05-10,2064.41,GPU cloud,Model development and testing compute
+152,7,2026-08-27,207.35,GPU cloud,Model development and testing compute
+153,7,2026-09-29,47.63,software,Project software subscription
+154,7,2026-06-30,371.11,software,Project software subscription
+155,8,2026-09-15,719.40,travel,Travel for a project meeting
+156,8,2026-08-05,330.29,travel,Travel for a project meeting
+157,8,2026-09-20,1146.82,data labeling,Review and label training examples
+158,8,2026-05-19,737.82,travel,Travel for a project meeting
+159,8,2026-06-04,597.93,travel,Travel for a project meeting
+160,8,2026-05-16,215.51,software,Project software subscription
+161,8,2026-06-23,1470.35,GPU cloud,Model development and testing compute
+162,8,2026-09-30,299.39,software,Project software subscription
+163,8,2026-09-17,24.33,software,Project software subscription
+164,8,2026-09-19,51.38,software,Project software subscription
+165,8,2026-08-03,1089.81,data labeling,Review and label training examples
+166,8,2026-10-04,71.04,software,Project software subscription
+167,9,2026-07-16,430.69,data labeling,Review and label training examples
+168,9,2026-09-01,377.25,GPU cloud,Model development and testing compute
+169,9,2026-05-29,407.49,data labeling,Review and label training examples
+170,9,2026-09-19,428.77,data labeling,Review and label training examples
+171,9,2026-10-06,2082.22,GPU cloud,Model development and testing compute
+172,9,2026-08-24,205.27,software,Project software subscription
+173,9,2026-09-01,561.20,software,Project software subscription
+174,9,2026-09-20,1896.54,GPU cloud,Model development and testing compute
+175,10,2026-06-20,288.13,software,Project software subscription
+176,10,2026-07-31,287.71,software,Project software subscription
+177,10,2026-08-05,1424.85,GPU cloud,Model development and testing compute
+178,10,2026-06-26,258.74,travel,Travel for a project meeting
+179,10,2026-09-28,2305.21,GPU cloud,Model development and testing compute
+180,10,2026-09-04,131.62,software,Project software subscription

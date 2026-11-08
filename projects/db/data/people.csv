@@ -1,0 +1,26 @@
+person_id,first_name,last_name,email,title,start_date,manager_id
+1,Avery,Stone,employee01@example.com,Co-founder,2025-11-09,
+2,Jordan,Vale,employee02@example.com,Co-founder,2025-11-09,
+3,Morgan,Reed,employee03@example.com,Team Lead,2025-11-09,1
+4,Casey,Brooks,employee04@example.com,Team Lead,2025-11-09,2
+5,Riley,Park,employee05@example.com,Team Lead,2025-11-09,1
+6,Taylor,Lane,employee06@example.com,Team Lead,2025-11-09,1
+7,Alex,Hart,employee07@example.com,Developer,2026-01-06,4
+8,Sam,Wells,employee08@example.com,Data Scientist,2026-01-19,6
+9,Jamie,West,employee09@example.com,Data Scientist,2026-01-14,4
+10,Drew,Hayes,employee10@example.com,Developer,2026-01-28,6
+11,Quinn,Lake,employee11@example.com,Analyst,2025-12-06,4
+12,Cameron,Finch,employee12@example.com,Data Engineer,2025-12-07,6
+13,Skyler,Dale,employee13@example.com,Data Engineer,2026-01-07,6
+14,Robin,Field,employee14@example.com,Data Engineer,2025-12-22,6
+15,Hayden,Ash,employee15@example.com,Data Engineer,2026-02-02,6
+16,Peyton,Snow,employee16@example.com,Analyst,2025-11-25,4
+17,Reese,Hill,employee17@example.com,Analyst,2026-01-10,5
+18,Rowan,Fox,employee18@example.com,Developer,2025-12-11,5
+19,Blake,Marsh,employee19@example.com,Designer,2026-02-17,3
+20,Emerson,North,employee20@example.com,Data Scientist,2025-12-29,3
+21,Finley,Gray,employee21@example.com,Data Engineer,2025-11-25,4
+22,Dakota,Shore,employee22@example.com,Data Scientist,2025-12-02,3
+23,Sage,Brook,employee23@example.com,Analyst,2025-12-02,4
+24,Charlie,Elm,employee24@example.com,Designer,2025-12-30,5
+25,River,Glen,employee25@example.com,Data Engineer,2025-11-09,3
