@@ -314,7 +314,14 @@
     {
       "id": "Vxnm",
       "code_hash": "3c646d2de1df110536de16ea37161658",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Vxnm-0' random-id='eddc7841-27d2-18c0-c624-69f656d2f49f'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:26},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:13},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:12},{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;towns&#92;&quot;:5},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:5},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:2},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;towns&#92;&quot;:1},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;towns&#92;&quot;:1}]&quot;' data-total-rows='8' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -333,7 +340,14 @@
     {
       "id": "ulZA",
       "code_hash": "cd2a7c8908f4b4d3a326b3d562608cd1",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='ulZA-0' random-id='819e8ae6-abd0-5b4d-54f8-378e69679e48'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:26},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:13},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:12}]&quot;' data-total-rows='3' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -344,6 +358,58 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"d-a-count-you-can-check\">\u270f\ufe0f D \u00b7 A Count You Can Check</h2>\n<ol>\n<li>Count the towns in each county with <code>GROUP BY</code>, and compare each count with the <code>towns</code> column of <code>counties</code>. <em>Check yourself: Worcester 60, Middlesex 54, Essex 34, and all 14 agree.</em></li>\n<li>Add the counts up. Write in a markdown cell why the sum has to equal the number of rows in <code>towns</code>. <em>Check yourself: 351.</em></li>\n<li>For each county, the total population of its towns, and the share of those people living in towns with a bill over $10,000. Use <code>sum()</code> and a <code>CASE WHEN</code> inside it, or two queries. <em>Check yourself: the totals add up to 7,136,171.</em></li>\n</ol>\n<span class=\"paragraph\"><strong>Going further.</strong> Answer one question of your own about the towns with <code>GROUP BY</code>, and check it in polars on <code>town_rows</code>. Or download the TV show database from <a href=\"https://oim7510.github.io/downloads/\" rel=\"noopener noreferrer\" target=\"_blank\">Downloads</a>, keep it out of your repository, and answer the two TV show questions from the topic slides.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TBvz",
+      "code_hash": "2f3936de3e202bc64bb326a222a69b6e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='TBvz-0' random-id='29467951-be66-fc67-014a-56a30dcb38e9'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;server_count&#92;&quot;:60,&#92;&quot;counted_count&#92;&quot;:60},{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;server_count&#92;&quot;:54,&#92;&quot;counted_count&#92;&quot;:54},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;server_count&#92;&quot;:34,&#92;&quot;counted_count&#92;&quot;:34},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;server_count&#92;&quot;:32,&#92;&quot;counted_count&#92;&quot;:32},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;server_count&#92;&quot;:28,&#92;&quot;counted_count&#92;&quot;:28},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;server_count&#92;&quot;:27,&#92;&quot;counted_count&#92;&quot;:27},{&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;server_count&#92;&quot;:26,&#92;&quot;counted_count&#92;&quot;:26},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;server_count&#92;&quot;:23,&#92;&quot;counted_count&#92;&quot;:23},{&#92;&quot;county&#92;&quot;:&#92;&quot;Bristol&#92;&quot;,&#92;&quot;server_count&#92;&quot;:20,&#92;&quot;counted_count&#92;&quot;:20},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;,&#92;&quot;server_count&#92;&quot;:20,&#92;&quot;counted_count&#92;&quot;:20}]&quot;' data-total-rows='14' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;server_count&quot;,[&quot;integer&quot;,&quot;i32&quot;]],[&quot;counted_count&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bKqF",
+      "code_hash": "6272beefd76963fd7319670e3df779ff",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='bKqF-0' random-id='d23b4626-58a1-692e-aeb4-ee47b2fd3885'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;total_from_groups&#92;&quot;:&#92;&quot;351&#92;&quot;,&#92;&quot;total_rows&#92;&quot;:351}]&quot;' data-total-rows='1' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;total_from_groups&quot;,[&quot;number&quot;,&quot;decimal[38,0]&quot;]],[&quot;total_rows&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "KJaN",
+      "code_hash": "1ec23d779dd25659ec87e7ec15eeaf9c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The sum has to equal the number of rows in <code>towns</code> because <code>GROUP BY county</code> splits every row in <code>towns</code> into exactly one group, with no row left out and no row counted twice. Every town belongs to exactly one county, so adding up each group's count simply adds every row back together once, which must total the same number of rows the table started with: 351.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZzwN",
+      "code_hash": "206add8fdadbc08d0db27d7a75064156",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='ZzwN-0' random-id='fae6d3af-821b-babb-7c77-fd5634c6f633'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;1668956&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;651079&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.39011154278483073},{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;881248&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;61892&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.07023221612985221},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;823938&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;160867&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.19524163225873792},{&#92;&quot;county&#92;&quot;:&#92;&quot;Suffolk&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;793144&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;740754&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;267818&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.36154782829387355},{&#92;&quot;county&#92;&quot;:&#92;&quot;Bristol&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;588593&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;542090&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;86753&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.1600343116456677},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;464151&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;15712&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.033851052782391935},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;232570&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;3729&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.016033882272004127},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;165399&#92;&quot;,&#92;&quot;high_bill_population&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;high_bill_share&#92;&quot;:0.0}]&quot;' data-total-rows='14' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;total_population&quot;,[&quot;number&quot;,&quot;decimal[38,0]&quot;]],[&quot;high_bill_population&quot;,[&quot;number&quot;,&quot;decimal[38,0]&quot;]],[&quot;high_bill_share&quot;,[&quot;number&quot;,&quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],

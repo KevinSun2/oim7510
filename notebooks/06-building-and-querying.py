@@ -418,6 +418,60 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ask):
+    comparison = ask("""
+        SELECT c.name AS county, c.towns AS server_count, t.town_count AS counted_count
+        FROM counties c
+        JOIN (
+            SELECT county, count(*) AS town_count
+            FROM towns
+            GROUP BY county
+        ) t ON t.county = c.name
+        ORDER BY c.towns DESC
+    """)
+    comparison
+    return
+
+
+@app.cell
+def _(ask):
+    total_check = ask("""
+        SELECT sum(town_count) AS total_from_groups, (SELECT count(*) FROM towns) AS total_rows
+        FROM (
+            SELECT county, count(*) AS town_count
+            FROM towns
+            GROUP BY county
+        )
+    """)
+    total_check
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    The sum has to equal the number of rows in `towns` because `GROUP BY county` splits every row in `towns` into exactly one group, with no row left out and no row counted twice. Every town belongs to exactly one county, so adding up each group's count simply adds every row back together once, which must total the same number of rows the table started with: 351.
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    part3 = ask("""
+        SELECT
+            county,
+            sum(population) AS total_population,
+            sum(CASE WHEN average_single_family_bill_dollars > 10000 THEN population ELSE 0 END) AS high_bill_population,
+            sum(CASE WHEN average_single_family_bill_dollars > 10000 THEN population ELSE 0 END) * 1.0 / sum(population) AS high_bill_share
+        FROM towns
+        GROUP BY county
+        ORDER BY total_population DESC
+    """)
+    part3
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
