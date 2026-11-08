@@ -1405,6 +1405,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "altair" },
+    { name = "duckdb" },
     { name = "marimo", extra = ["sql"] },
     { name = "matplotlib" },
     { name = "polars" },
@@ -1416,6 +1417,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "altair", specifier = ">=6.3.0" },
+    { name = "duckdb", specifier = ">=2.0.0" },
     { name = "marimo", extras = ["sql"], specifier = ">=0.24.2" },
     { name = "matplotlib", specifier = ">=3.11.2" },
     { name = "polars", specifier = ">=2.1.0" },

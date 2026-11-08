@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "altair>=6.3.0",
+    "duckdb>=2.0.0",
     "marimo[sql]>=0.24.2",
     "matplotlib>=3.11.2",
     "polars>=2.1.0",
