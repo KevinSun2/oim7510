@@ -100,7 +100,7 @@ def _(mo, pl, requests):
         town_rows = pl.DataFrame(_records).select(town_columns)
 
     county_rows.shape, town_rows.shape
-    return
+    return county_rows, town_rows
 
 
 @app.cell(hide_code=True)
@@ -130,10 +130,15 @@ def _(mo):
 
 
 @app.cell
-def _(duckdb, mo):
+def _(county_rows, duckdb, mo, town_rows):
     _file = mo.notebook_dir().parent / "data" / "ma-towns.duckdb"
     _file.parent.mkdir(exist_ok=True)
     _file.unlink(missing_ok=True)
+
+    # Referencing these here (not just inside the SQL strings below) tells marimo
+    # this cell depends on county_rows and town_rows, so it always runs after the
+    # cell that creates them.
+    _ = (county_rows, town_rows)
 
     with duckdb.connect(_file) as _con:
         _con.execute("""
@@ -225,26 +230,26 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    with duckdb.connect(database)as conn:
-        _con.execute"\"\"
-            CREATE TABLE town_bills (
+def _(ask, database, duckdb):
+    with duckdb.connect(database) as _con:
+        _con.execute("""
+            CREATE TABLE IF NOT EXISTS town_bills (
                 town_name VARCHAR REFERENCES towns(name),
                 fiscal_year INTEGER,
                 average_single_family_bill_dollars INTEGER,
                 PRIMARY KEY (town_name, fiscal_year)
             )
-        "\"\")
-
-        _con.execute("\"\"
+        """)
+        _con.execute("""
             INSERT INTO town_bills
                 (town_name, fiscal_year, average_single_family_bill_dollars)
             VALUES
                 ('Wellesley', 2025, 19792),
                 ('Wellesley', 2026, 20551)
-        "\"\")
-    """)
+            ON CONFLICT (town_name, fiscal_year) DO NOTHING
+        """)
+
+    ask("SELECT * FROM town_bills ORDER BY fiscal_year")
     return
 
 
