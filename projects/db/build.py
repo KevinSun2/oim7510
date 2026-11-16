@@ -230,7 +230,7 @@ def _(mo):
     `make_data.py` uses the fixed seed **7510** to generate five CSV files covering
     **November 9, 2025 through November 8, 2026**. Numeric and date columns are
     loaded into the declared SQL types; blank optional fields become `NULL`.
-    All **577 rows** are loaded; none are skipped. Money and weekly hours retain
+    All **573 rows** are loaded; none are skipped. Money and weekly hours retain
     their generated values when stored as decimals.
 
     **Exactly two intentional rule violations:** task IDs **1 and 2**, both in
