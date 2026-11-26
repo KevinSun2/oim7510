@@ -1,0 +1,971 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.24.2",
+    "script_metadata_hash": "b311fd0b03ba63c807420bf23620be92"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "5a6dd809a3c9ceffe94e4e42c9f752cf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "ecf18fabe298e237bca6d004a3baf6d8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"combining-tables-with-join\">Combining Tables with <code>JOIN</code></h1>\n<span class=\"paragraph\">In this notebook we put tables back together to answer questions that no single table can answer. We start with the towns and their counties, then move to the Northwind orders, their lines, their products and their categories. Along the way we count the rows before and after each join, and we find the rows a join leaves out. After class, you will ask the same kind of question of a database on a server.</span>\n<table>\n<thead>\n<tr>\n<th></th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>\u270f\ufe0f</td>\n<td>Your turn. Add cells with the <strong>+</strong> button</td>\n</tr>\n<tr>\n<td>\ud83d\ude80</td>\n<td>This week's work</td>\n</tr>\n</tbody>\n</table>\n<span class=\"paragraph\">For a written answer, add a cell under the question, open the cell's <strong>\u22ef</strong> menu and choose <strong>Convert to Markdown</strong>.</span>\n<span class=\"paragraph\">Every \u270f\ufe0f is part of this week's work. The <strong>Going further</strong> at the end of an exercise is optional; try it once the rest is done.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "00f1d657fe2fe7d3af9f7e161a75c44a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Work with your agent the same way as in notebook 6.</strong> Try it yourself first, or write the steps in words. Then ask your agent, ask it to explain any line you could not have written, and ask which concepts its answer used. Do exercise A by hand.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "051fd31cca55018ecce5195beae50567",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>The data.</strong> This notebook uses two ready-made databases from the course website. <code>combining-towns.duckdb</code> holds the same towns and counties as notebook 6, and <code>combining-northwind.duckdb</code> holds the Northwind tables, the warehouse the SQL handbook uses. The tables have no keys. The next cell downloads both files into your <code>data</code> folder the first time you run it.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "c556d7943b9d48efaff1a0c9b73c80e8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"combining-towns.duckdb\", \"combining-northwind.duckdb\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "a7ccc075e7eeef6e5fa02575be642ad5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "6fc0f404809e91846acd2128c5246458",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>What is in the database.</strong> Before we write a query, it is a good idea to ask the database which tables and columns it has, because an ERD drawn somewhere else can use other names. Both databases you query in this notebook, DuckDB here and SQL Server in section 5, keep that list in <code>information_schema</code>, a set of tables we can read with <code>SELECT</code>. The following query lists the tables in the Northwind database.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "ba884343fb2e7e60ea561cb56411dc63",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='13517669-c8c9-9438-20ba-de03ace4695a'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;table_name&#92;&quot;:&#92;&quot;categories&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;customers&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;employee_territories&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;employees&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;order_details&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;orders&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;products&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;regions&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;shippers&#92;&quot;},{&#92;&quot;table_name&#92;&quot;:&#92;&quot;suppliers&#92;&quot;}]&quot;' data-total-rows='11' data-total-columns='1' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;table_name&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "aaecfacd5e3997b9b52037593eb5fd2f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">There are 11 tables. The next query lists the columns of one of them, <code>order_details</code>, with their types.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "ad4a4d707bb0f07326fb8dd57b8625c8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Kclp-0' random-id='3617e055-a710-220c-b2bd-0b0ec9a42d80'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;column_name&#92;&quot;:&#92;&quot;OrderID&#92;&quot;,&#92;&quot;data_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;ProductID&#92;&quot;,&#92;&quot;data_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;UnitPrice&#92;&quot;,&#92;&quot;data_type&#92;&quot;:&#92;&quot;DECIMAL(12,4)&#92;&quot;},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;Quantity&#92;&quot;,&#92;&quot;data_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;Discount&#92;&quot;,&#92;&quot;data_type&#92;&quot;:&#92;&quot;DOUBLE&#92;&quot;}]&quot;' data-total-rows='5' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;column_name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;data_type&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "1a0f46cedf7f36017933807a2ac1bfee",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">These are the names to use in a query. Your agent cannot see the database, so paste them in when you ask it for one.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "fecf972d25163f703524aecf9bf75466",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"1-putting-tables-back-together\">1. Putting Tables Back Together</h1>\n<span class=\"paragraph\">The <code>towns</code> table keeps only the name of each town's county. To see a town beside its county's population, we have to combine <code>towns</code> with <code>counties</code>. <code>JOIN</code> names the second table, and <code>ON</code> specifies which rows go together, here a town and the county it names. The following query lists the five largest towns with the population of their counties.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "b7fe1facddc7c80224ed5c109619a9a6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='nWHF-0' random-id='2950aa66-06cd-0c79-f0de-938047623e09'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Boston&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Suffolk&#92;&quot;,&#92;&quot;population&#92;&quot;:673458,&#92;&quot;county_population&#92;&quot;:793144},{&#92;&quot;name&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;population&#92;&quot;:211286,&#92;&quot;county_population&#92;&quot;:881248},{&#92;&quot;name&#92;&quot;:&#92;&quot;Springfield&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;population&#92;&quot;:154888,&#92;&quot;county_population&#92;&quot;:464151},{&#92;&quot;name&#92;&quot;:&#92;&quot;Cambridge&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;population&#92;&quot;:121186,&#92;&quot;county_population&#92;&quot;:1668956},{&#92;&quot;name&#92;&quot;:&#92;&quot;Lowell&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;population&#92;&quot;:120418,&#92;&quot;county_population&#92;&quot;:1668956}]&quot;' data-total-rows='5' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;county_population&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "2e7b598d55282101a328aa4a26ccf641",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Boston has 673,458 people, and Suffolk County, where it is, has 793,144. In this query, <code>t</code> and <code>c</code> are short names for the two tables, called <strong>table aliases</strong>. They make it clear that <code>t.population</code> is a town's population and <code>c.population</code> is a county's.</span>\n<span class=\"paragraph\">On TV shows: <a href=\"https://oim-shows.zhili.dev/queries#join-inner\" rel=\"noopener noreferrer\" target=\"_blank\">The four shows, with <code>JOIN</code></a></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "e51ffd32ea698460cebff303e19cbb62",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>A column can be computed.</strong> <code>SELECT</code> accepts arithmetic on columns, <code>round(x, 1)</code> rounds a number to one decimal place, and <code>AS</code> gives the result a name. This query computes each town's income per person for one month:</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "2f196f3e2d4eb88552c13d0370438ab0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='ROlb-0' random-id='6a322005-0e5c-c978-0939-a134118f0d11'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Sherborn&#92;&quot;,&#92;&quot;income_per_capita_dollars&#92;&quot;:352250,&#92;&quot;monthly_income&#92;&quot;:29354.2},{&#92;&quot;name&#92;&quot;:&#92;&quot;Weston&#92;&quot;,&#92;&quot;income_per_capita_dollars&#92;&quot;:340262,&#92;&quot;monthly_income&#92;&quot;:28355.2},{&#92;&quot;name&#92;&quot;:&#92;&quot;Dover&#92;&quot;,&#92;&quot;income_per_capita_dollars&#92;&quot;:264727,&#92;&quot;monthly_income&#92;&quot;:22060.6}]&quot;' data-total-rows='3' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;income_per_capita_dollars&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;monthly_income&quot;,[&quot;number&quot;,&quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "5fe18168acd6a2ab33b88d84994abdb8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Sherborn is first, with an income per person of 352,250 dollars a year, or about 29,354 a month.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "1bc83f827f3ed99206539f49844758a7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"a-towns-and-their-counties\">\u270f\ufe0f A \u00b7 Towns and Their Counties</h2>\n<span class=\"paragraph\"><strong>No agent for this one</strong>, and no code completion either. When the editor suggests code in grey as you type, press <code>Esc</code> and keep typing your own.</span>\n<ol>\n<li>Copy the first query of this section into a cell of your own, remove its <code>LIMIT</code>, and count the rows it returns. In a markdown cell under it, explain why the count is the same as the number of rows in <code>towns</code>. <em>Check yourself: 351.</em></li>\n<li>Add a column with each town's share of its county's population, in percent and rounded to one decimal place, and list the five largest shares. <em>Check yourself: Nantucket 100.0, Boston 84.9, Pittsfield 33.5, Springfield 33.4, Oak Bluffs 25.7.</em></li>\n<li>In the same markdown cell, explain why Nantucket's share is exactly 100.</li>\n</ol>\n<span class=\"paragraph\"><strong>Going further.</strong> For each county, find the town with the largest share of its people.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "6c331433ac138547413c38c89f60356b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Vxnm-0' random-id='baa97350-aa23-96f4-1a15-93d2f71f64a6'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Boston&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Suffolk&#92;&quot;,&#92;&quot;population&#92;&quot;:673458,&#92;&quot;county_population&#92;&quot;:793144},{&#92;&quot;name&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;population&#92;&quot;:211286,&#92;&quot;county_population&#92;&quot;:881248},{&#92;&quot;name&#92;&quot;:&#92;&quot;Springfield&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;population&#92;&quot;:154888,&#92;&quot;county_population&#92;&quot;:464151},{&#92;&quot;name&#92;&quot;:&#92;&quot;Cambridge&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;population&#92;&quot;:121186,&#92;&quot;county_population&#92;&quot;:1668956},{&#92;&quot;name&#92;&quot;:&#92;&quot;Lowell&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;population&#92;&quot;:120418,&#92;&quot;county_population&#92;&quot;:1668956},{&#92;&quot;name&#92;&quot;:&#92;&quot;Brockton&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;population&#92;&quot;:105788,&#92;&quot;county_population&#92;&quot;:542090},{&#92;&quot;name&#92;&quot;:&#92;&quot;Lynn&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;population&#92;&quot;:103489,&#92;&quot;county_population&#92;&quot;:823938},{&#92;&quot;name&#92;&quot;:&#92;&quot;Quincy&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;population&#92;&quot;:103434,&#92;&quot;county_population&#92;&quot;:740754},{&#92;&quot;name&#92;&quot;:&#92;&quot;New Bedford&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Bristol&#92;&quot;,&#92;&quot;population&#92;&quot;:101318,&#92;&quot;county_population&#92;&quot;:588593},{&#92;&quot;name&#92;&quot;:&#92;&quot;Fall River&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Bristol&#92;&quot;,&#92;&quot;population&#92;&quot;:94689,&#92;&quot;county_population&#92;&quot;:588593}]&quot;' data-total-rows='351' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;county_population&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "A: The join returns 351 towns; no towns are left out.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "b990ea8e510eb9d8cbf1c2d82e781a79",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='DnEU-0' random-id='7e07d933-257c-90e3-afa4-936619fc6f04'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;population_percent&#92;&quot;:100.0},{&#92;&quot;name&#92;&quot;:&#92;&quot;Boston&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Suffolk&#92;&quot;,&#92;&quot;population_percent&#92;&quot;:84.9},{&#92;&quot;name&#92;&quot;:&#92;&quot;Pittsfield&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;population_percent&#92;&quot;:33.5},{&#92;&quot;name&#92;&quot;:&#92;&quot;Springfield&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;population_percent&#92;&quot;:33.4},{&#92;&quot;name&#92;&quot;:&#92;&quot;Oak Bluffs&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;population_percent&#92;&quot;:25.7}]&quot;' data-total-rows='5' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population_percent&quot;,[&quot;number&quot;,&quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "A: Five largest town shares: [('Nantucket', 'Nantucket', 100.0), ('Boston', 'Suffolk', 84.9), ('Pittsfield', 'Berkshire', 33.5), ('Springfield', 'Hampden', 33.4), ('Oak Bluffs', 'Dukes', 25.7)]\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "6a97dd0b26cfe2851d12a58ebacce9f2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>A \u2014 Explanation.</strong> Each of the 351 towns matches exactly one county, so the\njoin returns 351 rows. Nantucket is the only town in its county, so its town\nand county populations are equal and its share is 100%.</span>\n<span class=\"paragraph\"><code>AS t</code> and <code>AS c</code> give the tables short names; <code>ON</code> matches each town to its\ncounty; <code>round(100.0 * t.population / c.population, 1)</code> calculates the share\nas a percentage rounded to one decimal place. <code>LIMIT 5</code> displays five of\nthe 351 towns and leaves 346 out of that display.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "07abec9c33d499fe7c91699eb76dac8b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"2-what-a-join-leaves-out\">2. What a Join Leaves Out</h1>\n<span class=\"paragraph\"><code>JOIN</code> keeps only the rows that have a match in the other table. If a county has no matching town, that county is not in the result, and there is no error message or warning.</span>\n<span class=\"paragraph\">To find those counties, we can use <code>LEFT JOIN</code>, which keeps every row of the table on the left, here <code>counties</code>. If a county has no matching town, the columns from <code>towns</code> contain <code>NULL</code> in that row, and <code>WHERE t.name IS NULL</code> keeps exactly those rows. The following query finds the counties with no town whose average bill is over $15,000.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "7aa94a0363f31891da7afb3a998a17bf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Pvdt-0' random-id='a167dd3f-06b0-5ccf-cc7b-b3929041998d'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bristol&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Dukes&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Franklin&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Hampden&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Suffolk&#92;&quot;}]&quot;' data-total-rows='10' data-total-columns='1' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "0d51f159eb971c7fdbab2bcab4ff9898",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The result has 10 of the 14 counties. Each of the other four has at least one town with a bill over $15,000.</span>\n<span class=\"paragraph\">The bill condition is in <code>ON</code>, which decides what counts as a match. If we move it to <code>WHERE</code>, the query runs without an error, but the result is empty. <code>WHERE</code> keeps rows after the join, and for a county with no such town the bill is <code>NULL</code>, which is not over $15,000.</span>\n<span class=\"paragraph\">A query like this one, which finds the rows in one table that have no match in another, is called an <strong>anti join</strong>. When you write a <code>JOIN</code>, it is a good idea to check which rows it left out, and an anti join is one way to do that.</span>\n<span class=\"paragraph\"><code>RIGHT JOIN</code> keeps every row of the table on the right, and <code>FULL JOIN</code> keeps every row of both tables. For <code>towns</code> and <code>counties</code>, <code>JOIN</code>, <code>LEFT JOIN</code>, <code>RIGHT JOIN</code> and <code>FULL JOIN</code> all return the same 351 rows, because every town names a county in <code>counties</code> and every county has towns. With a few shows from the TV show database, each join returns a different number of rows.</span>\n<span class=\"paragraph\">On TV shows:</span>\n<ul>\n<li><a href=\"https://oim-shows.zhili.dev/queries#join-left\" rel=\"noopener noreferrer\" target=\"_blank\">The four shows, with <code>LEFT JOIN</code></a></li>\n<li><a href=\"https://oim-shows.zhili.dev/queries#join-right\" rel=\"noopener noreferrer\" target=\"_blank\">The four shows, with <code>RIGHT JOIN</code></a></li>\n<li><a href=\"https://oim-shows.zhili.dev/queries#join-full\" rel=\"noopener noreferrer\" target=\"_blank\">The four shows, with <code>FULL JOIN</code></a></li>\n<li><a href=\"https://oim-shows.zhili.dev/queries#anti-join\" rel=\"noopener noreferrer\" target=\"_blank\">The Office shows with no rating</a></li>\n<li><a href=\"https://oim-shows.zhili.dev/queries#on-and-where\" rel=\"noopener noreferrer\" target=\"_blank\">ON and WHERE</a></li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "7c2b5b41c2eb6f8785fafb3f21f0415f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"b-the-territories-nobody-covers\">\u270f\ufe0f B \u00b7 The Territories Nobody Covers</h2>\n<span class=\"paragraph\">In Northwind, <code>employee_territories</code> pairs each employee with the territories they cover. Find the territories in <code>territories</code> that nobody covers, using <code>LEFT JOIN</code> and <code>IS NULL</code>.</span>\n<span class=\"paragraph\"><em>Check yourself: four territories, Columbia, Bentonville, Dallas and Austin.</em></span>\n<span class=\"paragraph\"><strong>Going further.</strong> List the employees with the number of territories each covers, and check that the counts add up to the rows of <code>employee_territories</code>. Then find the same four territories with <code>WHERE NOT EXISTS (...)</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "eacb0993b17a5b007f5502f7e66bd1e2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='nHfw-0' random-id='43df889d-08a6-92be-ccb1-aff45e777650'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;78759&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Austin&#92;&quot;},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;72716&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Bentonville&#92;&quot;},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;29202&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Columbia&#92;&quot;},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;75234&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Dallas&#92;&quot;}]&quot;' data-total-rows='4' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;TerritoryID&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;TerritoryDescription&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "B: 4 territories have no employee.\nB: Uncovered territories: [('78759', 'Austin'), ('72716', 'Bentonville'), ('29202', 'Columbia'), ('75234', 'Dallas')]\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "74acbac7c52f5b42bcdd99f61675b08a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>B \u2014 Explanation.</strong> <code>LEFT JOIN</code> keeps every territory, and <code>IS NULL</code> keeps\nonly those with no matching employee assignment; no source rows are changed.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "744035161ab741a2ef96168e8f0fca03",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"3-when-a-join-repeats-rows\">3. When a Join Repeats Rows</h1>\n<span class=\"paragraph\">In Northwind, an order can have many lines, and each line is a row in <code>order_details</code>. When we join <code>orders</code> to <code>order_details</code>, the result has one row for each line. An order with three lines appears three times, and its <code>Freight</code> value is repeated in each of those rows. To see the effect, we can count the rows in <code>orders</code>, in <code>order_details</code>, and in the result of the join.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "570b103d8da3bb03be752425184e980a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='pHFh-0' random-id='ed695985-2c9c-e838-5340-e31efa3fd452'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;orders&#92;&quot;:16282,&#92;&quot;order_lines&#92;&quot;:609283,&#92;&quot;joined&#92;&quot;:609283}]&quot;' data-total-rows='1' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;orders&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;order_lines&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;joined&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "ead45d452c6069c897ff784b1f0d6d45",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">There are 16,282 orders and 609,283 order lines. The join has as many rows as <code>order_details</code>, one for each line.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "83332e51d03f3013eaeada3e352812c5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">If we add up <code>Freight</code> after the join, each order's freight is counted once for each of its lines, so the total is too big. The following query computes the total from <code>orders</code> and the total after the join.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "c19dba22bdff8bdbf7280671bcca841b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='TRpd-0' random-id='3a7d2363-5acb-e087-eae5-3069fad8a55a'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;freight&#92;&quot;:&#92;&quot;4047470.5000&#92;&quot;,&#92;&quot;freight_after_the_join&#92;&quot;:&#92;&quot;206911676.0000&#92;&quot;}]&quot;' data-total-rows='1' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;freight&quot;,[&quot;number&quot;,&quot;decimal[38,4]&quot;]],[&quot;freight_after_the_join&quot;,[&quot;number&quot;,&quot;decimal[38,4]&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TXez",
+      "code_hash": "05695bf41302f98169654167922058c7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The total from <code>orders</code> is 4,047,470.50. After the join, it is 206,911,676.00, about 51 times as much.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "a804cab6238aec3a3c4e08a1ce929af2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Check the key before you join.</strong> Before a join, it is a good idea to count the values that appear more than once in the column you join on. The following query does that for <code>OrderID</code> in both tables.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yCnT",
+      "code_hash": "510f41844e882130c6a9373eab823d17",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='yCnT-0' random-id='b1155bee-84f7-38b0-e953-5e866a194d5c'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;repeated_in_orders&#92;&quot;:0,&#92;&quot;repeated_in_order_details&#92;&quot;:15948}]&quot;' data-total-rows='1' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;repeated_in_orders&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;repeated_in_order_details&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wlCL",
+      "code_hash": "9f810ab059d1ab2b075e8fa20f49edae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">In <code>orders</code>, no <code>OrderID</code> appears more than once. In <code>order_details</code>, 15,948 of them do, so a column of <code>orders</code> is copied once for each line of its order.</span>\n<span class=\"paragraph\">On TV shows: <a href=\"https://oim-shows.zhili.dev/queries#rows-before-and-after\" rel=\"noopener noreferrer\" target=\"_blank\">Rows before and after a join</a> and <a href=\"https://oim-shows.zhili.dev/queries#checking-the-key\" rel=\"noopener noreferrer\" target=\"_blank\">Checking the key</a></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
+      "code_hash": "7756ca68cc25a6add10171e461e89953",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"c-freight-by-country\">\u270f\ufe0f C \u00b7 Freight by Country</h2>\n<span class=\"paragraph\">Compute the total freight for each <code>ShipCountry</code>, with the largest first, counting each order's freight once.</span>\n<span class=\"paragraph\"><em>Check yourself: the USA first, with 573,251.00, and the 21 countries add up to 4,047,470.50, the total in <code>orders</code>.</em></span>\n<span class=\"paragraph\"><strong>Going further.</strong> Build one row per order with its freight and its number of lines, by counting the lines first and joining the counts to <code>orders</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
+      "code_hash": "1f2c9d54c285ba29a4aac2eacc8b19a4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='wAgl-0' random-id='85be3155-801c-06f8-35ad-ba4d1065216f'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;USA&#92;&quot;,&#92;&quot;orders&#92;&quot;:2328,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;573251.0000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Germany&#92;&quot;,&#92;&quot;orders&#92;&quot;:2193,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;537189.7500&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;France&#92;&quot;,&#92;&quot;orders&#92;&quot;:1778,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;442055.7500&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Brazil&#92;&quot;,&#92;&quot;orders&#92;&quot;:1683,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;418464.5000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;UK&#92;&quot;,&#92;&quot;orders&#92;&quot;:1280,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;326250.0000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Mexico&#92;&quot;,&#92;&quot;orders&#92;&quot;:899,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;228138.7500&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Venezuela&#92;&quot;,&#92;&quot;orders&#92;&quot;:707,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;174448.5000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Spain&#92;&quot;,&#92;&quot;orders&#92;&quot;:691,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;172833.0000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Argentina&#92;&quot;,&#92;&quot;orders&#92;&quot;:535,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;140088.5000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Canada&#92;&quot;,&#92;&quot;orders&#92;&quot;:547,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;132277.0000&#92;&quot;}]&quot;' data-total-rows='21' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;ShipCountry&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;orders&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;total_freight&quot;,[&quot;number&quot;,&quot;decimal[38,4]&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "C: 21 countries; grouped freight = 4,047,470.50.\nC: Freight from orders alone = 4,047,470.50.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "rEll",
+      "code_hash": "a4661d3f3bae43cae2c84af01cea94b0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>C \u2014 Explanation.</strong> <code>GROUP BY ShipCountry</code> makes one group per country, and\n<code>sum(Freight)</code> adds each order's freight once because this query uses only\n<code>orders</code>; all orders are included.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dGlV",
+      "code_hash": "32b9f5190b70d897e6bb17678fd2f289",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"4-a-chain-of-joins\">4. A Chain of Joins</h1>\n<span class=\"paragraph\">A line in <code>order_details</code> has a <code>ProductID</code>, and a product in <code>products</code> has a <code>CategoryID</code>. So to compute revenue by category, we need three tables: <code>order_details</code>, <code>products</code> and <code>categories</code>. Each <code>JOIN</code> adds one table, with its own <code>ON</code>.</span>\n<span class=\"paragraph\">On TV shows: <a href=\"https://oim-shows.zhili.dev/queries#chain-of-joins\" rel=\"noopener noreferrer\" target=\"_blank\">A chain of joins</a></span>\n<h2 id=\"d-revenue-by-category\">\u270f\ufe0f D \u00b7 Revenue by Category</h2>\n<span class=\"paragraph\">A line's revenue is <code>UnitPrice * Quantity * (1 - Discount)</code>. Compute the total revenue for each category, for the orders shipped to the USA, with the largest first. <code>ShipCountry</code> is in <code>orders</code>, so this query needs a fourth table. Then check that the categories add up to the USA's revenue computed from <code>orders</code> and <code>order_details</code> alone.</span>\n<span class=\"paragraph\"><em>Check yourself: Beverages first, with about 13,375,939, and all eight, added before rounding, give 63,856,337.63.</em></span>\n<span class=\"paragraph\"><strong>Going further.</strong> Compute revenue by category for each year, and find the category that grew the most.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SdmI",
+      "code_hash": "f6a96b42f38a571124035c3fc269af5e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='SdmI-0' random-id='128e9216-2a37-ff39-d9dc-6df2bdb7a9e6'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Beverages&#92;&quot;,&#92;&quot;revenue&#92;&quot;:13375938.975},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Confections&#92;&quot;,&#92;&quot;revenue&#92;&quot;:9335182.633000001},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Meat/Poultry&#92;&quot;,&#92;&quot;revenue&#92;&quot;:9204395.634999998},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Dairy Products&#92;&quot;,&#92;&quot;revenue&#92;&quot;:8247657.945},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Condiments&#92;&quot;,&#92;&quot;revenue&#92;&quot;:7840478.627500003},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Seafood&#92;&quot;,&#92;&quot;revenue&#92;&quot;:7075991.922499999},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Produce&#92;&quot;,&#92;&quot;revenue&#92;&quot;:4665531.577500001},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Grains/Cereals&#92;&quot;,&#92;&quot;revenue&#92;&quot;:4111160.315}]&quot;' data-total-rows='8' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;CategoryName&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;revenue&quot;,[&quot;number&quot;,&quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "D: 8 categories; category revenue = 63,856,337.63.\nD: Revenue from orders and lines alone = 63,856,337.63.\nD: Kept 2,328 USA orders; excluded 13,954 other orders.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "lgWD",
+      "code_hash": "ca685d0a0952c8d8d001001f9c266d38",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>D \u2014 Explanation.</strong> The joins connect each order line to its order, product\nand category; <code>UnitPrice * Quantity * (1 - Discount)</code> calculates revenue\nafter the discount. The second query checks the total using just orders and\norder lines, and both totals are added before rounding for display.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yOPj",
+      "code_hash": "1d9ee8fa29085c2175feb3e8ffb11f24",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"5-after-class-the-same-joins-on-a-server\">5. After Class: The Same Joins on a Server</h1>\n<span class=\"paragraph\">So far every database we have used is a file on your computer. Most companies keep theirs on a server, and you connect to it over the network. Babson runs one with <strong>AdventureWorks</strong>, a bicycle company's sales database, on Microsoft SQL Server. The version of SQL that SQL Server uses is called <strong>T-SQL</strong>. It differs from DuckDB's in small ways: tables are inside schemas, as in <code>Sales.SalesOrderHeader</code>, and you write <code>TOP 5</code> after <code>SELECT</code> where DuckDB writes <code>LIMIT 5</code> at the end.</span>\n<span class=\"paragraph\"><strong>Set it up once:</strong></span>\n<ol>\n<li>In a Terminal in the root folder of your repository, run <code>uv add \"pymssql==2.4.5\" python-dotenv</code>. Keep the version number: this one also installs on Apple Silicon Macs with macOS 14, where the newest does not. If the install fails on an older Mac, email me.</li>\n<li>Open <code>.gitignore</code> in the root folder and check that it lists <code>.env</code>. If it does not, add the line <code>.env</code> and commit that first. Your repository is public, and a password committed once stays in its history. The cell below does not connect until <code>.gitignore</code> lists <code>.env</code>.</li>\n<li>Make a file named exactly <code>.env</code> in the root folder, in VS Code. Copy into it the four lines on the <strong>Connecting to SQL Server</strong> page, in the Class Information module on Canvas. If you change <code>.env</code> later, run your query cell again: marimo does not notice a change to a file on its own.</li>\n<li>Before every commit, look at the list of changed files in GitHub Desktop. If <code>.env</code> is in the list, it is not ignored: do not commit.</li>\n</ol>\n<span class=\"paragraph\">The cell below reads the server, the login and the password from <code>.env</code>, so they never appear in the notebook. It defines <code>ask_server</code>, which works like <code>ask</code> but takes only the query.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fwwy",
+      "code_hash": "ba978cfb5d20b5429a0aa9d3f83583d4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Copy the four lines from the Canvas page into .env first, as step 3 describes.&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LJZf",
+      "code_hash": "81c40dfeb6cdcfe03c502ab0937d1c4d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">If the connection works, the cell shows the first five orders in <code>Sales.SalesOrderHeader</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "urSm",
+      "code_hash": "a7a02dc7c870020e368d094d624321a8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"e-adventureworks-on-the-server\">\u270f\ufe0f E \u00b7 AdventureWorks on the Server</h2>\n<span class=\"paragraph\">Use <code>ask_server</code>, and write T-SQL.</span>\n<ol>\n<li>Count the rows of <code>Sales.SalesOrderHeader</code>, of <code>Sales.SalesOrderDetail</code>, and of the two joined on <code>SalesOrderID</code>. Explain in a markdown cell why the join has exactly as many rows as one of them. <em>Check yourself: 31,465, 121,317 and 121,317.</em></li>\n<li>Compute the total <code>Freight</code> in <code>Sales.SalesOrderHeader</code>, and the same total after the join. <em>Check yourself: 3,183,430.25, and 78,690,398.20 after the join.</em></li>\n<li>Find the customers in <code>Sales.Customer</code> who never placed an order, and the products in <code>Production.Product</code> that never sold. <em>Check yourself: 701 customers and 238 products.</em></li>\n</ol>\n<span class=\"paragraph\"><strong>Going further.</strong> Answer one question of your own about AdventureWorks that needs three tables, and check it against a total you can get from one of them.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "jxvo",
+      "code_hash": "d5773194b75f0421885a6cde4f1f81c2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Copy the four lines from the Canvas page into .env first, as step 3 describes.&#x27;</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "E: Order and join counts:\nCopy the four lines from the Canvas page into .env first, as step 3 describes.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "mWxS",
+      "code_hash": "121aabef2f4cf1a21e84de3a02c28176",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Copy the four lines from the Canvas page into .env first, as step 3 describes.&#x27;</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "E: Freight before and after joining:\nCopy the four lines from the Canvas page into .env first, as step 3 describes.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "CcZR",
+      "code_hash": "12e85713c9cc71bc39737fa6990c1206",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Copy the four lines from the Canvas page into .env first, as step 3 describes.&#x27;</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Copy the four lines from the Canvas page into .env first, as step 3 describes.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "YWSi",
+      "code_hash": "ccdee2bd73c77b118b44289c252abc46",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Copy the four lines from the Canvas page into .env first, as step 3 describes.&#x27;</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Copy the four lines from the Canvas page into .env first, as step 3 describes.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "zlud",
+      "code_hash": "7866dd509a0906b4b5ce895359280335",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>E \u2014 Explanation.</strong> Each order line matches one order header, so the join\nhas as many rows as the detail table. Adding freight after that join repeats\neach order's freight once for every line, which inflates the total.</span>\n<span class=\"paragraph\"><code>LEFT JOIN</code> with <code>IS NULL</code> finds customers and products without a match;\n<code>isinstance(..., str)</code> checks whether the helper returned setup instructions\ninstead of a result table, <code>.rows()</code> supplies plain rows for printing, and\n<code>.height</code> counts result rows. These queries\nread data and do not change any server rows. Run them after setting up <code>.env</code>\nto see the actual counts and freight totals.</span>\n<span class=\"paragraph\">The helper imports <code>pymssql</code> only when credentials are present; <code>try</code> and\n<code>except ImportError</code> show the installation command if that package is missing.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tZnO",
+      "code_hash": "0b7b9a843f9e940b7bb37cb237cfb354",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"6-practice-for-the-database-project\">6. Practice for the Database Project</h1>\n<span class=\"paragraph\">The questions in Part B of the <a href=\"https://oim7510.github.io/assignments/database-project/\" rel=\"noopener noreferrer\" target=\"_blank\">database project</a> use a few patterns that the sections above do not show on their own. The exercises below practice them on Northwind, and each one names the project questions that are like it.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xvXZ",
+      "code_hash": "8e752c24abf91a4c1598eec523eee78a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"f-every-territory-with-its-count\">\u270f\ufe0f F \u00b7 Every Territory With Its Count</h2>\n<span class=\"paragraph\">For each territory, count the employees who cover it, and keep the territories that nobody covers in the result, with 0.</span>\n<span class=\"paragraph\">A common error is to count with <code>count(*)</code>. After a <code>LEFT JOIN</code>, a territory with no match still has one row, so <code>count(*)</code> gives it 1. Count a column from <code>employee_territories</code> instead, because <code>count</code> skips <code>NULL</code>.</span>\n<span class=\"paragraph\"><em>Check yourself: 53 rows. Four of them have 0, and the counts add up to 49, the number of rows in <code>employee_territories</code>.</em></span>\n<span class=\"paragraph\"><strong>In the project:</strong> like scenario B's question 2 and scenario D's question 4.</span>\n<span class=\"paragraph\"><strong>Going further.</strong> For each region, the number of territories and the number of them that somebody covers.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CLip",
+      "code_hash": "249144de1e446eafa087157d2fe88ebc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='CLip-0' random-id='5c071bce-4c39-8053-305b-2901ea4654fe'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;78759&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Austin&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:0},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;72716&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Bentonville&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:0},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;29202&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Columbia&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:0},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;75234&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Dallas&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:0},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;30346&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Atlanta&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:1},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;44122&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Beachwood&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:1},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;01730&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Bedford&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:1},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;98004&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Bellevue&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:1},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;48304&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Bloomfield Hills&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:1},{&#92;&quot;TerritoryID&#92;&quot;:&#92;&quot;02116&#92;&quot;,&#92;&quot;TerritoryDescription&#92;&quot;:&#92;&quot;Boston&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:1}]&quot;' data-total-rows='53' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;TerritoryID&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;TerritoryDescription&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;employee_count&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "F: 53 territories; 4 have 0 employees; no territories excluded.\nF: Employee counts add to 49; assignment table has 49 rows.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "YECM",
+      "code_hash": "fc4ce69c33849ebf19b28c200ea3b6be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>F - Explanation.</strong> <code>LEFT JOIN</code> keeps all territories, including uncovered\nones; <code>count(e.EmployeeID)</code> counts only matching employee assignments and\nignores the empty (<code>NULL</code>) values, so uncovered territories receive 0.\n<code>GROUP BY</code> produces one row per territory, and <code>ORDER BY</code> lists the zero\ncounts first. <code>.iter_rows(named=True)</code> lets the loop read each row by its\ncolumn names; the loop counts how many territories have no employees.\nThe separate query counts assignments directly to check the total.\nNo source values or types are changed.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "cEAS",
+      "code_hash": "a7592057143b06d5b1eda78114fb31c7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"g-orders-and-territories-for-each-employee\">\u270f\ufe0f G \u00b7 Orders and Territories for Each Employee</h2>\n<span class=\"paragraph\">Build one row per employee with their number of orders and their number of territories. Then check each count against counting it on its own, from <code>orders</code> alone and from <code>employee_territories</code> alone.</span>\n<span class=\"paragraph\"><em>Check yourself: Robert has 1,789 orders and 10 territories. If you join both tables to <code>employees</code> in one query and count the rows, Robert gets 17,890, one row for each pair of an order and a territory.</em></span>\n<span class=\"paragraph\"><strong>In the project:</strong> like scenario A's question 6 and scenario D's question 6, and the note under scenario C's questions.</span>\n<span class=\"paragraph\"><strong>Going further.</strong> Add each employee's total freight, and check it against <code>orders</code> alone.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iXej",
+      "code_hash": "0e8a004739269c7928cdbc0419d8c943",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='iXej-0' random-id='41e509d9-d9ac-42d7-a79f-2887eca9792b'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;EmployeeID&#92;&quot;:1,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Nancy&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;Davolio&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1846,&#92;&quot;territory_count&#92;&quot;:2},{&#92;&quot;EmployeeID&#92;&quot;:2,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Andrew&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;Fuller&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1771,&#92;&quot;territory_count&#92;&quot;:7},{&#92;&quot;EmployeeID&#92;&quot;:3,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Janet&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;Leverling&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1846,&#92;&quot;territory_count&#92;&quot;:4},{&#92;&quot;EmployeeID&#92;&quot;:4,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Margaret&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;Peacock&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1908,&#92;&quot;territory_count&#92;&quot;:3},{&#92;&quot;EmployeeID&#92;&quot;:5,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Steven&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;Buchanan&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1804,&#92;&quot;territory_count&#92;&quot;:7},{&#92;&quot;EmployeeID&#92;&quot;:6,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Michael&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;Suyama&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1754,&#92;&quot;territory_count&#92;&quot;:5},{&#92;&quot;EmployeeID&#92;&quot;:7,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Robert&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;King&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1789,&#92;&quot;territory_count&#92;&quot;:10},{&#92;&quot;EmployeeID&#92;&quot;:8,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Laura&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;Callahan&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1798,&#92;&quot;territory_count&#92;&quot;:4},{&#92;&quot;EmployeeID&#92;&quot;:9,&#92;&quot;FirstName&#92;&quot;:&#92;&quot;Anne&#92;&quot;,&#92;&quot;LastName&#92;&quot;:&#92;&quot;Dodsworth&#92;&quot;,&#92;&quot;order_count&#92;&quot;:1766,&#92;&quot;territory_count&#92;&quot;:7}]&quot;' data-total-rows='9' data-total-columns='5' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;EmployeeID&quot;,[&quot;integer&quot;,&quot;i32&quot;]],[&quot;FirstName&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;LastName&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;order_count&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;territory_count&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "G: Robert has 1,789 orders and 10 territories.\nG: Checked every count for 9 employees; 0 mismatches; no employees excluded.\nG: Filled 0 missing order counts and 0 missing territory counts with 0 in the result.\nG: Total orders = 16,282; total territory assignments = 49.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "EJmg",
+      "code_hash": "2c626234d6029fdb735d4bb057f7467c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>G - Explanation.</strong> Each query inside parentheses counts one table by\nemployee before the joins, so an employee's orders cannot multiply their\nterritory assignments. <code>coalesce(value, 0)</code> supplies 0 when an employee has\nno matching count; it does not change the source tables. <code>LEFT JOIN</code> keeps\nevery employee. The two separate queries check each count without joining\ntables. The loops build dictionaries keyed by employee ID, then compare\nboth counts for every employee; <code>.get(ID, 0)</code> supplies 0 for a missing ID.\n<code>!=</code> means unequal and <code>or</code> flags a row if either count differs.\nThe Robert line provides the requested spot check.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UmEG",
+      "code_hash": "27a1d0f6c103554ec3ff61e35fa213ff",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"h-the-last-90-days\">\u270f\ufe0f H \u00b7 The Last 90 Days</h2>\n<span class=\"paragraph\">The last order in Northwind was placed on 2023-10-28. For each shipper, compute the number of orders and the total freight in the 90 days before that date, with the most orders first. In <code>orders</code>, the shipper is <code>ShipVia</code>, which holds a <code>ShipperID</code>. To keep the orders of those 90 days, use <code>WHERE OrderDate &gt;= DATE '2023-10-28' - INTERVAL 90 DAY</code>. <a href=\"https://oim7510.github.io/handbooks/sql/02-asking-one-table/#12-dates-truncating-differencing-grouping-by-month\" rel=\"noopener noreferrer\" target=\"_blank\">Chapter B, \u00a712</a> of the SQL handbook has more on dates.</span>\n<span class=\"paragraph\"><em>Check yourself: 328 orders in all, and United Package first, with 115 orders and 31,827.75 in freight.</em></span>\n<span class=\"paragraph\"><strong>In the project:</strong> like scenario A's question 4, scenario B's question 1 and scenario C's question 7.</span>\n<span class=\"paragraph\"><strong>Going further.</strong> The number of orders for each shipper in each month of 2023.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vEBW",
+      "code_hash": "9fa0312db32e3304ea22eb2021ccea2b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='vEBW-0' random-id='d59b4a32-520f-063a-f07e-ce54dc3564eb'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;CompanyName&#92;&quot;:&#92;&quot;United Package&#92;&quot;,&#92;&quot;order_count&#92;&quot;:115,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;31827.7500&#92;&quot;},{&#92;&quot;CompanyName&#92;&quot;:&#92;&quot;Speedy Express&#92;&quot;,&#92;&quot;order_count&#92;&quot;:112,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;29396.2500&#92;&quot;},{&#92;&quot;CompanyName&#92;&quot;:&#92;&quot;Federal Shipping&#92;&quot;,&#92;&quot;order_count&#92;&quot;:101,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;26954.5000&#92;&quot;}]&quot;' data-total-rows='3' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;CompanyName&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;order_count&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;total_freight&quot;,[&quot;number&quot;,&quot;decimal[38,4]&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "H: Shipper counts add to 328 orders; orders alone give 328.\nH: Shipper freight = 88,178.50; orders alone = 88,178.50.\nH: Date filter excludes 15,954 orders.\nH: Shipper results: [('United Package', 115, Decimal('31827.7500')), ('Speedy Express', 112, Decimal('29396.2500')), ('Federal Shipping', 101, Decimal('26954.5000'))]\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "kLmu",
+      "code_hash": "b2b99f7c1e4d4b4e3ac4638592b42c66",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>H - Explanation.</strong> <code>ShipVia</code> matches an order to its shipper's ID;\nthe date condition keeps orders on or after July 30, 2023, using the\ncutoff specified in the question. <code>DATE</code> reads the written cutoff as a date,\nand <code>INTERVAL 90 DAY</code> subtracts 90 days; neither changes stored values.\nEach order joins to one shipper, so freight is counted once. The separate\nquery checks the order count and freight directly from <code>orders</code>; the printed\nexclusion count reports orders outside the date range.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "IpqN",
+      "code_hash": "382ab71761cabf23fc29e06dc863bed2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"i-categories-above-the-average\">\u270f\ufe0f I \u00b7 Categories Above the Average</h2>\n<span class=\"paragraph\">Compute the revenue of each category, then keep only the categories whose revenue is above the average of all the category totals. This needs a query inside another query, called a <strong>subquery</strong>, which <a href=\"https://oim7510.github.io/handbooks/sql/03-more-than-one-table/#21-subqueries\" rel=\"noopener noreferrer\" target=\"_blank\">chapter C, \u00a721</a> of the SQL handbook explains.</span>\n<span class=\"paragraph\"><em>Check yourself: four categories, Beverages, Confections, Meat/Poultry and Dairy Products. The average is about 56,048,329.</em></span>\n<span class=\"paragraph\"><strong>In the project:</strong> like scenario A's question 4 and scenario C's question 3.</span>\n<span class=\"paragraph\"><strong>Going further.</strong> The products whose revenue is above the average of their own category.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dxZZ",
+      "code_hash": "1a291f8d2edf134577b4970d5d675098",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='dxZZ-0' random-id='8afdd701-4d82-d8d7-a645-05b9b631ceb4'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Beverages&#92;&quot;,&#92;&quot;revenue&#92;&quot;:92163184.18,&#92;&quot;average_category_revenue&#92;&quot;:56048329.1461875,&#92;&quot;categories_before_filter&#92;&quot;:8},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Confections&#92;&quot;,&#92;&quot;revenue&#92;&quot;:66337803.065,&#92;&quot;average_category_revenue&#92;&quot;:56048329.1461875,&#92;&quot;categories_before_filter&#92;&quot;:8},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Meat/Poultry&#92;&quot;,&#92;&quot;revenue&#92;&quot;:64881147.9695,&#92;&quot;average_category_revenue&#92;&quot;:56048329.1461875,&#92;&quot;categories_before_filter&#92;&quot;:8},{&#92;&quot;CategoryName&#92;&quot;:&#92;&quot;Dairy Products&#92;&quot;,&#92;&quot;revenue&#92;&quot;:58018116.785,&#92;&quot;average_category_revenue&#92;&quot;:56048329.1461875,&#92;&quot;categories_before_filter&#92;&quot;:8}]&quot;' data-total-rows='4' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;CategoryName&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;revenue&quot;,[&quot;number&quot;,&quot;f64&quot;]],[&quot;average_category_revenue&quot;,[&quot;number&quot;,&quot;f64&quot;]],[&quot;categories_before_filter&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "I: 4 categories exceed the average revenue of 56,048,329.15.\nI: Excluded 4 categories at or below the average.\nI: Above-average categories: ['Beverages', 'Confections', 'Meat/Poultry', 'Dairy Products']\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "dlnW",
+      "code_hash": "18050b0d08bc1f9c04baa9e5f19e9149",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>I - Explanation.</strong> <code>WITH category_totals AS (...)</code> gives the first query\na temporary name for use within this statement; it creates no stored table.\nThe joins connect each line to its product and category, and the revenue\nformula subtracts its discount before adding the category's sales.\n<code>SELECT avg(revenue) FROM category_totals</code> averages the category totals,\nand the outer <code>WHERE</code> keeps only totals greater than that average.\n<code>.to_list()</code> supplies the category names as a Python list for printing.\nThe output reports the number of categories excluded by the filter;\nno source rows or types are changed.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TTti",
+      "code_hash": "bc95bf007d854138e772acea417598c6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"this-weeks-work\">\ud83d\ude80 This Week's Work</h1>\n<ol>\n<li><strong>What is due is listed under <em>Before next session</em> in the post-class notes.</strong> I post them on the session page after each class, with the sections we reached, and the checkpoint on Canvas lists the same items.</li>\n<li><strong><a href=\"https://oim7510.github.io/assignments/database-project/\" rel=\"noopener noreferrer\" target=\"_blank\">The database project</a></strong>, Part B, due Monday 11/16</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RKFZ",
+      "code_hash": "25e2994058a7fdc8f44ca3c28303937b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Self-check:</strong></span>\n<ul class=\"task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can join two tables with <code>JOIN</code> and <code>ON</code>, and explain how many rows come out</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can find the rows a join leaves out, with <code>LEFT JOIN</code> and <code>IS NULL</code></li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can check a key for repeats before I join on it, and explain why a total grows after a join</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can join three tables and check the result against a total I know</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can connect to a database on a server and ask it the same questions in T-SQL</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

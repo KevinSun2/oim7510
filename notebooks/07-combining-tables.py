@@ -216,6 +216,49 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ask, towns_database):
+    towns_with_counties = ask(towns_database, """
+        SELECT t.name, t.county, t.population, c.population AS county_population
+        FROM towns AS t
+        JOIN counties AS c ON t.county = c.name
+        ORDER BY t.population DESC
+    """)
+    print(f"A: The join returns {towns_with_counties.height} towns; no towns are left out.")
+    towns_with_counties
+    return
+
+
+@app.cell
+def _(ask, towns_database):
+    largest_population_shares = ask(towns_database, """
+        SELECT t.name, t.county,
+               round(100.0 * t.population / c.population, 1) AS population_percent
+        FROM towns AS t
+        JOIN counties AS c ON t.county = c.name
+        ORDER BY population_percent DESC, t.name
+        LIMIT 5
+    """)
+    print("A: Five largest town shares:", largest_population_shares.rows())
+    largest_population_shares
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **A — Explanation.** Each of the 351 towns matches exactly one county, so the
+    join returns 351 rows. Nantucket is the only town in its county, so its town
+    and county populations are equal and its share is 100%.
+
+    `AS t` and `AS c` give the tables short names; `ON` matches each town to its
+    county; `round(100.0 * t.population / c.population, 1)` calculates the share
+    as a percentage rounded to one decimal place. `LIMIT 5` displays five of
+    the 351 towns and leaves 346 out of that display.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -273,6 +316,30 @@ def _(mo):
     *Check yourself: four territories, Columbia, Bentonville, Dallas and Austin.*
 
     **Going further.** List the employees with the number of territories each covers, and check that the counts add up to the rows of `employee_territories`. Then find the same four territories with `WHERE NOT EXISTS (...)`.
+    """)
+    return
+
+
+@app.cell
+def _(ask, northwind_database):
+    uncovered_territories = ask(northwind_database, """
+        SELECT t.TerritoryID, t.TerritoryDescription
+        FROM territories AS t
+        LEFT JOIN employee_territories AS e ON e.TerritoryID = t.TerritoryID
+        WHERE e.TerritoryID IS NULL
+        ORDER BY t.TerritoryDescription
+    """)
+    print(f"B: {uncovered_territories.height} territories have no employee.")
+    print("B: Uncovered territories:", uncovered_territories.rows())
+    uncovered_territories
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **B — Explanation.** `LEFT JOIN` keeps every territory, and `IS NULL` keeps
+    only those with no matching employee assignment; no source rows are changed.
     """)
     return
 
@@ -378,6 +445,31 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ask, northwind_database):
+    freight_by_country = ask(northwind_database, """
+        SELECT ShipCountry, count(*) AS orders, sum(Freight) AS total_freight
+        FROM orders
+        GROUP BY ShipCountry
+        ORDER BY total_freight DESC
+    """)
+    freight_check = ask(northwind_database, "SELECT sum(Freight) AS freight FROM orders")
+    print(f"C: {freight_by_country.height} countries; grouped freight = {freight_by_country['total_freight'].sum():,.2f}.")
+    print(f"C: Freight from orders alone = {freight_check['freight'][0]:,.2f}.")
+    freight_by_country
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **C — Explanation.** `GROUP BY ShipCountry` makes one group per country, and
+    `sum(Freight)` adds each order's freight once because this query uses only
+    `orders`; all orders are included.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -394,6 +486,48 @@ def _(mo):
     *Check yourself: Beverages first, with about 13,375,939, and all eight, added before rounding, give 63,856,337.63.*
 
     **Going further.** Compute revenue by category for each year, and find the category that grew the most.
+    """)
+    return
+
+
+@app.cell
+def _(ask, northwind_database):
+    usa_category_revenue = ask(northwind_database, """
+        SELECT c.CategoryName,
+               sum(d.UnitPrice * d.Quantity * (1 - d.Discount)) AS revenue
+        FROM orders AS o
+        JOIN order_details AS d ON d.OrderID = o.OrderID
+        JOIN products AS p ON p.ProductID = d.ProductID
+        JOIN categories AS c ON c.CategoryID = p.CategoryID
+        WHERE o.ShipCountry = 'USA'
+        GROUP BY c.CategoryName
+        ORDER BY revenue DESC
+    """)
+    usa_revenue_check = ask(northwind_database, """
+        SELECT sum(d.UnitPrice * d.Quantity * (1 - d.Discount)) AS revenue
+        FROM orders AS o
+        JOIN order_details AS d ON d.OrderID = o.OrderID
+        WHERE o.ShipCountry = 'USA'
+    """)
+    usa_order_counts = ask(northwind_database, """
+        SELECT count(*) AS all_orders,
+               sum(CASE WHEN ShipCountry = 'USA' THEN 1 ELSE 0 END) AS usa_orders
+        FROM orders
+    """)
+    print(f"D: {usa_category_revenue.height} categories; category revenue = {usa_category_revenue['revenue'].sum():,.2f}.")
+    print(f"D: Revenue from orders and lines alone = {usa_revenue_check['revenue'][0]:,.2f}.")
+    print(f"D: Kept {usa_order_counts['usa_orders'][0]:,} USA orders; excluded {usa_order_counts['all_orders'][0] - usa_order_counts['usa_orders'][0]:,} other orders.")
+    usa_category_revenue
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **D — Explanation.** The joins connect each order line to its order, product
+    and category; `UnitPrice * Quantity * (1 - Discount)` calculates revenue
+    after the discount. The second query checks the total using just orders and
+    order lines, and both totals are added before rounding for display.
     """)
     return
 
@@ -419,7 +553,6 @@ def _(mo):
 
 @app.cell
 def _(mo, os, pl):
-    import pymssql
     from dotenv import load_dotenv
 
     def ask_server(sql):
@@ -430,6 +563,10 @@ def _(mo, os, pl):
         load_dotenv(root / ".env", override=True)
         if not os.environ.get("ATIC_PASSWORD"):
             return "Copy the four lines from the Canvas page into .env first, as step 3 describes."
+        try:
+            import pymssql
+        except ImportError:
+            return 'Run uv add "pymssql==2.4.5" python-dotenv before connecting to the server.'
         with pymssql.connect(
             server=os.environ["ATIC_SERVER"],
             user=os.environ["ATIC_USER"],
@@ -470,6 +607,99 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ask_server):
+    adventureworks_counts = ask_server("""
+        SELECT
+            (SELECT count(*) FROM Sales.SalesOrderHeader) AS orders,
+            (SELECT count(*) FROM Sales.SalesOrderDetail) AS order_lines,
+            (SELECT count(*)
+             FROM Sales.SalesOrderHeader AS h
+             JOIN Sales.SalesOrderDetail AS d
+                 ON d.SalesOrderID = h.SalesOrderID) AS joined_rows
+    """)
+    print("E: Order and join counts:")
+    if isinstance(adventureworks_counts, str):
+        print(adventureworks_counts)
+    else:
+        print(adventureworks_counts.rows())
+    adventureworks_counts
+    return
+
+
+@app.cell
+def _(ask_server):
+    adventureworks_freight = ask_server("""
+        SELECT
+            (SELECT sum(Freight) FROM Sales.SalesOrderHeader) AS freight_once,
+            (SELECT sum(h.Freight)
+             FROM Sales.SalesOrderHeader AS h
+             JOIN Sales.SalesOrderDetail AS d
+                 ON d.SalesOrderID = h.SalesOrderID) AS freight_after_join
+    """)
+    print("E: Freight before and after joining:")
+    if isinstance(adventureworks_freight, str):
+        print(adventureworks_freight)
+    else:
+        print(adventureworks_freight.rows())
+    adventureworks_freight
+    return
+
+
+@app.cell
+def _(ask_server):
+    customers_without_orders = ask_server("""
+        SELECT c.CustomerID
+        FROM Sales.Customer AS c
+        LEFT JOIN Sales.SalesOrderHeader AS h ON h.CustomerID = c.CustomerID
+        WHERE h.SalesOrderID IS NULL
+        ORDER BY c.CustomerID
+    """)
+    if isinstance(customers_without_orders, str):
+        print(customers_without_orders)
+    else:
+        print(f"E: {customers_without_orders.height} customers never placed an order.")
+    customers_without_orders
+    return
+
+
+@app.cell
+def _(ask_server):
+    products_without_sales = ask_server("""
+        SELECT p.ProductID, p.Name
+        FROM Production.Product AS p
+        LEFT JOIN Sales.SalesOrderDetail AS d ON d.ProductID = p.ProductID
+        WHERE d.SalesOrderDetailID IS NULL
+        ORDER BY p.ProductID
+    """)
+    if isinstance(products_without_sales, str):
+        print(products_without_sales)
+    else:
+        print(f"E: {products_without_sales.height} products never sold.")
+    products_without_sales
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **E — Explanation.** Each order line matches one order header, so the join
+    has as many rows as the detail table. Adding freight after that join repeats
+    each order's freight once for every line, which inflates the total.
+
+    `LEFT JOIN` with `IS NULL` finds customers and products without a match;
+    `isinstance(..., str)` checks whether the helper returned setup instructions
+    instead of a result table, `.rows()` supplies plain rows for printing, and
+    `.height` counts result rows. These queries
+    read data and do not change any server rows. Run them after setting up `.env`
+    to see the actual counts and freight totals.
+
+    The helper imports `pymssql` only when credentials are present; `try` and
+    `except ImportError` show the installation command if that package is missing.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -498,6 +728,44 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ask, northwind_database):
+    territory_employee_counts = ask(northwind_database, """
+        SELECT t.TerritoryID, t.TerritoryDescription,
+               count(e.EmployeeID) AS employee_count
+        FROM territories AS t
+        LEFT JOIN employee_territories AS e ON e.TerritoryID = t.TerritoryID
+        GROUP BY t.TerritoryID, t.TerritoryDescription
+        ORDER BY employee_count, t.TerritoryDescription
+    """)
+    territory_assignment_check = ask(northwind_database, """
+        SELECT count(*) AS assignments FROM employee_territories
+    """)
+    territories_with_zero = 0
+    for territory_row in territory_employee_counts.iter_rows(named=True):
+        if territory_row["employee_count"] == 0:
+            territories_with_zero += 1
+    print(f"F: {territory_employee_counts.height} territories; {territories_with_zero} have 0 employees; no territories excluded.")
+    print(f"F: Employee counts add to {territory_employee_counts['employee_count'].sum()}; assignment table has {territory_assignment_check['assignments'][0]} rows.")
+    territory_employee_counts
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **F - Explanation.** `LEFT JOIN` keeps all territories, including uncovered
+    ones; `count(e.EmployeeID)` counts only matching employee assignments and
+    ignores the empty (`NULL`) values, so uncovered territories receive 0.
+    `GROUP BY` produces one row per territory, and `ORDER BY` lists the zero
+    counts first. `.iter_rows(named=True)` lets the loop read each row by its
+    column names; the loop counts how many territories have no employees.
+    The separate query counts assignments directly to check the total.
+    No source values or types are changed.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -510,6 +778,75 @@ def _(mo):
     **In the project:** like scenario A's question 6 and scenario D's question 6, and the note under scenario C's questions.
 
     **Going further.** Add each employee's total freight, and check it against `orders` alone.
+    """)
+    return
+
+
+@app.cell
+def _(ask, northwind_database):
+    employee_activity = ask(northwind_database, """
+        SELECT e.EmployeeID, e.FirstName, e.LastName,
+               coalesce(o.order_count, 0) AS order_count,
+               coalesce(t.territory_count, 0) AS territory_count
+        FROM employees AS e
+        LEFT JOIN (
+            SELECT EmployeeID, count(*) AS order_count
+            FROM orders
+            GROUP BY EmployeeID
+        ) AS o ON o.EmployeeID = e.EmployeeID
+        LEFT JOIN (
+            SELECT EmployeeID, count(*) AS territory_count
+            FROM employee_territories
+            GROUP BY EmployeeID
+        ) AS t ON t.EmployeeID = e.EmployeeID
+        ORDER BY e.EmployeeID
+    """)
+    orders_by_employee_check = ask(northwind_database, """
+        SELECT EmployeeID, count(*) AS order_count
+        FROM orders GROUP BY EmployeeID
+    """)
+    territories_by_employee_check = ask(northwind_database, """
+        SELECT EmployeeID, count(*) AS territory_count
+        FROM employee_territories GROUP BY EmployeeID
+    """)
+    employee_order_lookup = {}
+    for order_check_row in orders_by_employee_check.iter_rows(named=True):
+        employee_order_lookup[order_check_row["EmployeeID"]] = order_check_row["order_count"]
+    employee_territory_lookup = {}
+    for territory_check_row in territories_by_employee_check.iter_rows(named=True):
+        employee_territory_lookup[territory_check_row["EmployeeID"]] = territory_check_row["territory_count"]
+    employee_count_mismatches = 0
+    employee_zero_order_counts = 0
+    employee_zero_territory_counts = 0
+    for activity_row in employee_activity.iter_rows(named=True):
+        if activity_row["EmployeeID"] not in employee_order_lookup:
+            employee_zero_order_counts += 1
+        if activity_row["EmployeeID"] not in employee_territory_lookup:
+            employee_zero_territory_counts += 1
+        if (activity_row["order_count"] != employee_order_lookup.get(activity_row["EmployeeID"], 0)
+                or activity_row["territory_count"] != employee_territory_lookup.get(activity_row["EmployeeID"], 0)):
+            employee_count_mismatches += 1
+        if activity_row["FirstName"] == "Robert":
+            print(f"G: Robert has {activity_row['order_count']:,} orders and {activity_row['territory_count']} territories.")
+    print(f"G: Checked every count for {employee_activity.height} employees; {employee_count_mismatches} mismatches; no employees excluded.")
+    print(f"G: Filled {employee_zero_order_counts} missing order counts and {employee_zero_territory_counts} missing territory counts with 0 in the result.")
+    print(f"G: Total orders = {employee_activity['order_count'].sum():,}; total territory assignments = {employee_activity['territory_count'].sum()}.")
+    employee_activity
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **G - Explanation.** Each query inside parentheses counts one table by
+    employee before the joins, so an employee's orders cannot multiply their
+    territory assignments. `coalesce(value, 0)` supplies 0 when an employee has
+    no matching count; it does not change the source tables. `LEFT JOIN` keeps
+    every employee. The two separate queries check each count without joining
+    tables. The loops build dictionaries keyed by employee ID, then compare
+    both counts for every employee; `.get(ID, 0)` supplies 0 for a missing ID.
+    `!=` means unequal and `or` flags a row if either count differs.
+    The Robert line provides the requested spot check.
     """)
     return
 
@@ -530,6 +867,45 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ask, northwind_database):
+    recent_shipper_totals = ask(northwind_database, """
+        SELECT s.CompanyName, count(*) AS order_count,
+               sum(o.Freight) AS total_freight
+        FROM orders AS o
+        JOIN shippers AS s ON s.ShipperID = o.ShipVia
+        WHERE o.OrderDate >= DATE '2023-10-28' - INTERVAL 90 DAY
+        GROUP BY s.ShipperID, s.CompanyName
+        ORDER BY order_count DESC, s.CompanyName
+    """)
+    recent_orders_check = ask(northwind_database, """
+        SELECT count(*) AS order_count, sum(Freight) AS total_freight,
+               (SELECT count(*) FROM orders) AS all_orders
+        FROM orders
+        WHERE OrderDate >= DATE '2023-10-28' - INTERVAL 90 DAY
+    """)
+    print(f"H: Shipper counts add to {recent_shipper_totals['order_count'].sum()} orders; orders alone give {recent_orders_check['order_count'][0]}.")
+    print(f"H: Shipper freight = {recent_shipper_totals['total_freight'].sum():,.2f}; orders alone = {recent_orders_check['total_freight'][0]:,.2f}.")
+    print(f"H: Date filter excludes {recent_orders_check['all_orders'][0] - recent_orders_check['order_count'][0]:,} orders.")
+    print("H: Shipper results:", recent_shipper_totals.rows())
+    recent_shipper_totals
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **H - Explanation.** `ShipVia` matches an order to its shipper's ID;
+    the date condition keeps orders on or after July 30, 2023, using the
+    cutoff specified in the question. `DATE` reads the written cutoff as a date,
+    and `INTERVAL 90 DAY` subtracts 90 days; neither changes stored values.
+    Each order joins to one shipper, so freight is counted once. The separate
+    query checks the order count and freight directly from `orders`; the printed
+    exclusion count reports orders outside the date range.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -542,6 +918,47 @@ def _(mo):
     **In the project:** like scenario A's question 4 and scenario C's question 3.
 
     **Going further.** The products whose revenue is above the average of their own category.
+    """)
+    return
+
+
+@app.cell
+def _(ask, northwind_database):
+    above_average_categories = ask(northwind_database, """
+        WITH category_totals AS (
+            SELECT c.CategoryID, c.CategoryName,
+                   sum(d.UnitPrice * d.Quantity * (1 - d.Discount)) AS revenue
+            FROM categories AS c
+            JOIN products AS p ON p.CategoryID = c.CategoryID
+            JOIN order_details AS d ON d.ProductID = p.ProductID
+            GROUP BY c.CategoryID, c.CategoryName
+        )
+        SELECT CategoryName, revenue,
+               (SELECT avg(revenue) FROM category_totals) AS average_category_revenue,
+               (SELECT count(*) FROM category_totals) AS categories_before_filter
+        FROM category_totals
+        WHERE revenue > (SELECT avg(revenue) FROM category_totals)
+        ORDER BY revenue DESC
+    """)
+    print(f"I: {above_average_categories.height} categories exceed the average revenue of {above_average_categories['average_category_revenue'][0]:,.2f}.")
+    print(f"I: Excluded {above_average_categories['categories_before_filter'][0] - above_average_categories.height} categories at or below the average.")
+    print("I: Above-average categories:", above_average_categories['CategoryName'].to_list())
+    above_average_categories
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **I - Explanation.** `WITH category_totals AS (...)` gives the first query
+    a temporary name for use within this statement; it creates no stored table.
+    The joins connect each line to its product and category, and the revenue
+    formula subtracts its discount before adding the category's sales.
+    `SELECT avg(revenue) FROM category_totals` averages the category totals,
+    and the outer `WHERE` keeps only totals greater than that average.
+    `.to_list()` supplies the category names as a Python list for printing.
+    The output reports the number of categories excluded by the filter;
+    no source rows or types are changed.
     """)
     return
 

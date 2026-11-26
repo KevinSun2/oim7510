@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A collection of Python and SQL coursework for Programming for Business Analytics.">
+  <title>Analytics Notebook | KevinSun2</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #17322e; background: #f5f4ee; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1040px; margin: auto; padding: 56px 24px 32px; }
+    nav, footer { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    nav { padding-bottom: 28px; border-bottom: 1px solid #ced6cd; }
+    a { color: #205e4e; text-underline-offset: 4px; }
+    a:hover { color: #111; }
+    a:focus-visible { outline: 3px solid #b66524; outline-offset: 5px; }
+    .label { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; font-weight: 700; }
+    header { padding: 76px 0 58px; max-width: 760px; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: 1.05; letter-spacing: -.055em; margin: 20px 0; }
+    header p { max-width: 570px; font-size: 1.15rem; line-height: 1.7; color: #4b6057; }
+    h2 { font-size: 1.6rem; letter-spacing: -.03em; }
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    article { background: #fffef9; padding: 26px; border: 1px solid #d6ddd2; border-radius: 12px; }
+    article h3 { margin: 18px 0 12px; font-size: 1.2rem; }
+    article p { line-height: 1.65; color: #4b6057; }
+    .number { color: #946039; font-size: .8rem; font-weight: 700; }
+    footer { margin-top: 64px; border-top: 1px solid #ced6cd; padding-top: 24px; font-size: .85rem; color: #4b6057; }
+    @media (max-width: 720px) { .projects { grid-template-columns: 1fr; } header { padding: 48px 0 36px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation">
+      <span class="label">Analytics Notebook / KevinSun2</span>
+      <a href="https://github.com/KevinSun2/oim7510">View coursework on GitHub</a>
+    </nav>
+    <header>
+      <span class="label">Programming for Business Analytics</span>
+      <h1>From data to<br>better questions.</h1>
+      <p>A collection of coursework exploring how Python and SQL turn records into useful business answers. Built one query, table, and check at a time.</p>
+    </header>
+    <section aria-labelledby="projects-title">
+      <h2 id="projects-title">Selected coursework</h2>
+      <div class="projects">
+        <article>
+          <span class="number">01 / BUILD</span>
+          <h3>Building a database</h3>
+          <p>Turn Massachusetts town data into related tables, define keys, and check county totals with SQL.</p>
+          <a href="https://github.com/KevinSun2/oim7510/blob/main/notebooks/06-building-and-querying.py">Explore notebook 6</a>
+        </article>
+        <article>
+          <span class="number">02 / CONNECT</span>
+          <h3>Combining tables</h3>
+          <p>Use joins to connect towns and counties, find unmatched records, and calculate freight and revenue.</p>
+          <a href="https://github.com/KevinSun2/oim7510/blob/main/notebooks/07-combining-tables.py">Explore notebook 7</a>
+        </article>
+        <article>
+          <span class="number">03 / APPLY</span>
+          <h3>A business database</h3>
+          <p>Model a business scenario, build a database from CSV files, and answer practical questions with SQL.</p>
+          <a href="https://github.com/KevinSun2/oim7510/tree/main/projects/db">Explore the database project</a>
+        </article>
+      </div>
+    </section>
+    <footer>
+      <span>OIM7510 · A learning portfolio</span>
+      <a href="https://github.com/KevinSun2">GitHub profile</a>
+    </footer>
+  </main>
+</body>
+</html>
